@@ -35,21 +35,16 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         crayonNameLabel.text = crayonReference.name
-//        crayonRedLabel.text = "Red"
-//        crayonGreenLabel.text = "Green"
-//        crayonBlueLabel.text = "Blue"
+        
 //        crayonAlphaLabel.text = "Alpha"
     }
     
     @IBAction func sliderChanges(_ sender: UISlider) {
-        currentsliderValue = sender.value
-        if crayonReference != nil {
-            //if i have a crayon color then i want my label to take the slider value and print it
-            //so i got the value to the label for one, how can i set each differently?
-            crayonRedLabel.text = currentsliderValue.description
-            crayonGreenLabel.text = currentsliderValue.description
-            crayonBlueLabel.text = currentsliderValue.description
-        }
+        
+        crayonRedLabel.text = "Red: \(crayonRedSlider.value.description)"
+        crayonGreenLabel.text = "Green: \(crayonGreenSlider.value.description)"
+        crayonBlueLabel.text = "Blue: \(crayonBlueSlider.value.description)"
+    
     }
     
     
