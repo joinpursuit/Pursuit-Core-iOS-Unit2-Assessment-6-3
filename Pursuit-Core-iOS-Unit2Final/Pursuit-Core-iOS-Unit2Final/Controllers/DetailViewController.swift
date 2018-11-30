@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var crayonBlueSlider: UISlider!
     
-    var currentsliderValue: Float = 0.0
+    var currentSliderValue: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +39,21 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func sliderChanges(_ sender: UISlider) {
-        
-       // crayonRedSlider = crayonArray
-            
-        crayonRedLabel.text = "Red: \(crayonRedSlider.value.description)"
-        crayonGreenLabel.text = "Green: \(crayonGreenSlider.value.description)"
-        crayonBlueLabel.text = "Blue: \(crayonBlueSlider.value.description)"
     
-    }
+        
+//        currentSliderValue = sender.value
+//
+//        switch  {
+//        case crayonRedLabel:
+//            crayonRedLabel.text = "Red: \(crayonRedSlider.value.description)"
+//        case crayonGreenLabel:
+//            crayonGreenLabel.text = "Green: \(crayonGreenSlider.value.description)"
+//        case crayonBlueLabel:
+//             crayonBlueLabel.text = "Blue: \(crayonBlueSlider.value.description)"
+//        default:
+//            print("who even knows anymore")
+//        }
+   }
 
     
     @IBAction func crayonAlphaStepper(_ sender: UIStepper) {

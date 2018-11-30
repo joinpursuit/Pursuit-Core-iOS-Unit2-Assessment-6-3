@@ -11,7 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var crayons = Crayon.allTheCrayons //variable holding my array of crayons
+    var crayons = Crayon.allTheCrayons
     
     @IBOutlet weak var crayonTableView: UITableView!
 
@@ -45,7 +45,6 @@ extension ViewController: UITableViewDataSource {
         
         crayonCell.textLabel?.text = crayonsInfoSet.name
         crayonCell.detailTextLabel?.text = crayonsInfoSet.hex
-       // crayonCell.textLabel?.backgroundColor = 
         
         return crayonCell
     }
