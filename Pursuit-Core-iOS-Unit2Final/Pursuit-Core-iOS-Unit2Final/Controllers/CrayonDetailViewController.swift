@@ -12,20 +12,18 @@ class CrayonDetailViewController: UITableViewController {
 
     var crayon: Crayon?
     
+    @IBOutlet weak var colorCell: UITableViewCell!
     @IBOutlet weak var redLabel: UILabel!
-    @IBOutlet weak var redCell: UITableViewCell!
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenLabel: UILabel!
-    @IBOutlet weak var greenCell: UITableViewCell!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueLabel: UILabel!
-    @IBOutlet weak var blueCell: UITableViewCell!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var stepperLabel: UILabel!
     @IBOutlet weak var alphaStepper: UIStepper!
     
     @IBAction func redSliderColor(_ sender: UISlider) {
-        
+       
     }
     
     @IBAction func greenSliderColor(_ sender: UISlider) {
@@ -50,7 +48,8 @@ class CrayonDetailViewController: UITableViewController {
         redLabel.text = "Red Value: \(crayon!.red)"
         greenLabel.text = "Green Value: \(crayon!.green)"
         blueLabel.text = "Blue Value: \(crayon!.blue)"
-        
+        colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
+       
         
         redSlider.minimumValue = 0.0
         redSlider.maximumValue = 0.1
