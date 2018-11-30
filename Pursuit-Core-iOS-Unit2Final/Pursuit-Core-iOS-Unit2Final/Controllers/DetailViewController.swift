@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var colorName: UILabel!
     
     @IBAction func resetButton(_ sender: UIButton) {
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon!.red), green: CGFloat(crayon!.green), blue: CGFloat(crayon!.blue), alpha: 255)
     }
     
     
