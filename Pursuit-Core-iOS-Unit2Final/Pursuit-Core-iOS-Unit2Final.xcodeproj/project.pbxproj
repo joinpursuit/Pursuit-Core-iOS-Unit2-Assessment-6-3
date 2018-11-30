@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55688B9B21B19B0900DFF216 /* crayonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55688B9A21B19B0900DFF216 /* crayonViewController.swift */; };
+		55688B9D21B19D1F00DFF216 /* crayonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55688B9C21B19D1F00DFF216 /* crayonCell.swift */; };
 		57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72D219E136D0024A541 /* AppDelegate.swift */; };
 		57AFE730219E136D0024A541 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE72F219E136D0024A541 /* ViewController.swift */; };
 		57AFE733219E136D0024A541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57AFE731219E136D0024A541 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55688B9A21B19B0900DFF216 /* crayonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crayonViewController.swift; sourceTree = "<group>"; };
+		55688B9C21B19D1F00DFF216 /* crayonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crayonCell.swift; sourceTree = "<group>"; };
 		57AFE72A219E136D0024A541 /* Pursuit-Core-iOS-Unit2Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Unit2Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFE72D219E136D0024A541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57AFE72F219E136D0024A541 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55688B9E21B19D3500DFF216 /* CRayonCell */ = {
+			isa = PBXGroup;
+			children = (
+				55688B9C21B19D1F00DFF216 /* crayonCell.swift */,
+			);
+			path = CRayonCell;
+			sourceTree = "<group>";
+		};
 		57AFE721219E136D0024A541 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				57AFE72F219E136D0024A541 /* ViewController.swift */,
+				55688B9A21B19B0900DFF216 /* crayonViewController.swift */,
+				55688B9E21B19D3500DFF216 /* CRayonCell */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,7 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55688B9B21B19B0900DFF216 /* crayonViewController.swift in Sources */,
 				57AFE742219E139C0024A541 /* Crayon.swift in Sources */,
+				55688B9D21B19D1F00DFF216 /* crayonCell.swift in Sources */,
 				57AFE730219E136D0024A541 /* ViewController.swift in Sources */,
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
 			);
@@ -319,8 +335,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZEKMNK5YD3;
+				DEVELOPMENT_TEAM = RFPRDQU6MN;
 				INFOPLIST_FILE = "Pursuit-Core-iOS-Unit2Final/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,8 +354,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZEKMNK5YD3;
+				DEVELOPMENT_TEAM = RFPRDQU6MN;
 				INFOPLIST_FILE = "Pursuit-Core-iOS-Unit2Final/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
