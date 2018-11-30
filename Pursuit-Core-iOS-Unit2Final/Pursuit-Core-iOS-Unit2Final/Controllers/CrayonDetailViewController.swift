@@ -23,6 +23,7 @@ class CrayonDetailViewController: UIViewController {
     
     
     var crayonInfo: Crayon?
+    var currentSliderValue: Float = 1.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,23 +44,29 @@ class CrayonDetailViewController: UIViewController {
     
     @IBAction func redSliderChange( sender: UISlider) {
         //redSlider.value = sender.value
-        redSliderLabel.text =
-            Int(sender.value).description
+        currentSliderValue = Float(crayonInfo!.red)
+        redSlider.value = currentSliderValue
+        redSliderLabel.text = Int(sender.value).description
+        
     }
     
     @IBAction func blueSliderChange( sender: UISlider) {
+        currentSliderValue = Float(crayonInfo!.blue)
+        blueSlider.value = currentSliderValue
         blueSliderLabel.text =
             Int(sender.value).description
     }
     
     @IBAction func greenSliderChange ( sender: UISlider) {
+        currentSliderValue = Float(crayonInfo!.green)
+        greenSlider.value = currentSliderValue
         greenSliderLabel.text = Int(sender.value).description
     }
     
-    @IBAction func stepperChanged ( sender: UIStepper) {
+    @IBAction func stepperChanged(_ sender: UIStepper) {
         alphaStepperLabel.text = sender.value.description
     }
-    
+
     
     private func updateCrayonUI() {
         guard let crayonInfo = crayonInfo else {
