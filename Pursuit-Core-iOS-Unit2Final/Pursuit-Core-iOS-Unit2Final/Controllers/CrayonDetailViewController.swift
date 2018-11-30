@@ -23,15 +23,16 @@ class CrayonDetailViewController: UITableViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     
     @IBAction func redSliderColor(_ sender: UISlider) {
-       colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
+        redLabel.text = Float(sender.value).description
+        
     }
     
     @IBAction func greenSliderColor(_ sender: UISlider) {
-        colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
+        greenLabel.text = Float(sender.value).description
     }
     
     @IBAction func blueSliderColor(_ sender: UISlider) {
-        colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
+        blueLabel.text = Float(sender.value).description
         
     }
     
@@ -51,13 +52,12 @@ class CrayonDetailViewController: UITableViewController {
         blueLabel.text = "Blue Value: \(Float(crayon!.blue)/255)"
         colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
        
-        
         redSlider.minimumValue = 0.0
-        redSlider.maximumValue = 0.1
+        redSlider.maximumValue = 1.0
         greenSlider.minimumValue = 0.0
-        greenSlider.maximumValue = 0.1
+        greenSlider.maximumValue = 1.0
         blueSlider.minimumValue = 0.0
-        blueSlider.maximumValue = 0.1
+        blueSlider.maximumValue = 1.0
         alphaStepper.minimumValue = 0.0
         alphaStepper.maximumValue = 1.0
         stepperLabel.text = "0.0"
