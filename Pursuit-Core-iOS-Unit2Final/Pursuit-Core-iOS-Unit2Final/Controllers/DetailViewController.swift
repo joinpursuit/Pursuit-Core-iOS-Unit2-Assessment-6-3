@@ -36,18 +36,18 @@ class DetailViewController: UIViewController {
         
         crayonNameLabel.text = crayonReference.name
         
-//        crayonAlphaLabel.text = "Alpha"
     }
     
     @IBAction func sliderChanges(_ sender: UISlider) {
         
+       // crayonRedSlider = crayonArray
+            
         crayonRedLabel.text = "Red: \(crayonRedSlider.value.description)"
         crayonGreenLabel.text = "Green: \(crayonGreenSlider.value.description)"
         crayonBlueLabel.text = "Blue: \(crayonBlueSlider.value.description)"
     
     }
-    
-    
+
     
     @IBAction func crayonAlphaStepper(_ sender: UIStepper) {
     }
@@ -55,3 +55,4 @@ class DetailViewController: UIViewController {
     @IBAction func resetButtonPress(_ sender: UIButton) {
     }
 }
+
