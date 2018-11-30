@@ -11,6 +11,7 @@ import UIKit
 class CrayonDetailViewController: UIViewController {
     
     var crayon: Crayon!
+    //var red: Double
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
@@ -20,37 +21,41 @@ class CrayonDetailViewController: UIViewController {
     @IBOutlet weak var blueLabel: UILabel!
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var alphaLabel: UILabel!
- //   @IBOutlet weak var resetButton: UIButton!
+    var currentRedSliderValue: Float = 0.0 {
+        didSet {
+            redLabel.text = "Red: " + String(format: "%.2f", currentRedSliderValue)
+    }
+    }
 
-    fileprivate func sliderAndLabelSetUp(color: Double, slider: UISlider, label: UILabel) {
-        label.text = "Red: " + (String(format: "%.2f", color/255))
+    var currentGreenSliderValue: Float = 0.0 {
+        didSet {
+            greenLabel.text = "Green: " + String(format: "%.2f", currentGreenSliderValue)
+        }
+    }
+    var currentBlueSliderValue: Float = 0.0 {
+        didSet {
+            blueLabel.text = "Blue: " + String(format: "%.2f", currentBlueSliderValue)
+        }
+    }
+    
+
+    fileprivate func sliderAndLabelSetUp(color: String, colorDouble: Double, slider: UISlider, label: UILabel) {
+        label.text = "\(color): " + (String(format: "%.2f", colorDouble/255))
+        slider.value = Float(colorDouble/255)
+        print(slider.value)
         slider.maximumValue = 1
         slider.minimumValue = 0
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-    nameLabel.text = crayon.name
-    view.backgroundColor = UIColor.init(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
-        sliderAndLabelSetUp(color: crayon!.red, slider: redSlider, label: redLabel)
-        sliderAndLabelSetUp(color: crayon!.green, slider: greenSlider, label: greenLabel)
-        sliderAndLabelSetUp(color: crayon!.blue, slider: blueSlider, label: blueLabel)
-    }
-    var currentRedSliderValue: Float = 0.0 {
-        didSet {
-            redLabel.text = "Red: " + String(format: "%.2f", currentRedSliderValue)
-        }
-    }
-    var currentGreenSliderValue: Float = 0.0 {
-        didSet {
-            redLabel.text = "Green: " + String(format: "%.2f", currentGreenSliderValue)
-        }
-    }
-    var currentBlueSliderValue: Float = 0.0 {
-        didSet {
-            redLabel.text = "Blue: " + String(format: "%.2f", currentBlueSliderValue)
-        }
+        nameLabel.text = crayon.name
+        view.backgroundColor = UIColor.init(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        sliderAndLabelSetUp(color: "Red", colorDouble: crayon!.red, slider: redSlider, label: redLabel)
+        sliderAndLabelSetUp(color: "Green", colorDouble: crayon!.green, slider: greenSlider, label: greenLabel)
+        sliderAndLabelSetUp(color: "Blue", colorDouble: crayon!.blue, slider: blueSlider, label: blueLabel)
+        alphaLabel.text = "Alpha: 0"
+        
     }
     
     @IBAction func redSlider(_ sender: UISlider) {
