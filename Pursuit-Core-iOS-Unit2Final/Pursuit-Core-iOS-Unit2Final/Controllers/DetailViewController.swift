@@ -9,6 +9,19 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    
+    @IBOutlet weak var crayonNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var crayonRedLabel: UILabel!
+    
+    @IBOutlet weak var crayonGreenLabel: UILabel!
+    
+    @IBOutlet weak var crayonBlueLabel: UILabel!
+    
+    @IBOutlet weak var crayonAlphaLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +30,20 @@ class DetailViewController: UIViewController {
     }
     
 
- 
-
+    @IBAction func crayonRedSlider(_ sender: UISlider) {
+    }
+   
+    
+    @IBAction func crayonGreenSlider(_ sender: UISlider) {
+    }
+    
+    @IBAction func crayonBlueSlider(_ sender: UISlider) {
+    }
+    
+    
+    @IBAction func crayonAlphaStepper(_ sender: UIStepper) {
+    }
+    
+    @IBAction func resetButtonPress(_ sender: UIButton) {
+    }
 }
