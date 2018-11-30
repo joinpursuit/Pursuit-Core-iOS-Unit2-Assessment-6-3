@@ -27,33 +27,46 @@ class CrayonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateCrayonUI()
-        redSliderLabel.text = "Current Red Value is \(crayonInfo!.red)"
+        redSliderLabel.text = "Current Red Value Above is \(crayonInfo!.red)"
         redSlider.value = Float((crayonInfo?.red)!)
         redSlider.minimumValue = 0
         redSlider.maximumValue = 10
-        greenSliderLabel.text = "Current Green Value is \(crayonInfo!.green)"
+        greenSliderLabel.text = "Current Green Value Above is \(crayonInfo!.green)"
         greenSlider.value = Float((crayonInfo?.green)!)
         greenSlider.minimumValue = 0
         greenSlider.maximumValue = 10
-        blueSliderLabel.text = "Current Blue Value is \(crayonInfo!.blue)"
+        blueSliderLabel.text = "Current Blue Value Above is \(crayonInfo!.blue)"
         blueSlider.value = Float((crayonInfo?.blue)!)
         blueSlider.minimumValue = 0
         blueSlider.maximumValue = 10
     }
     
     @IBAction func redSliderChange( sender: UISlider) {
-        redSlider.value = sender.value
+        //redSlider.value = sender.value
         redSliderLabel.text =
             Int(sender.value).description
-    
     }
+    
+    @IBAction func blueSliderChange( sender: UISlider) {
+        blueSliderLabel.text =
+            Int(sender.value).description
+    }
+    
+    @IBAction func greenSliderChange ( sender: UISlider) {
+        greenSliderLabel.text = Int(sender.value).description
+    }
+    
+    @IBAction func stepperChanged ( sender: UIStepper) {
+        alphaStepperLabel.text = sender.value.description
+    }
+    
     
     private func updateCrayonUI() {
         guard let crayonInfo = crayonInfo else {
             fatalError("Cell is nil")
         }
         crayonColor.text = crayonInfo.name.uppercased()
-//        view.backgroundColor = UIColor.init(red: CGFloat(crayonInfo.red), green: CGFloat(crayonInfo.green), blue: CGFloat(crayonInfo.blue), alpha: 1)
+        //        view.backgroundColor = UIColor.init(red: CGFloat(crayonInfo.red), green: CGFloat(crayonInfo.green), blue: CGFloat(crayonInfo.blue), alpha: 1)
         
         view.backgroundColor = UIColor(displayP3Red: CGFloat(crayonInfo.red/255), green: CGFloat(crayonInfo.green/255), blue: CGFloat(crayonInfo.blue/255), alpha: 1)
     }
