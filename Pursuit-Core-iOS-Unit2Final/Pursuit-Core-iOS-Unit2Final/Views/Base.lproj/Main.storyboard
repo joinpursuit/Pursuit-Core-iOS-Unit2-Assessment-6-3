@@ -118,6 +118,9 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FWP-vQ-fej">
                                 <rect key="frame" x="160" y="465" width="94" height="29"/>
+                                <connections>
+                                    <action selector="alphaStepper:" destination="QFQ-6a-wvA" eventType="valueChanged" id="QLa-2S-CFM"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0He-V0-ZhG">
                                 <rect key="frame" x="11" y="505" width="392" height="26"/>
