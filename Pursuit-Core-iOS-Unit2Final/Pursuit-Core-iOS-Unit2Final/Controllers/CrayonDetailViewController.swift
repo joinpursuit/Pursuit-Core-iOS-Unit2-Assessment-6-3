@@ -11,7 +11,6 @@ import UIKit
 class CrayonDetailViewController: UIViewController {
     
     var crayon: Crayon!
-    //var red: Double
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
@@ -21,6 +20,7 @@ class CrayonDetailViewController: UIViewController {
     @IBOutlet weak var blueLabel: UILabel!
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var alphaLabel: UILabel!
+    @IBOutlet var allLabels: [UILabel]!
     lazy var currentRedSliderValue = CGFloat(crayon.red/255)
     lazy var currentGreenSliderValue = CGFloat(crayon.green/255)
     lazy var currentBlueSliderValue = CGFloat(crayon.blue/255)
@@ -36,7 +36,8 @@ class CrayonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = crayon.name
-        view.backgroundColor = UIColor.init(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
+        updateBackgroundAndTextColors()
+        
         sliderAndLabelSetUp(color: "Red", colorDouble: crayon!.red, slider: redSlider, label: redLabel)
         sliderAndLabelSetUp(color: "Green", colorDouble: crayon!.green, slider: greenSlider, label: greenLabel)
         sliderAndLabelSetUp(color: "Blue", colorDouble: crayon!.blue, slider: blueSlider, label: blueLabel)
@@ -48,42 +49,56 @@ class CrayonDetailViewController: UIViewController {
         alphaStepper.stepValue = 0.1
     }
     
-    private func updateBackground() {
-        print(currentRedSliderValue)
-        print(currentGreenSliderValue)
-        print(currentBlueSliderValue)
-        print(currentAlphaStepperValue)
+    private func updateBackgroundAndTextColors() {
         view.backgroundColor = UIColor.init(red: currentRedSliderValue, green: currentGreenSliderValue, blue: currentBlueSliderValue, alpha: CGFloat(currentAlphaStepperValue))
+        if view.backgroundColor!.isDark() {
+            allLabels.forEach{$0.textColor = UIColor.white}
+        } else {
+            allLabels.forEach{$0.textColor = UIColor.black}
+        }
     }
     
     @IBAction func redSlider(_ sender: UISlider) {
         currentRedSliderValue = CGFloat(sender.value)
-        updateBackground()
+        updateBackgroundAndTextColors()
         redLabel.text = "Red: " + String(format: "%.2f", currentRedSliderValue)
     }
     
-    
     @IBAction func greenSlider(_ sender: UISlider) {
         currentGreenSliderValue = CGFloat(sender.value)
-        updateBackground()
+        updateBackgroundAndTextColors()
+        greenLabel.text = "Green: " + String(format: "%.2f", currentGreenSliderValue)
     }
     
     @IBAction func blueSlider(_ sender: UISlider) {
         currentBlueSliderValue = CGFloat(sender.value)
-        updateBackground()
+        updateBackgroundAndTextColors()
+        blueLabel.text = "Blue: " + String(format: "%.2f", currentBlueSliderValue)
     }
     
     @IBAction func alphaStepper(_ sender: UIStepper) {
         currentAlphaStepperValue = CGFloat(sender.value)
-        updateBackground()
+        updateBackgroundAndTextColors()
         alphaLabel.text = "Alpha: " + String(format: "%.1f", currentAlphaStepperValue)
     }
+    
     @IBAction func reset(_ sender: UIButton) {
         view.backgroundColor = UIColor.init(red: CGFloat(crayon.red/255), green: CGFloat(crayon.green/255), blue: CGFloat(crayon.blue/255), alpha: 1)
         sliderAndLabelSetUp(color: "Red", colorDouble: crayon!.red, slider: redSlider, label: redLabel)
         sliderAndLabelSetUp(color: "Green", colorDouble: crayon!.green, slider: greenSlider, label: greenLabel)
         sliderAndLabelSetUp(color: "Blue", colorDouble: crayon!.blue, slider: blueSlider, label: blueLabel)
+        currentRedSliderValue = CGFloat(crayon.red/255)
+        currentBlueSliderValue = CGFloat(crayon.blue/255)
+        currentGreenSliderValue = CGFloat(crayon.green/255)
         alphaLabel.text = "Alpha: 1"
         alphaStepper.value = 1.0
+    }
+}
+
+extension UIColor {
+    func isDark() -> Bool {
+        guard let components = cgColor.components, components.count > 2 else {return false}
+        let darkness = ((components[0] * 299) + (components[1] * 587) + (components[2] * 114)) / 1000
+        return darkness < 0.5
     }
 }

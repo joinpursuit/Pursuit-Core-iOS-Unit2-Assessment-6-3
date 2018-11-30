@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
   override func viewDidLoad() {
-    title = "Crayons"
+    
     super.viewDidLoad()
     tableView.dataSource = self
   }

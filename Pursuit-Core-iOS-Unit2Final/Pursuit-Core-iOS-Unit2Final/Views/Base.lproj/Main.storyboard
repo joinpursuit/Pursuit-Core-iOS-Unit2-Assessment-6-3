@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Crayons-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pursuit_Core_iOS_Unit2Final" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,24 +22,24 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="crayonCell" textLabel="REO-2m-7dK" detailTextLabel="crg-0b-d39" rowHeight="75" style="IBUITableViewCellStyleSubtitle" id="b8x-wP-rId">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="crayonCell" textLabel="REO-2m-7dK" detailTextLabel="crg-0b-d39" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="b8x-wP-rId">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b8x-wP-rId" id="gU6-f5-erN">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="REO-2m-7dK">
-                                                    <rect key="frame" x="20" y="11" width="46.5" height="30"/>
+                                                    <rect key="frame" x="20" y="4" width="37.5" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="crg-0b-d39">
-                                                    <rect key="frame" x="20" y="41" width="67" height="24"/>
+                                                    <rect key="frame" x="20" y="28" width="53" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FGh-Zg-YP1"/>
+                    <navigationItem key="navigationItem" title="Crayons" id="FGh-Zg-YP1"/>
                     <connections>
                         <outlet property="tableView" destination="n9f-kZ-tn0" id="kub-5O-4zz"/>
                     </connections>
@@ -181,6 +181,11 @@
                         <outlet property="nameLabel" destination="NxE-al-vsH" id="AWJ-zt-Bq1"/>
                         <outlet property="redLabel" destination="wYb-45-TbP" id="XMf-XM-bQa"/>
                         <outlet property="redSlider" destination="1LU-Gb-yjv" id="nlo-FS-104"/>
+                        <outletCollection property="allLabels" destination="0He-V0-ZhG" collectionClass="NSMutableArray" id="Lnt-gM-cNn"/>
+                        <outletCollection property="allLabels" destination="1Ko-Co-b0I" collectionClass="NSMutableArray" id="HbR-sn-Lg0"/>
+                        <outletCollection property="allLabels" destination="lvd-g4-z7a" collectionClass="NSMutableArray" id="FrN-bw-7kt"/>
+                        <outletCollection property="allLabels" destination="wYb-45-TbP" collectionClass="NSMutableArray" id="EQx-Cf-N8t"/>
+                        <outletCollection property="allLabels" destination="NxE-al-vsH" collectionClass="NSMutableArray" id="0Zh-aA-dpI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sn9-33-8KT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -203,7 +208,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qd6-CP-nAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860.86956521739137" y="665.625"/>
+            <point key="canvasLocation" x="254" y="21"/>
         </scene>
     </scenes>
 </document>
