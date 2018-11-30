@@ -19,6 +19,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     myTableView.dataSource = self
+    title = "Crayon colors!"
 
   }
   

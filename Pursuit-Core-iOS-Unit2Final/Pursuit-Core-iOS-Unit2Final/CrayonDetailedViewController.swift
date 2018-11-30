@@ -59,9 +59,9 @@ class CrayonDetailedViewController: UIViewController {
   
   func sliderAction(){
     redLabel.text = "red: \(crayonColorInfo.red)"
-    redSlider.value = 0
-    redSlider.minimumValue = 0
-    redSlider.maximumValue = 1
+    redSlider.value = 0.0
+    redSlider.minimumValue = 0.0
+    redSlider.maximumValue = 1.0
   }
   
   func stepperAction(){
