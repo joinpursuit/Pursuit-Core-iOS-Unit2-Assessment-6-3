@@ -19,9 +19,18 @@ class ColorMenuViewController: UIViewController {
         allTheCrayons = Crayon.allTheCrayons
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        <#code#>
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = crayonTableView.indexPathForSelectedRow,
+            let toDestinedViewController = segue.destination as? DetailColorViewController else {
+                fatalError("indexPath or DetailColorViewController is nil")
+        }
+        
+        let selectedCrayon = allTheCrayons[indexPath.row]
+        let color = UIColor(displayP3Red: CGFloat(selectedCrayon.red / 255), green: CGFloat(selectedCrayon.green / 255), blue: CGFloat(selectedCrayon.blue / 255), alpha: CGFloat(1.0))
+        
+        toDestinedViewController.crayon = selectedCrayon
+        toDestinedViewController.defaultColor = color
+    }
 
 }
 

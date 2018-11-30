@@ -88,18 +88,30 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ROW-pL-TUe">
                                 <rect key="frame" x="14" y="184" width="254" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slidersChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Bw-6X-v9T"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLq-ef-x8Q">
+                            <slider opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLq-ef-x8Q">
                                 <rect key="frame" x="14" y="288" width="254" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slidersChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="BG4-ef-I7Z"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bZx-wY-0VC">
+                            <slider opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bZx-wY-0VC">
                                 <rect key="frame" x="14" y="382" width="254" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slidersChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="jse-qP-1x9"/>
+                                </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="HIR-GV-6lw">
                                 <rect key="frame" x="94" y="493" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="stepperChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="eWQ-VK-pBE"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqE-uL-HSY">
                                 <rect key="frame" x="132" y="342" width="39" height="24"/>
@@ -162,11 +174,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetColorSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ut5-bO-wdr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="alphaStepper" destination="HIR-GV-6lw" id="RyF-yR-dXp"/>
+                        <outlet property="alphaValueLabel" destination="AHi-yl-qXS" id="4o2-8z-uJr"/>
+                        <outlet property="blueSlider" destination="bZx-wY-0VC" id="rdh-XL-dhM"/>
+                        <outlet property="blueValueLabel" destination="DzJ-EV-vXF" id="KvU-gE-Qp4"/>
+                        <outlet property="colorNameLabel" destination="MzB-B9-h56" id="dpZ-lc-9On"/>
+                        <outlet property="greenSlider" destination="wLq-ef-x8Q" id="EmV-SS-6Af"/>
+                        <outlet property="greenValueLabel" destination="wxr-s5-HWx" id="Gv2-u2-Nle"/>
+                        <outlet property="redSlider" destination="ROW-pL-TUe" id="MWg-gU-abw"/>
+                        <outlet property="redValueLabel" destination="WEm-wp-UqL" id="NZ6-hA-X9O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
