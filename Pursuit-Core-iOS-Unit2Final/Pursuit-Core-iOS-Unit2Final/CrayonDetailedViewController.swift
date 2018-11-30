@@ -12,8 +12,7 @@ class CrayonDetailedViewController: UIViewController {
 
   var crayonColorInfo: Crayon!
   
-  
-  
+ 
   @IBOutlet weak var colorName: UILabel!
   
   @IBOutlet weak var redLabel: UILabel!
@@ -37,6 +36,7 @@ class CrayonDetailedViewController: UIViewController {
 
     setInitialColorInDetail()
     sliderAction()
+    stepperAction()
 
   }
    
@@ -64,18 +64,18 @@ class CrayonDetailedViewController: UIViewController {
     redSlider.maximumValue = 1
   }
   
-//  func adjustColor(){
-//    let red = CGFloat(redSlider.value/255)
-//    let green = CGFloat(greenSlider.value/255)
-//    let blue = CGFloat(blueSlider.value/255)
-//
-//    let colorToSet = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1.0)
-//
-//  }
+  func stepperAction(){
+    alphaStepper.value = 1.0
+    alphaStepper.minimumValue = 0.0
+    alphaStepper.maximumValue = 1.0
+    alphaStepper.stepValue = 0.1
+  }
+  
+
   
   
   @IBAction func redSliderAdjusts(_ sender: UISlider) {
-   redLabel.text = (sender.value).description
+    redLabel.text = "red: \((sender.value).description)"
     let newRedValue = sender.value
     
     view.backgroundColor = UIColor.init(displayP3Red: CGFloat(newRedValue), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: 1.0)
@@ -83,26 +83,34 @@ class CrayonDetailedViewController: UIViewController {
   }
   
   @IBAction func blueSliderAdjusts(_ sender: UISlider) {
-    blueLabel.text = (sender.value).description
+    blueLabel.text = "blue: \((sender.value).description)"
     let newBlueValue = sender.value
     
-    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(newBlueValue), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: 1.0)
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayonColorInfo.red), green: (CGFloat(newBlueValue)), blue: (CGFloat(crayonColorInfo.green)), alpha: 1.0)
   }
   
   
   @IBAction func greenSliderAdjusts(_ sender: UISlider) {
-    greenLabel.text = (sender.value).description
+    greenLabel.text = "green: \((sender.value).description)"
     let newGreenValue = sender.value
     
-    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(newGreenValue), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: 1.0)
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayonColorInfo.red), green: (CGFloat(crayonColorInfo.blue)), blue: (CGFloat(newGreenValue)), alpha: 1.0)
   }
   
   
   @IBAction func alphaStepperAdjustment(_ sender: UIStepper) {
+    alphaLabel.text = "alpha: \((sender.value).description)"
+    let newStepperValue = sender.value
     
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayonColorInfo.red), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: CGFloat(newStepperValue))
     
   }
   
  
-
+  @IBAction func resetToInitalColor(_ sender: UIButton) {
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayonColorInfo.red), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: CGFloat(1.0))
+    
+  
+  }
+  
 }
