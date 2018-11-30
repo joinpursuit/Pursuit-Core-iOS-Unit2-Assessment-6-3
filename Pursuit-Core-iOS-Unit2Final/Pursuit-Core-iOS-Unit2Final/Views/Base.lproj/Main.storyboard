@@ -85,6 +85,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1LU-Gb-yjv">
                                 <rect key="frame" x="31" y="165" width="352" height="31"/>
+                                <connections>
+                                    <action selector="redSlider:" destination="QFQ-6a-wvA" eventType="valueChanged" id="fEz-Sj-YAE"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYb-45-TbP">
                                 <rect key="frame" x="11" y="206" width="392" height="26"/>
@@ -93,6 +96,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="twv-Zz-ADB">
                                 <rect key="frame" x="31" y="265" width="352" height="31"/>
+                                <connections>
+                                    <action selector="greenSlider:" destination="QFQ-6a-wvA" eventType="valueChanged" id="30t-Mo-HD2"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvd-g4-z7a">
                                 <rect key="frame" x="11" y="306" width="392" height="26"/>
@@ -101,6 +107,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-h3-wxf">
                                 <rect key="frame" x="31" y="365" width="352" height="31"/>
+                                <connections>
+                                    <action selector="blueSlider:" destination="QFQ-6a-wvA" eventType="valueChanged" id="u0o-SL-CPu"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ko-Co-b0I">
                                 <rect key="frame" x="11" y="406" width="392" height="26"/>
@@ -120,6 +129,9 @@
                                 <color key="backgroundColor" red="0.80952477329999994" green="0.80952477329999994" blue="0.80952477329999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <state key="normal" title="  Reset  "/>
+                                <connections>
+                                    <action selector="reset:" destination="QFQ-6a-wvA" eventType="touchUpInside" id="mwr-8S-ZbW"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,15 +170,14 @@
                     </view>
                     <connections>
                         <outlet property="alphaLabel" destination="0He-V0-ZhG" id="4pY-N4-PdS"/>
-                        <outlet property="alphaStepper" destination="FWP-vQ-fej" id="4ea-Zh-FJX"/>
+                        <outlet property="alphaStepper" destination="FWP-vQ-fej" id="afZ-xV-GEa"/>
                         <outlet property="blueLabel" destination="1Ko-Co-b0I" id="KTY-MJ-l0Z"/>
-                        <outlet property="blueSlider" destination="e0h-h3-wxf" id="QSk-es-Xfp"/>
+                        <outlet property="blueSlider" destination="e0h-h3-wxf" id="0eo-7X-Dgf"/>
                         <outlet property="greenLabel" destination="lvd-g4-z7a" id="nro-62-dc1"/>
-                        <outlet property="greenSlider" destination="twv-Zz-ADB" id="COr-f8-rUw"/>
+                        <outlet property="greenSlider" destination="twv-Zz-ADB" id="0Xp-hi-0gf"/>
                         <outlet property="nameLabel" destination="NxE-al-vsH" id="AWJ-zt-Bq1"/>
                         <outlet property="redLabel" destination="wYb-45-TbP" id="XMf-XM-bQa"/>
-                        <outlet property="redSlider" destination="1LU-Gb-yjv" id="lot-Ck-MjH"/>
-                        <outlet property="resetButton" destination="iwR-6b-gq8" id="n6J-36-CJ3"/>
+                        <outlet property="redSlider" destination="1LU-Gb-yjv" id="nlo-FS-104"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sn9-33-8KT" userLabel="First Responder" sceneMemberID="firstResponder"/>
