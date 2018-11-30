@@ -43,7 +43,8 @@ class CrayonDetailViewController: UIViewController {
     
     @IBAction func redSliderChange( sender: UISlider) {
         redSlider.value = sender.value
-        
+        redSliderLabel.text =
+            Int(sender.value).description
     
     }
     
