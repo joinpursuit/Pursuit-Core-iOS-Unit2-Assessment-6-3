@@ -44,16 +44,12 @@ class DetailViewController: UIViewController {
     }
     
     
-    
-    
     @IBAction func sliderChanged (sender: AnyObject) {
         redValueLabel.text = "Red: \(redSlider.value)"
         greenValueLabel.text = "Green: \(greenSlider.value)"
         blueValueLabel.text = "Blue: \(blueSlider.value)"
         alphaValueLabel.text = "Alpha: \(alphaStepper.value)"
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider!.value)/255, green: CGFloat(greenSlider!.value)/255, blue: CGFloat(blueSlider!.value)/255, alpha: CGFloat(alphaStepper!.value))
-        
-        
     }
     
     @IBAction func resetValues (sender: UIButton) {
