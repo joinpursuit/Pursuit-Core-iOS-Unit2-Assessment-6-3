@@ -35,27 +35,74 @@ class CrayonDetailedViewController: UIViewController {
   override func viewDidLoad() {
         super.viewDidLoad()
 
-    setColorInDetail()
+    setInitialColorInDetail()
+    sliderAction()
 
   }
    
   
-  func setColorInDetail() {
+  func setInitialColorInDetail() {
     
     colorName.text = crayonColorInfo.name
     
-    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayonColorInfo.red/255), green: (CGFloat(crayonColorInfo.green/255)), blue: (CGFloat(crayonColorInfo.blue/255)), alpha: 1.0)
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayonColorInfo.red), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: 1.0)
     
-    redLabel.text = "red"
+    redLabel.text = "red: \(crayonColorInfo.red)"
     
-    blueLabel.text = "blue"
+    blueLabel.text = "blue: \(crayonColorInfo.blue)"
     
-    greenLabel.text = "green"
+    greenLabel.text = "green: \(crayonColorInfo.green)"
     
     alphaLabel.text = "alpha"
     
+  }
+  
+  func sliderAction(){
+    redLabel.text = "red: \(crayonColorInfo.red)"
+    redSlider.value = 0
+    redSlider.minimumValue = 0
+    redSlider.maximumValue = 1
+  }
+  
+//  func adjustColor(){
+//    let red = CGFloat(redSlider.value/255)
+//    let green = CGFloat(greenSlider.value/255)
+//    let blue = CGFloat(blueSlider.value/255)
+//
+//    let colorToSet = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1.0)
+//
+//  }
+  
+  
+  @IBAction func redSliderAdjusts(_ sender: UISlider) {
+   redLabel.text = (sender.value).description
+    let newRedValue = sender.value
+    
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(newRedValue), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: 1.0)
     
   }
-
+  
+  @IBAction func blueSliderAdjusts(_ sender: UISlider) {
+    blueLabel.text = (sender.value).description
+    let newBlueValue = sender.value
+    
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(newBlueValue), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: 1.0)
+  }
+  
+  
+  @IBAction func greenSliderAdjusts(_ sender: UISlider) {
+    greenLabel.text = (sender.value).description
+    let newGreenValue = sender.value
+    
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(newGreenValue), green: (CGFloat(crayonColorInfo.green)), blue: (CGFloat(crayonColorInfo.blue)), alpha: 1.0)
+  }
+  
+  
+  @IBAction func alphaStepperAdjustment(_ sender: UIStepper) {
+    
+    
+  }
+  
+ 
 
 }
