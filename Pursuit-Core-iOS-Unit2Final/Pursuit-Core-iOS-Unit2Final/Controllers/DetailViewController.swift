@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    var crayonReference: Crayon?
     
     @IBOutlet weak var crayonNameLabel: UILabel!
     
@@ -25,8 +26,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        
     }
     
 

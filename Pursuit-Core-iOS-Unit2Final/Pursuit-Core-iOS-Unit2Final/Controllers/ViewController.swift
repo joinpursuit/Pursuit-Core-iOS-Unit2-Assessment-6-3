@@ -22,6 +22,13 @@ class ViewController: UIViewController {
     crayonTableView.delegate = self //you have to do this too
    
   }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? DetailViewController,
+            let cellSelected = crayonTableView.indexPathForSelectedRow else { return }
+        let crayonSelected = crayons[cellSelected.row]
+        destination.crayonReference = crayonSelected
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
