@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow,
         let CrayonDetailViewController = segue.destination as?
@@ -29,6 +30,7 @@ class ViewController: UIViewController {
         let crayonInfo = crayons[indexPath.row]
         CrayonDetailViewController.crayonInfo = crayonInfo    
     }
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -39,7 +41,7 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CrayonCell", for: indexPath)
         let crayonInfo = crayons[indexPath.row]
         let color = crayonInfo.hex
-        let background = UIColor(named: color)
+       let background = UIColor(named: color)
         cell.textLabel?.text = crayonInfo.name
         cell.detailTextLabel?.text = crayonInfo.hex
         //cell.contentView.backgroundColor = background
@@ -48,3 +50,5 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
 }
+
+

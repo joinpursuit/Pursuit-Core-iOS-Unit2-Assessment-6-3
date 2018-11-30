@@ -26,6 +26,7 @@ class CrayonDetailViewController: UIViewController {
             fatalError("Cell is nil")
         }
         crayonColor.text = crayonInfo.name
+        view.backgroundColor = UIColor.init(red: CGFloat(crayonInfo.red), green: CGFloat(crayonInfo.green), blue: CGFloat(crayonInfo.blue), alpha: 1)
     }
     
 }
