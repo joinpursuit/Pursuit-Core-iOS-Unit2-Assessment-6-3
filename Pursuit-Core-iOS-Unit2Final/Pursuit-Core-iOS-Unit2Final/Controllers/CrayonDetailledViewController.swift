@@ -38,12 +38,32 @@ class CrayonDetailledViewController: UITableViewController {
       setsInitialValuesForControls()
         updateTheUi()
        stepperControl.value = 1
-        stepperLabel.text = "1"
+        stepperLabel.text = "\(stepperControl.value)"
+        
     }
     // Control Actions
     @IBAction func backButton(_ sender:UIButton) {
         dismiss(animated: true, completion: nil)
         
+    }
+   
+    @IBAction func changesColorsWhenClicked(_ sender: UISlider) {
+        if sender == crayonColorRedSlider{
+            crayonColorRedSlider.maximumValue = 1.0
+            firstSliderLabel.text = "\((currentRedValue))"
+            currentRedValue = crayonColorRedSlider.value
+        }
+        else if sender == crayonColorGreenSlider {
+            crayonColorGreenSlider.maximumValue = 1.0
+            secondSliderLabel.text = "\(currentGreenValue)"
+           currentGreenValue = crayonColorGreenSlider.value
+            }
+        else if sender == crayonColorBlueSlider{
+            crayonColorBlueSlider.maximumValue = 1.0
+            currentBlueValue = crayonColorBlueSlider.value
+            thirdSliderLabel.text = "\(currentBlueValue)"
+        }
+        setsColors()
     }
     @IBAction func stepperChanged(_ sender: UIStepper) {
         stepperControl.maximumValue = 1
@@ -51,31 +71,14 @@ class CrayonDetailledViewController: UITableViewController {
         stepperControl.stepValue = 0.1
         currentAlpha = CGFloat(stepperControl.value)
         stepperLabel.text = "\(currentAlpha)"
-        viewWillDisplayLabelAndColor.backgroundColor = UIColor(displayP3Red: CGFloat(currentRedValue), green: CGFloat(currentGreenValue), blue: CGFloat(currentBlueValue), alpha: currentAlpha)
-    }
-    @IBAction func changesColorsWhenClicked(_ sender: UISlider) {
-        switch sender {
-        case crayonColorRedSlider:
-            crayonColorRedSlider.maximumValue = 1.0
-            firstSliderLabel.text = "\(crayonColorRedSlider.value)"
-            currentRedValue = crayonColorRedSlider.value
-           
-        case crayonColorGreenSlider:
-            crayonColorGreenSlider.maximumValue = 1.0
-            secondSliderLabel.text = "\(crayonColorGreenSlider.value)"
-           currentGreenValue = crayonColorGreenSlider.value
-          
-        case crayonColorBlueSlider:
-            crayonColorBlueSlider.maximumValue = 1.0
-            currentBlueValue = crayonColorBlueSlider.value
-     thirdSliderLabel.text = "\(crayonColorBlueSlider.value)"
-     
-            
-        default:
-           print("d")
+        if sender.isSelected{
+        setsColors()
         }
-        viewWillDisplayLabelAndColor.backgroundColor = UIColor(displayP3Red: CGFloat(currentRedValue), green: CGFloat(currentGreenValue), blue: CGFloat(currentBlueValue), alpha: currentAlpha)
+        else {
+        setsColors()
+        }
     }
+
     
     @IBAction func resetButton(_ sender: UIButton) {
     setsInitialValuesForControls()
@@ -91,13 +94,16 @@ class CrayonDetailledViewController: UITableViewController {
     }
     func setsInitialValuesForControls(){
         crayonColorRedSlider.value = Float(crayonColorRed)/255
-        firstSliderLabel.text = "\(crayonColorRed/255)"
+        firstSliderLabel.text = "\(crayonColorRed/255))"
         crayonColorGreenSlider.value = Float(crayonColorGreen)/255
-        secondSliderLabel.text = "\(crayonColorGreen/255)"
+        secondSliderLabel.text = "\(crayonColorGreen/255))"
         crayonColorBlueSlider.value = Float(crayonColorBlue)/255
-        thirdSliderLabel.text = "\(crayonColorBlue/255)"
-        stepperControl.value = 0.0
+        thirdSliderLabel.text = "\(crayonColorBlue/255))"
+        stepperControl.value = 1
         stepperLabel.text = "\(currentAlpha)"
         updateTheUi()
+    }
+    func setsColors() {
+        viewWillDisplayLabelAndColor.backgroundColor = UIColor(displayP3Red: CGFloat(currentRedValue), green: CGFloat(currentGreenValue), blue: CGFloat(currentBlueValue), alpha: CGFloat(currentAlpha))
     }
 }
