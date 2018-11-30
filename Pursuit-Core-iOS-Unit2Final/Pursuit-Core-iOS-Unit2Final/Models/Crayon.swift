@@ -14,18 +14,29 @@ class Crayon {
   var green: Double
   var blue: Double
   var hex: String
+  
+  
   init(name: String, red: Double, green: Double, blue: Double, hex: String) {
     self.name = name
     self.red = red
     self.green = green
     self.blue = blue
     self.hex = hex
+    
   }
-  
+ 
 
+/*
+ The following initializer will be helpful:
+ 
+ UIColor(displayP3Red:green:blue:alpha:)
+ All four arguments to the initializer are of type CGFloat and expect a value between 0.0 and 1.0.
+ 
+ The doubles provided for the Crayon values are from 0 from 255. You will need to convert them proportionally to the appropriate CGFloat by dividing by 255. */
+  
   
   static let allTheCrayons = [
-    Crayon(name: "Almond", red: 239, green: 222, blue: 205, hex: "#EFDECD"),
+    Crayon(name: "Almond", red: 239, green: 222, blue: 205, hex: "#EFDECD" ),
     Crayon(name: "Antique Brass", red: 205, green: 149, blue: 117, hex: "#CD9575"),
     Crayon(name: "Apricot", red: 253, green: 217, blue: 181, hex: "#FDD9B5"),
     Crayon(name: "Aquamarine", red: 120, green: 219, blue: 226, hex: "#78DBE2"),
@@ -43,3 +54,5 @@ class Crayon {
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
 }
+
+

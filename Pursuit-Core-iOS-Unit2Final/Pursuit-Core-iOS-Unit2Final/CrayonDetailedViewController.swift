@@ -12,6 +12,8 @@ class CrayonDetailedViewController: UIViewController {
 
   var crayonColorInfo: Crayon!
   
+  
+  
   @IBOutlet weak var colorName: UILabel!
   
   @IBOutlet weak var redLabel: UILabel!
@@ -33,8 +35,27 @@ class CrayonDetailedViewController: UIViewController {
   override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
+    setColorInDetail()
+
+  }
+   
+  
+  func setColorInDetail() {
     
+    colorName.text = crayonColorInfo.name
+    
+    view.backgroundColor = UIColor.init(displayP3Red: CGFloat(crayonColorInfo.red/255), green: (CGFloat(crayonColorInfo.green/255)), blue: (CGFloat(crayonColorInfo.blue/255)), alpha: 1.0)
+    
+    redLabel.text = "red"
+    
+    blueLabel.text = "blue"
+    
+    greenLabel.text = "green"
+    
+    alphaLabel.text = "alpha"
+    
+    
+  }
 
 
 }

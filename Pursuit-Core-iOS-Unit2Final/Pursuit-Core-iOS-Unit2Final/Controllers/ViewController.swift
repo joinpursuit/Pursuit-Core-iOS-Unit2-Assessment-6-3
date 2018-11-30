@@ -21,6 +21,14 @@ class ViewController: UIViewController {
     myTableView.dataSource = self
 
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let indexPath = myTableView.indexPathForSelectedRow,
+    let myCrayonDetailedViewController = segue.destination as? CrayonDetailedViewController else {fatalError("didn't find CrayonDtailedViewController")}
+    
+    let currentCrayon = crayons[indexPath.row]
+    myCrayonDetailedViewController.crayonColorInfo = currentCrayon
+  }
 
 
 }
@@ -37,7 +45,8 @@ extension ViewController: UITableViewDataSource {
     
     cell.textLabel?.text = currentColor.name
     cell.detailTextLabel?.text = currentColor.hex
-    
+    cell.backgroundColor = UIColor.init(displayP3Red: CGFloat(currentColor.red/255), green: CGFloat(currentColor.green/255), blue: CGFloat(currentColor.blue/255), alpha: 1.0)
+    cell.textLabel?.textColor = .white
     return cell
     
   }
