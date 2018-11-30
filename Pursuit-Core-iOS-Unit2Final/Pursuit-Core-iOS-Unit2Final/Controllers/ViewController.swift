@@ -10,12 +10,39 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var crayons = Crayon.allTheCrayons //variable holding my array of crayons
+    
+    @IBOutlet weak var crayonTableView: UITableView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    crayonTableView.dataSource = self   //just cause you have to
+    crayonTableView.delegate = self //you have to do this too
    
   }
-
-
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return crayons.count    //this func asks how many rows do i want? the same number as my number of colors
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let crayonCell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
+        //we're setting up our individual crayon row cells
+        
+        //we have to get the crayon info from our model
+        let crayonsInfoSet = crayons[indexPath.row]
+        
+        crayonCell.textLabel?.text = crayonsInfoSet.name
+        crayonCell.detailTextLabel?.text = crayonsInfoSet.hex
+        
+        return crayonCell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    
+}
