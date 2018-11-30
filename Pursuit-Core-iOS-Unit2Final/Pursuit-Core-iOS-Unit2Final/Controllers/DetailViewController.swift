@@ -11,6 +11,7 @@ import UIKit
 class DetailViewController: UIViewController {
     
     var crayonReference: Crayon!
+    var crayonArray: [Crayon]!
     
     @IBOutlet weak var crayonNameLabel: UILabel!
     
@@ -28,20 +29,30 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var crayonBlueSlider: UISlider!
     
-
+    var currentsliderValue: Float = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         crayonNameLabel.text = crayonReference.name
-        crayonRedLabel.text = "Red"
-        crayonGreenLabel.text = "Green"
-        crayonBlueLabel.text = "Blue"
-        crayonAlphaLabel.text = "Alpha"
+//        crayonRedLabel.text = "Red"
+//        crayonGreenLabel.text = "Green"
+//        crayonBlueLabel.text = "Blue"
+//        crayonAlphaLabel.text = "Alpha"
     }
     
     @IBAction func sliderChanges(_ sender: UISlider) {
-        
+        currentsliderValue = sender.value
+        if crayonReference != nil {
+            //if i have a crayon color then i want my label to take the slider value and print it
+            //so i got the value to the label for one, how can i set each differently?
+            crayonRedLabel.text = currentsliderValue.description
+            crayonGreenLabel.text = currentsliderValue.description
+            crayonBlueLabel.text = currentsliderValue.description
+        }
     }
+    
+    
     
     @IBAction func crayonAlphaStepper(_ sender: UIStepper) {
     }
