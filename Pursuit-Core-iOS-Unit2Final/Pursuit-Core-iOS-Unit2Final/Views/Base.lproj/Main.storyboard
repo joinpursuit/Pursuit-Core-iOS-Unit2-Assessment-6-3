@@ -84,14 +84,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZpG-RZ-uks">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="ZpG-RZ-uks">
                                 <rect key="frame" x="9" y="258" width="357" height="31"/>
+                                <connections>
+                                    <action selector="sliderChangedWithSender:" destination="uG2-c3-AC0" eventType="valueChanged" id="W4J-gT-fgl"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F5p-7V-Tik">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="F5p-7V-Tik">
                                 <rect key="frame" x="9" y="372" width="357" height="31"/>
+                                <connections>
+                                    <action selector="sliderChangedWithSender:" destination="uG2-c3-AC0" eventType="valueChanged" id="qrd-jI-v1B"/>
+                                </connections>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="E80-gf-hL1">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="150" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="E80-gf-hL1">
                                 <rect key="frame" x="9" y="486" width="357" height="31"/>
+                                <connections>
+                                    <action selector="sliderChangedWithSender:" destination="uG2-c3-AC0" eventType="valueChanged" id="cKz-mI-7tD"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pR-20-FVc">
                                 <rect key="frame" x="11" y="224" width="353" height="24"/>
@@ -120,9 +129,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50J-oJ-Bo1">
                                 <rect key="frame" x="143" y="697" width="89" height="30"/>
                                 <state key="normal" title="Reset Values"/>
+                                <connections>
+                                    <action selector="resetValuesWithSender:" destination="uG2-c3-AC0" eventType="touchUpInside" id="0KB-eO-zku"/>
+                                </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="2Fr-Ze-NXx">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="2Fr-Ze-NXx">
                                 <rect key="frame" x="140" y="600" width="94" height="29"/>
+                                <connections>
+                                    <action selector="sliderChangedWithSender:" destination="uG2-c3-AC0" eventType="valueChanged" id="SIK-je-BRV"/>
+                                </connections>
                             </stepper>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
