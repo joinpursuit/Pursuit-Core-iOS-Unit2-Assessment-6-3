@@ -19,7 +19,11 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     tableView.dataSource = self
   }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow, let CrayonDetailViewController = segue.destination as? CrayonDetailViewController else { return }
+        let crayon = crayons[indexPath.row]
+        CrayonDetailViewController.crayon = crayon
+    }
 
 }
 

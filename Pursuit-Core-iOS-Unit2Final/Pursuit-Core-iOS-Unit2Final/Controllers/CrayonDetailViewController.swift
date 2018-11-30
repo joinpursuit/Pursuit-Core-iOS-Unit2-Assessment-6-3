@@ -26,6 +26,7 @@ class CrayonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     nameLabel.text = crayon.name
+    
     }
     
 
