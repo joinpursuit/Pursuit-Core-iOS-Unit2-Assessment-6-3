@@ -39,17 +39,9 @@ class DetailViewController: UIViewController {
         crayonAlphaLabel.text = "Alpha"
     }
     
-
-    @IBAction func crayonRedSliderChanged(_ sender: UISlider) {
+    @IBAction func sliderChanges(_ sender: UISlider) {
+        
     }
-   
-    
-    @IBAction func crayonGreenSliderChanged(_ sender: UISlider) {
-    }
-    
-    @IBAction func crayonBlueSliderChanged(_ sender: UISlider) {
-    }
-    
     
     @IBAction func crayonAlphaStepper(_ sender: UIStepper) {
     }
