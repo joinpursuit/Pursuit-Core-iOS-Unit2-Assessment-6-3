@@ -15,7 +15,6 @@ class DetailVC: UIViewController {
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var backgroundColor: UIView!
-    
     @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var redLabel: UILabel!
     @IBOutlet weak var greenLabel: UILabel!
@@ -119,8 +118,6 @@ class DetailVC: UIViewController {
             greenLabel.textColor = .white
             blueLabel.textColor = .white
             alphaValue.textColor = .white
-            
-        
         }
     }
 }
