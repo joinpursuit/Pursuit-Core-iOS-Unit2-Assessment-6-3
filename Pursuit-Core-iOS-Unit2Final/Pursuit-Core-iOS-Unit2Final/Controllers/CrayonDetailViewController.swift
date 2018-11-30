@@ -55,19 +55,19 @@ class CrayonDetailViewController: UIViewController {
 
     @IBAction func redSliderChange(_ sender: UISlider) {
         view.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
-        redLabel.text = String(sender.value)
+        redLabel.text = String(Int(sender.value * 250))
     }
     
     
     @IBAction func greenSliderChanged(_ sender: UISlider) {
         view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(sender.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaStepper.value))
-        greenLabel.text = String(sender.value)
+        greenLabel.text = String(Int(sender.value * 250))
     }
     
     
     @IBAction func blueSliderChanged(_ sender: UISlider) {
         view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(sender.value), alpha: CGFloat(alphaStepper.value))
-        blueLabel.text = String(sender.value)
+        blueLabel.text = String(Int(sender.value * 250))
     }
     
     

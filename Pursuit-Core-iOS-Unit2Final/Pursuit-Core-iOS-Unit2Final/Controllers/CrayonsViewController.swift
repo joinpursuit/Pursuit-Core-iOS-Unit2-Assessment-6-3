@@ -28,11 +28,11 @@ class CrayonsViewController: UIViewController {
         crayonDetailView.crayon = crayon
         crayonDetailView.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/250), green: CGFloat(crayon.green/250), blue: CGFloat(crayon.blue/250), alpha: 1)
         crayonDetailView.redSlider.value = Float(crayon.red/250)
-        crayonDetailView.redLabel.text = String(crayon.red/250)
+        crayonDetailView.redLabel.text = String(Int(crayon.red))
         crayonDetailView.greenSlider.value = Float(crayon.green/250)
-        crayonDetailView.greenLabel.text = String(crayon.green/250)
+        crayonDetailView.greenLabel.text = String(Int(crayon.green))
         crayonDetailView.blueSlider.value = Float(crayon.blue/250)
-        crayonDetailView.blueLabel.text = String(crayon.blue/250)
+        crayonDetailView.blueLabel.text = String(Int(crayon.blue))
     }
 
 
