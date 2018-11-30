@@ -44,6 +44,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Uld-7E-Xaz" kind="show" id="Npt-Tp-o1j"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
