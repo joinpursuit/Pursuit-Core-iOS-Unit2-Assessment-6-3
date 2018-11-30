@@ -160,13 +160,13 @@
                         <viewLayoutGuide key="safeArea" id="CVf-bs-4ue"/>
                     </view>
                     <connections>
-                        <outlet property="alphaLabel" destination="xTQ-6x-cPn" id="f2J-Pq-paJ"/>
                         <outlet property="alphaStepper" destination="a6q-Li-U5M" id="v5W-S9-Eko"/>
-                        <outlet property="blueLabel" destination="exw-gS-c0C" id="w4Y-EG-XiB"/>
+                        <outlet property="alphaStepperLabel" destination="xTQ-6x-cPn" id="f2J-Pq-paJ"/>
                         <outlet property="blueSlider" destination="FVq-p3-0fr" id="Ua2-FV-7Wf"/>
+                        <outlet property="blueSliderLabel" destination="exw-gS-c0C" id="w4Y-EG-XiB"/>
                         <outlet property="crayonColor" destination="DXa-G5-WZx" id="SyG-69-8ek"/>
-                        <outlet property="greenLabel" destination="h4P-IF-sKl" id="LOE-za-yEf"/>
                         <outlet property="greenSlider" destination="gJ2-Hr-qmL" id="oS3-fB-Lea"/>
+                        <outlet property="greenSliderLabel" destination="h4P-IF-sKl" id="LOE-za-yEf"/>
                         <outlet property="redSlider" destination="Eh8-6r-sFd" id="PhN-U2-NQ8"/>
                         <outlet property="redSliderLabel" destination="v7R-KV-caU" id="QEo-af-Wyv"/>
                     </connections>

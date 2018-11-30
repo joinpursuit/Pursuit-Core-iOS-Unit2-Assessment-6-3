@@ -15,30 +15,43 @@ class CrayonDetailViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var redSliderLabel: UILabel!
     @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var greenLabel: UILabel!
+    @IBOutlet weak var greenSliderLabel: UILabel!
     @IBOutlet weak var blueSlider: UISlider!
-    @IBOutlet weak var blueLabel: UILabel!
+    @IBOutlet weak var blueSliderLabel: UILabel!
     @IBOutlet weak var alphaStepper: UIStepper!
-    @IBOutlet weak var alphaLabel: UILabel!
+    @IBOutlet weak var alphaStepperLabel: UILabel!
     
     
     var crayonInfo: Crayon?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateCrayonUI()
-        redSliderLabel.text = "Current Red Value is"
+        redSliderLabel.text = "Current Red Value is \(crayonInfo!.red)"
         redSlider.value = Float((crayonInfo?.red)!)
         redSlider.minimumValue = 0
-        redSlider.maximumValue = 20
+        redSlider.maximumValue = 10
+        greenSliderLabel.text = "Current Green Value is \(crayonInfo!.green)"
+        greenSlider.value = Float((crayonInfo?.green)!)
+        greenSlider.minimumValue = 0
+        greenSlider.maximumValue = 10
+        blueSliderLabel.text = "Current Blue Value is \(crayonInfo!.blue)"
+        blueSlider.value = Float((crayonInfo?.blue)!)
+        blueSlider.minimumValue = 0
+        blueSlider.maximumValue = 10
+    }
+    
+    @IBAction func redSliderChange( sender: UISlider) {
+        redSlider.value = sender.value
+        
+    
     }
     
     private func updateCrayonUI() {
         guard let crayonInfo = crayonInfo else {
             fatalError("Cell is nil")
         }
-        crayonColor.text = crayonInfo.name
+        crayonColor.text = crayonInfo.name.uppercased()
 //        view.backgroundColor = UIColor.init(red: CGFloat(crayonInfo.red), green: CGFloat(crayonInfo.green), blue: CGFloat(crayonInfo.blue), alpha: 1)
         
         view.backgroundColor = UIColor(displayP3Red: CGFloat(crayonInfo.red), green: CGFloat(crayonInfo.green), blue: CGFloat(crayonInfo.blue), alpha: 1)
