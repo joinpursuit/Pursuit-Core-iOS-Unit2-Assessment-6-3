@@ -23,14 +23,15 @@ class CrayonDetailViewController: UITableViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     
     @IBAction func redSliderColor(_ sender: UISlider) {
-       
+       colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
     }
     
     @IBAction func greenSliderColor(_ sender: UISlider) {
-        
+        colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
     }
     
     @IBAction func blueSliderColor(_ sender: UISlider) {
+        colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
         
     }
     
@@ -45,9 +46,9 @@ class CrayonDetailViewController: UITableViewController {
     }
     
     private func updateUI(){
-        redLabel.text = "Red Value: \(crayon!.red)"
-        greenLabel.text = "Green Value: \(crayon!.green)"
-        blueLabel.text = "Blue Value: \(crayon!.blue)"
+        redLabel.text = "Red Value: \(Float(crayon!.red/255))"
+        greenLabel.text = "Green Value: \(Float(crayon!.green/255))"
+        blueLabel.text = "Blue Value: \(Float(crayon!.blue)/255)"
         colorCell.backgroundColor = UIColor(red: CGFloat(crayon!.red / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
        
         
