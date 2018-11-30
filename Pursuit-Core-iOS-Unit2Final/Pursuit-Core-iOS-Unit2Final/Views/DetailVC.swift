@@ -10,19 +10,19 @@ import UIKit
 
 class DetailVC: UIViewController {
     
-    @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var redLabel: UILabel!
     @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var greenLabel: UILabel!
     @IBOutlet weak var blueSlider: UISlider!
-    @IBOutlet weak var blueLabel: UILabel!
-    @IBOutlet weak var backgroundColor: UIView!
-    @IBOutlet weak var alphaValue: UILabel!
     @IBOutlet weak var alphaStepper: UIStepper!
+    @IBOutlet weak var backgroundColor: UIView!
+    
+    @IBOutlet weak var colorName: UILabel!
+    @IBOutlet weak var redLabel: UILabel!
+    @IBOutlet weak var greenLabel: UILabel!
+    @IBOutlet weak var blueLabel: UILabel!
+    @IBOutlet weak var alphaValue: UILabel!
     
     var color: Crayon!
-    var arrOfCol = Crayon.allTheCrayons
     var newBlueValue = Double()
     var newRedValue = Double()
     var newGreenValue = Double()
@@ -42,6 +42,7 @@ class DetailVC: UIViewController {
         redSlider.value = Float(color.red/255)
         alphaValue.text = "Alpha: \(1.0)"
         alphaStepper.value = 1.0
+        fixDarkText()
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
@@ -57,6 +58,13 @@ class DetailVC: UIViewController {
         backgroundColor.backgroundColor = UIColor.init(red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1.0)
         backgroundColor.alpha = 1.0
         alphaValue.text = "Alpha: \(1.0)"
+        colorName.textColor = .black
+        redLabel.textColor = .black
+        greenLabel.textColor = .black
+        blueLabel.textColor = .black
+        alphaValue.textColor = .black
+        
+        fixDarkText()
     }
     
     @IBAction func alphaChanged(_ sender: UIStepper) {
@@ -71,18 +79,21 @@ class DetailVC: UIViewController {
         redLabel.text = ("Red:\(CGFloat(sender.value).description)")
         newRedValue = Double(CGFloat(sender.value))
         updateBackgroundColor(Red: Double(sender.value), Green: Double(newGreenValue), Blue: Double(newBlueValue))
+        fixDarkText()
     }
     
     @IBAction func greenSlider(_ sender: UISlider) {
         greenLabel.text = ("Green:\( CGFloat(sender.value).description)")
         newGreenValue = Double(CGFloat(sender.value))
         updateBackgroundColor(Red: Double(newRedValue), Green: Double(sender.value), Blue: Double(newBlueValue))
+        fixDarkText()
     }
     
     @IBAction func blueSlider(_ sender: UISlider) {
         blueLabel.text = ("Blue:\( CGFloat(sender.value).description)")
         newBlueValue = Double(CGFloat(sender.value))
         updateBackgroundColor(Red: Double(newRedValue), Green: Double(newGreenValue), Blue: Double(sender.value))
+        fixDarkText()
     }
     
     func setUpSlider(Slider: UISlider){
@@ -97,6 +108,19 @@ class DetailVC: UIViewController {
         
         if Red != color.red && Green != color.green && Blue != color.blue{
             backgroundColor.backgroundColor = UIColor(red: CGFloat(Red), green: CGFloat(Green), blue: CGFloat(Blue), alpha: 1.0)
+        }
+        fixDarkText()
+    }
+    
+    func fixDarkText() {
+        if backgroundColor.backgroundColor == UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0) {
+            colorName.textColor = .white
+            redLabel.textColor = .white
+            greenLabel.textColor = .white
+            blueLabel.textColor = .white
+            alphaValue.textColor = .white
+            
+        
         }
     }
 }
