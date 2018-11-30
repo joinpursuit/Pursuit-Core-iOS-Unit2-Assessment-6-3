@@ -18,8 +18,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    crayonTableView.dataSource = self   //just cause you have to
-    crayonTableView.delegate = self //you have to do this too
+    crayonTableView.dataSource = self   
+    crayonTableView.delegate = self
    
   }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
