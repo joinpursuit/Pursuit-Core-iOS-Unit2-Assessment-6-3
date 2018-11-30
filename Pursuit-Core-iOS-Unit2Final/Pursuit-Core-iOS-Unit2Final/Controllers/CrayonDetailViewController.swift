@@ -55,7 +55,7 @@ class CrayonDetailViewController: UIViewController {
         crayonColor.text = crayonInfo.name.uppercased()
 //        view.backgroundColor = UIColor.init(red: CGFloat(crayonInfo.red), green: CGFloat(crayonInfo.green), blue: CGFloat(crayonInfo.blue), alpha: 1)
         
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayonInfo.red), green: CGFloat(crayonInfo.green), blue: CGFloat(crayonInfo.blue), alpha: 1)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayonInfo.red/255), green: CGFloat(crayonInfo.green/255), blue: CGFloat(crayonInfo.blue/255), alpha: 1)
     }
     
 }
