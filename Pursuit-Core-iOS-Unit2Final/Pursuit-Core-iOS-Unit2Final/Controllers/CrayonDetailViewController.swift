@@ -25,7 +25,7 @@ class CrayonDetailViewController: UITableViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     
     @IBAction func redSliderColor(_ sender: UISlider) {
-    
+        
     }
     
     @IBAction func greenSliderColor(_ sender: UISlider) {
@@ -43,26 +43,23 @@ class CrayonDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        title = crayon?.name
     }
     
     private func updateUI(){
+        redLabel.text = "Red Value: \(crayon!.red)"
+        greenLabel.text = "Green Value: \(crayon!.green)"
+        blueLabel.text = "Blue Value: \(crayon!.blue)"
         
         
-        
-        
-        
-        redLabel.text = "Color: \(crayon!.name), Red Value: \(crayon!.red)"
-        greenLabel.text = "Color: \(crayon!.name), Green Value: \(crayon!.green)"
-        blueLabel.text = "Color: \(crayon!.name), Blue Value: \(crayon!.blue)"
-        redSlider.minimumValue = 0
-        redSlider.maximumValue = 255
-        greenSlider.minimumValue = 0
-        greenSlider.maximumValue = 255
-        blueSlider.minimumValue = 0
-        blueSlider.maximumValue = 255
+        redSlider.minimumValue = 0.0
+        redSlider.maximumValue = 0.1
+        greenSlider.minimumValue = 0.0
+        greenSlider.maximumValue = 0.1
+        blueSlider.minimumValue = 0.0
+        blueSlider.maximumValue = 0.1
         alphaStepper.minimumValue = 0.0
         alphaStepper.maximumValue = 1.0
         stepperLabel.text = "0.0"
     }
-    
 }
