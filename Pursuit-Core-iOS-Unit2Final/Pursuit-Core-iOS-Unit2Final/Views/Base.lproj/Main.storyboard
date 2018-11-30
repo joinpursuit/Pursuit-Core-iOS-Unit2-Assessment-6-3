@@ -88,7 +88,7 @@
                                 <rect key="frame" x="16" y="170" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="crayonRedSlider:" destination="Uld-7E-Xaz" eventType="valueChanged" id="LKK-Jh-Ldo"/>
+                                    <action selector="crayonRedSliderChanged:" destination="Uld-7E-Xaz" eventType="valueChanged" id="LKK-Jh-Ldo"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVC-fT-NDr">
@@ -124,14 +124,7 @@
                                 <rect key="frame" x="10" y="270" width="118" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="crayonGreenSlider:" destination="Uld-7E-Xaz" eventType="valueChanged" id="xNJ-H2-gb4"/>
-                                </connections>
-                            </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mzg-4e-plO">
-                                <rect key="frame" x="16" y="370" width="118" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="crayonBlueSlider:" destination="Uld-7E-Xaz" eventType="valueChanged" id="GUw-NG-GBG"/>
+                                    <action selector="crayonGreenSliderChanged:" destination="Uld-7E-Xaz" eventType="valueChanged" id="xNJ-H2-gb4"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="crayonAlphaLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCj-L6-KOz">
@@ -141,23 +134,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="IkK-6f-CKN">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="IkK-6f-CKN">
                                 <rect key="frame" x="179" y="468" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="crayonAlphaStepper:" destination="Uld-7E-Xaz" eventType="valueChanged" id="fKW-pb-Czo"/>
                                 </connections>
                             </stepper>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1GE-1b-DlW">
+                                <rect key="frame" x="18" y="376" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qqu-i4-TCe"/>
                     </view>
                     <connections>
                         <outlet property="crayonAlphaLabel" destination="oCj-L6-KOz" id="g2P-0S-F0V"/>
-                        <outlet property="crayonBlueLabel" destination="Yri-90-0aW" id="paa-0w-pIN"/>
+                        <outlet property="crayonBlueLabel" destination="Yri-90-0aW" id="vJJ-W0-guO"/>
+                        <outlet property="crayonBlueSlider" destination="1GE-1b-DlW" id="BEU-0v-8ct"/>
                         <outlet property="crayonGreenLabel" destination="Bgl-zi-UXm" id="HuA-ra-c1J"/>
+                        <outlet property="crayonGreenSlider" destination="GlE-a1-vY2" id="jUA-zf-afu"/>
                         <outlet property="crayonNameLabel" destination="brd-dd-y1c" id="4HI-Ob-AAL"/>
                         <outlet property="crayonRedLabel" destination="WHW-HC-7Gg" id="bTY-Pm-LDl"/>
+                        <outlet property="crayonRedSlider" destination="hXz-qe-2f2" id="luR-CJ-nUx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ukn-95-vnH" userLabel="First Responder" sceneMemberID="firstResponder"/>

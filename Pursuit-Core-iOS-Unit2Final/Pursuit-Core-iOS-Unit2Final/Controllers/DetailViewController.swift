@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var crayonNameLabel: UILabel!
     
-    
     @IBOutlet weak var crayonRedLabel: UILabel!
     
     @IBOutlet weak var crayonGreenLabel: UILabel!
@@ -22,6 +21,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var crayonBlueLabel: UILabel!
     
     @IBOutlet weak var crayonAlphaLabel: UILabel!
+    
+    @IBOutlet weak var crayonRedSlider: UISlider!
+    
+    @IBOutlet weak var crayonGreenSlider: UISlider!
+    
+    @IBOutlet weak var crayonBlueSlider: UISlider!
     
 
     override func viewDidLoad() {
@@ -35,14 +40,14 @@ class DetailViewController: UIViewController {
     }
     
 
-    @IBAction func crayonRedSlider(_ sender: UISlider) {
+    @IBAction func crayonRedSliderChanged(_ sender: UISlider) {
     }
    
     
-    @IBAction func crayonGreenSlider(_ sender: UISlider) {
+    @IBAction func crayonGreenSliderChanged(_ sender: UISlider) {
     }
     
-    @IBAction func crayonBlueSlider(_ sender: UISlider) {
+    @IBAction func crayonBlueSliderChanged(_ sender: UISlider) {
     }
     
     
