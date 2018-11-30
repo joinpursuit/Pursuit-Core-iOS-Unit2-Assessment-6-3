@@ -39,6 +39,8 @@ class DetailViewController: UIViewController {
   
     
     @IBAction func redSlider(_ sender: UISlider) {
+         redLabel.text = "The current value of red is \(Float(sender.value).description)"
+        updateCrayonsUI()
     }
     
     
@@ -46,6 +48,8 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func greenSlider(_ sender: UISlider) {
+        greenLabel.text = "The current value of green is \(Float(sender.value).description)"
+        updateCrayonsUI()
     }
     
     
@@ -53,6 +57,8 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func blueSlider(_ sender: UISlider) {
+        blueLabel.text = "The current value of blue is \(Float(sender.value).description)"
+        updateCrayonsUI()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,11 +69,13 @@ class DetailViewController: UIViewController {
         redSliderOutlet.minimumValue = 0.0
         redSliderOutlet.maximumValue = 1.0
         
+        
         blueSliderOutlet.value = Float(crayon.blue)
         blueLabel.text = "The current value of blue is \(Float(crayon.blue))"
         
         blueSliderOutlet.minimumValue = 0.0
         blueSliderOutlet.maximumValue = 1.0
+    
         
         greenSliderOutlet.value = Float(crayon.green)
         greenLabel.text = "The current value of green is \(Float(crayon.green))"
@@ -75,21 +83,19 @@ class DetailViewController: UIViewController {
         greenSliderOutlet.minimumValue = 0.0
         greenSliderOutlet.maximumValue = 1.0
         
-        
-        //**Aaron LOOK AT THIS!!!
-        //stepper setup
-//        stepperControl.wraps = true
-//        stepperControl.autorepeat = true
-//
-//        stepperControl.value = 0
-//        stepperLabel.text = "0"
-//
-//        stepperControl.maximumValue = 10
-//        stepperControl.minimumValue = 0
+        alphaStepperOutlet.wraps = true
+        alphaStepperOutlet.autorepeat = true
+
+        alphaStepperOutlet.value = 1.0
+        alphaLabel.text = "1.0"
+
+        alphaStepperOutlet.maximumValue = 1.0
+        alphaStepperOutlet.minimumValue = 0.0
         updateCrayonsUI()
     }
     private func updateCrayonsUI(){
         colorName.text = crayon.name
         view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon!.red), green: CGFloat(crayon!.green), blue: CGFloat(crayon!.blue), alpha: 255)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSliderOutlet!.value), green: CGFloat(greenSliderOutlet!.value), blue: CGFloat(blueSliderOutlet!.value), alpha: 255)
     }
 }
