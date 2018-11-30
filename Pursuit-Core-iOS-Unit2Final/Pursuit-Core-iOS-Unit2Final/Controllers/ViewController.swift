@@ -38,6 +38,7 @@ extension ViewController: UITableViewDataSource {
         
         crayonCell.textLabel?.text = crayonsInfoSet.name
         crayonCell.detailTextLabel?.text = crayonsInfoSet.hex
+       // crayonCell.textLabel?.backgroundColor = 
         
         return crayonCell
     }
