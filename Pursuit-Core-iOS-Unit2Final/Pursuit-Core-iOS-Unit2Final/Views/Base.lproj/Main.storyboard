@@ -127,7 +127,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6vn-O2-PFH">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="6vn-O2-PFH">
                                 <rect key="frame" x="141" y="266" width="94" height="29"/>
                                 <connections>
                                     <action selector="alphaStepper:" destination="trW-fd-or3" eventType="valueChanged" id="zdy-ki-XO5"/>
@@ -135,7 +135,7 @@
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbg-vH-xuQ">
                                 <rect key="frame" x="162" y="149" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="resetButton:" destination="trW-fd-or3" eventType="touchUpInside" id="ghq-RD-dpg"/>
                                 </connections>

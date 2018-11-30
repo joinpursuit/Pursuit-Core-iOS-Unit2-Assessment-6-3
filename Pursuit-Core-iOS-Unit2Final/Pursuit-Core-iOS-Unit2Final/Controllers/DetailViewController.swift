@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func alphaStepper(_ sender: UIStepper) {
+        alphaLabel.text = Float(sender.value).description
     }
     
     
@@ -97,6 +98,6 @@ class DetailViewController: UIViewController {
     private func updateCrayonsUI(){
         colorName.text = crayon.name
         view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon!.red), green: CGFloat(crayon!.green), blue: CGFloat(crayon!.blue), alpha: 255)
-        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSliderOutlet!.value), green: CGFloat(greenSliderOutlet!.value), blue: CGFloat(blueSliderOutlet!.value), alpha: 255)
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(redSliderOutlet!.value), green: CGFloat(greenSliderOutlet!.value), blue: CGFloat(blueSliderOutlet!.value), alpha: CGFloat(alphaStepperOutlet!.value))
     }
 }
