@@ -66,6 +66,14 @@ class crayonViewController: UIViewController {
         view.backgroundColor = UIColor(displayP3Red: CGFloat(currentRedValue), green: CGFloat(currentGreenValue), blue: CGFloat(currentBlueValue), alpha:CGFloat(stepper))
     }
 
+    @IBAction func resetButton(_ sender: UIButton) {
+        
+        view.backgroundColor = UIColor(displayP3Red: CGFloat(crayons.red/255), green: CGFloat(crayons.green/255), blue: CGFloat(crayons.blue/255), alpha: 1)
+        slider1.value = Float(crayons.red/255)
+        slider2.value = Float(crayons.green/255)
+        slider3.value = Float(crayons.blue/255)
+        myStepper.value = 1
+    }
     
     
 
