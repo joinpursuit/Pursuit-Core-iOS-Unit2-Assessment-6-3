@@ -24,20 +24,26 @@ class CrayonDetailViewController: UITableViewController {
     
     @IBAction func redSliderColor(_ sender: UISlider) {
         redLabel.text = Float(sender.value).description
+        let color = UIColor(red: CGFloat(sender.value / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
+        colorCell.backgroundColor = color
+        
         
     }
     
     @IBAction func greenSliderColor(_ sender: UISlider) {
         greenLabel.text = Float(sender.value).description
+        let color = UIColor(red: CGFloat(sender.value / 255), green: CGFloat(sender.value / 255), blue: CGFloat(crayon!.blue / 255), alpha: 1)
+        colorCell.backgroundColor = color
     }
     
     @IBAction func blueSliderColor(_ sender: UISlider) {
         blueLabel.text = Float(sender.value).description
-        
+        let color = UIColor(red: CGFloat(sender.value / 255), green: CGFloat(crayon!.green / 255), blue: CGFloat(sender.value / 255), alpha: 1)
+        colorCell.backgroundColor = color
     }
     
     @IBAction func alphaStepperChange(_ sender: UIStepper) {
-       stepperLabel.text = Double(sender.value).description
+       stepperLabel.text = Float(sender.value).description
     }
     
     override func viewDidLoad() {
