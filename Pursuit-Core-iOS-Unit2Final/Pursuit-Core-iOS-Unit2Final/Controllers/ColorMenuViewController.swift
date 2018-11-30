@@ -26,7 +26,7 @@ class ColorMenuViewController: UIViewController {
         }
         
         let selectedCrayon = allTheCrayons[indexPath.row]
-        let color = UIColor(displayP3Red: CGFloat(selectedCrayon.red / 255), green: CGFloat(selectedCrayon.green / 255), blue: CGFloat(selectedCrayon.blue / 255), alpha: CGFloat(1.0))
+        let color = CrayonBrain.rGBtoUIColor(red: selectedCrayon.red, green: selectedCrayon.green, blue: selectedCrayon.blue, alpha: 1.0)
         
         toDestinedViewController.crayon = selectedCrayon
         toDestinedViewController.defaultColor = color
@@ -44,7 +44,7 @@ extension ColorMenuViewController: UITableViewDataSource {
         let cell = crayonTableView.dequeueReusableCell(withIdentifier: "CrayonCell", for: indexPath)
         
         let crayon = allTheCrayons[indexPath.row]
-        let color = UIColor.init(red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: 1.0)
+        let color = CrayonBrain.rGBtoUIColor(red: crayon.red, green: crayon.green, blue: crayon.blue, alpha: 1.0)
             
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex

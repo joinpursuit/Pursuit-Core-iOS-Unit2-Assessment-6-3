@@ -26,32 +26,36 @@ class DetailColorViewController: UIViewController {
     
     var slidersArr: [UISlider]!
     var colorValueLabelsArr: [UILabel]!
+    var colorValuesArr: [Double]!
     
     var crayon: Crayon!
     var defaultColor: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = defaultColor
         
-        //set color name label
+        self.view.backgroundColor = defaultColor
+        colorNameLabel.text = crayon.name
         
         //setup sliders
-        //notice that their corresponding indexes are match
         slidersArr = [redSlider, greenSlider, blueSlider]
         colorValueLabelsArr = [redValueLabel, greenValueLabel, blueValueLabel]
+        colorValuesArr = [crayon.red, crayon.green, crayon.blue]
         
-        //iterate one of the arr set:
-            //1) min & & max value of sliders
-            //2) slider starting value
-            //3) color label text
+        for (i, slider) in slidersArr.enumerated() {
+            slider.minimumValue = 0
+            slider.maximumValue = 255
+            
+            slider.value = Float(colorValuesArr[i])
+            colorValueLabelsArr[i].text = "\(Int(slider.value))"
+        }
         
         //setup stepper
-            //set min & max (0 - 10)
-            //set starting value
-            //set label
-                //change the value of the slider from 1 to .1 by divide by 10
-    
+        alphaStepper.minimumValue = 0
+        alphaStepper.maximumValue = 10
+        
+        alphaStepper.value = 10
+        alphaValueLabel.text = "\(alphaStepper.value / 10)"
     }
     
     //action for sliders

@@ -14,6 +14,7 @@
 		57AFE742219E139C0024A541 /* Crayon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFE741219E139C0024A541 /* Crayon.swift */; };
 		D62024BD21B1A06B00FA97F5 /* DetailColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62024BC21B1A06B00FA97F5 /* DetailColorViewController.swift */; };
 		D62024BF21B1AB7600FA97F5 /* ColorMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62024BE21B1AB7600FA97F5 /* ColorMenuViewController.swift */; };
+		D62024C121B1CE1600FA97F5 /* CrayonBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62024C021B1CE1600FA97F5 /* CrayonBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		57AFE741219E139C0024A541 /* Crayon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crayon.swift; sourceTree = "<group>"; };
 		D62024BC21B1A06B00FA97F5 /* DetailColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailColorViewController.swift; sourceTree = "<group>"; };
 		D62024BE21B1AB7600FA97F5 /* ColorMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMenuViewController.swift; sourceTree = "<group>"; };
+		D62024C021B1CE1600FA97F5 /* CrayonBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrayonBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				57AFE741219E139C0024A541 /* Crayon.swift */,
+				D62024C021B1CE1600FA97F5 /* CrayonBrain.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				57AFE72E219E136D0024A541 /* AppDelegate.swift in Sources */,
 				D62024BD21B1A06B00FA97F5 /* DetailColorViewController.swift in Sources */,
 				D62024BF21B1AB7600FA97F5 /* ColorMenuViewController.swift in Sources */,
+				D62024C121B1CE1600FA97F5 /* CrayonBrain.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
