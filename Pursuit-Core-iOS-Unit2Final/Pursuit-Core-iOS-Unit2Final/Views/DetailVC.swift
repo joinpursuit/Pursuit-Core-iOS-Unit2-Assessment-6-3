@@ -14,7 +14,6 @@ class DetailVC: UIViewController {
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
     @IBOutlet weak var alphaStepper: UIStepper!
-    @IBOutlet weak var backgroundColor: UIView!
     @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var redLabel: UILabel!
     @IBOutlet weak var greenLabel: UILabel!
@@ -28,7 +27,9 @@ class DetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundColor.backgroundColor = UIColor.init(red: CGFloat(color!.red/255), green: CGFloat(color!.green/255), blue: CGFloat(color!.blue/255), alpha: 1.0)
+        view.backgroundColor = UIColor.init(red: CGFloat(color!.red/255), green: CGFloat(color!.green/255), blue: CGFloat(color!.blue/255), alpha: 1.0)
+        
+        
         colorName.text = color.name
         redLabel.text = "Red:\(color.red/255)"
         greenLabel.text = "Green:\(color.green/255)"
@@ -54,8 +55,8 @@ class DetailVC: UIViewController {
         redSlider.value = Float(color.red/255)
         blueSlider.value = Float(color.blue/255)
         greenSlider.value = Float(color.green/255)
-        backgroundColor.backgroundColor = UIColor.init(red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1.0)
-        backgroundColor.alpha = 1.0
+        view.backgroundColor = UIColor.init(red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1.0)
+        view.alpha = 1.0
         alphaValue.text = "Alpha: \(1.0)"
         colorName.textColor = .black
         redLabel.textColor = .black
@@ -71,7 +72,7 @@ class DetailVC: UIViewController {
         alphaStepper.minimumValue = 0
         alphaStepper.maximumValue = 1
         alphaValue.text = "Alpha: \(alphaStepper.value)"
-        backgroundColor.alpha = CGFloat(alphaStepper.value)
+        view.alpha = CGFloat(alphaStepper.value)
     }
     
     @IBAction func redSlider(_ sender: UISlider) {
@@ -106,13 +107,13 @@ class DetailVC: UIViewController {
         newBlueValue = Blue
         
         if Red != color.red && Green != color.green && Blue != color.blue{
-            backgroundColor.backgroundColor = UIColor(red: CGFloat(Red), green: CGFloat(Green), blue: CGFloat(Blue), alpha: 1.0)
+            view.backgroundColor = UIColor(red: CGFloat(Red), green: CGFloat(Green), blue: CGFloat(Blue), alpha: 1.0)
         }
         fixDarkText()
     }
     
     func fixDarkText() {
-        if backgroundColor.backgroundColor == UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0) {
+        if view.backgroundColor == UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0) {
             colorName.textColor = .white
             redLabel.textColor = .white
             greenLabel.textColor = .white
