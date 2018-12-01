@@ -10,9 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     var colors: Crayon?
-    var red = 0.0
-    var blue = 0.0
-    var green = 0.0
+
     @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var redLabel: UILabel!
@@ -25,11 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let colors = colors {
-            red = colors.red
-            blue = colors.blue
-            green = colors.green
-        }
+
         alphaStepper.minimumValue = 0.0
         alphaStepper.maximumValue = 1.0
         alphaStepper.stepValue = 0.1
@@ -38,37 +32,26 @@ class DetailViewController: UIViewController {
     private func setUp() {
             guard let colors = colors else {fatalError("colors is nil")}
             colorName.text = colors.name
-            redSlider.value = Float(colors.red)
+            redSlider.setValue(Float(colors.red), animated: true)
             redLabel.text = "red: \(redSlider.value)"
-            greenSlider.value = Float(colors.green)
+            greenSlider.setValue(Float(colors.green), animated: true)
             greenLabel.text = "green: \(greenSlider.value)"
-            blueSlider.value = Float(colors.blue)
+            blueSlider.setValue(Float(colors.blue), animated: true)
             blueLabel.text = "blue: \(blueSlider.value)"
             alphaLabel.text = "alpha: \(alphaStepper.value)"
             view.backgroundColor = UIColor(red: CGFloat(redSlider.value/255.0), green: CGFloat(greenSlider.value/255.0), blue: CGFloat(blueSlider.value/255.0), alpha: CGFloat(alphaStepper.value))
     }
+    @IBAction func sliderChange(sender: AnyObject) {
+        redLabel.text = "red: \(redSlider.value)"
+        greenLabel.text = "green: \(greenSlider.value)"
+        blueLabel.text = "blue: \(blueSlider.value)"
+        alphaLabel.text = "alpha: \(alphaStepper.value)"
+        view.backgroundColor = UIColor(red: CGFloat(redSlider.value/255.0), green: CGFloat(greenSlider.value/255.0), blue: CGFloat(blueSlider.value/255.0), alpha: CGFloat(alphaStepper.value))
 
-    @IBAction func redChanged(_ sender: UISlider) {
-        colors?.red = Double(sender.value)
-        setUp()
-    }
-    @IBAction func greenChanged(_ sender: UISlider) {
-        colors?.green = Double(sender.value)
-        setUp()
-    }
-    @IBAction func blueChanged(_ sender: UISlider) {
-        colors?.blue = Double(sender.value)
-        setUp()
-    }
-    @IBAction func alphaChanged(_ sender: UIStepper) {
-        alphaStepper.value = sender.value
-        setUp()
     }
     @IBAction func resetButton(_ sender: UIButton) {
-        colors?.red = red
-        colors?.blue = blue
-        colors?.green = green
         setUp()
-        
+        guard let colors = colors else { fatalError("Color is nil")}
+            self.view.backgroundColor = UIColor(red: CGFloat(colors.red/255.0), green: CGFloat(colors.green/255.0), blue: CGFloat(colors.blue/255.0), alpha: CGFloat(alphaStepper.value))
     }
 }
