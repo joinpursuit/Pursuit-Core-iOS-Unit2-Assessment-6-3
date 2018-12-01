@@ -50,6 +50,21 @@ class DetailViewController: UIViewController {
         blueValueLabel.text = "Blue: \(blueSlider.value)"
         alphaValueLabel.text = "Alpha: \(alphaStepper.value)"
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider!.value)/255, green: CGFloat(greenSlider!.value)/255, blue: CGFloat(blueSlider!.value)/255, alpha: CGFloat(alphaStepper!.value))
+        if alphaStepper.value < 0.5 {
+            colorNameLabel.textColor = .white
+            greenValueLabel.textColor = .white
+            blueValueLabel.textColor = .white
+            redValueLabel.textColor = .white
+            alphaValueLabel.textColor = .white
+        } else {
+            colorNameLabel.textColor = .black
+            greenValueLabel.textColor = .black
+            blueValueLabel.textColor = .black
+            redValueLabel.textColor = .black
+            alphaValueLabel.textColor = .black
+        }
+            
+        
     }
     
     @IBAction func resetValues (sender: UIButton) {
