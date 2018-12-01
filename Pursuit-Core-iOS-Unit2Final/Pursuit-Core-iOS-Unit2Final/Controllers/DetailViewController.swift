@@ -10,9 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    
+    
+    
     @IBOutlet weak var colorName: UILabel!
-    
-    
     @IBOutlet weak var stepperLabel: UILabel!
     
     @IBOutlet weak var sliderRed: UILabel!
@@ -27,6 +28,7 @@ class DetailViewController: UIViewController {
     var colors: Crayon?
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorName?.text = colors?.name
         
         sliderRed.text = "0.0"
         sliderControl.minimumValue = 0.0
