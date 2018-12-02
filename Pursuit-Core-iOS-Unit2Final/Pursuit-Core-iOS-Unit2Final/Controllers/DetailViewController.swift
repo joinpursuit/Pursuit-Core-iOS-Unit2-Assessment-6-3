@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    
+   
     
     
     @IBOutlet weak var colorName: UILabel!
@@ -29,6 +29,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorName?.text = colors?.name
+        
         
         sliderRed.text = "0.0"
         sliderControl.minimumValue = 0.0
@@ -50,15 +51,15 @@ class DetailViewController: UIViewController {
 
     @IBAction func sliderChanged(_ sender: UISlider) {
         sliderRed.text = Int(sender.value).description
-        view.backgroundColor = .red
+        
     }
     @IBAction func sliderChange1(_ sender: UISlider) {
         sliderGreen.text = Int(sender.value).description
-        view.backgroundColor = .green
+       
     }
     @IBAction func sliderChange2(_ sender: UISlider) {
         sliderBlue.text = Int(sender.value).description
-        view.backgroundColor = .blue
+       
     }
     
     @IBAction func stepperChange3(_ sender: UIStepper) {

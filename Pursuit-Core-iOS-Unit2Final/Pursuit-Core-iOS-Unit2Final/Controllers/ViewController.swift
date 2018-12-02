@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
     super.viewDidLoad()
+      
        tableView.dataSource = self
        tableView.delegate = self
+        
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,11 +35,14 @@ extension ViewController: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let theColors = colors[indexPath.row]
+       
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ColorTableViewCell", for: indexPath) as? ColorTableViewCell else {return UITableViewCell()}
         cell.colorName.text = theColors.name
         cell.colorhex.text = theColors.hex
+        cell.backgroundColor = UIColor(displayP3Red: (CGFloat(theColors.red/250)), green: CGFloat(theColors.green/250), blue: CGFloat(theColors.blue/250), alpha: 1)
         return cell
-        }
+        
+      }
     }
 
 extension ViewController: UITableViewDelegate{
