@@ -179,6 +179,7 @@
                         <outlet property="sliderControl2" destination="vBd-49-zLC" id="jYk-kC-bcU"/>
                         <outlet property="sliderGreen" destination="dDw-GW-a72" id="SQf-Pi-drp"/>
                         <outlet property="sliderRed" destination="sRi-r4-Z8j" id="5s1-py-5oP"/>
+                        <outlet property="stepperControll" destination="Bjo-fW-GCz" id="TvS-8p-ej0"/>
                         <outlet property="stepperLabel" destination="zAJ-3A-aq5" id="oql-ev-1Zh"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var colorName: UILabel!
     @IBOutlet weak var stepperLabel: UILabel!
+    @IBOutlet weak var stepperControll: UIStepper!
     
     @IBOutlet weak var sliderRed: UILabel!
     @IBOutlet weak var sliderControl: UISlider!
@@ -29,7 +30,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         colorName?.text = colors?.name
-        
+    
         
         sliderRed.text = "0.0"
         sliderControl.minimumValue = 0.0
@@ -44,25 +45,27 @@ class DetailViewController: UIViewController {
         sliderControl2.maximumValue = 1.0
         
         stepperLabel.text = "0.0"
-        
-
-        // Do any additional setup after loading the view.
+    
     }
 
     @IBAction func sliderChanged(_ sender: UISlider) {
         sliderRed.text = Int(sender.value).description
-        
+        view.backgroundColor = UIColor.red
+       
     }
     @IBAction func sliderChange1(_ sender: UISlider) {
         sliderGreen.text = Int(sender.value).description
+        view.backgroundColor = UIColor.green
        
     }
     @IBAction func sliderChange2(_ sender: UISlider) {
         sliderBlue.text = Int(sender.value).description
+         view.backgroundColor = UIColor.blue
        
     }
     
     @IBAction func stepperChange3(_ sender: UIStepper) {
         stepperLabel.text = Int(sender.value).description
+        view.backgroundColor = UIColor.white
     }
 }
