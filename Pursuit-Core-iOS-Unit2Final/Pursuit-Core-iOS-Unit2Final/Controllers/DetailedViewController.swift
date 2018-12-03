@@ -27,6 +27,7 @@ class DetailedViewController: UIViewController {
       clickedCrayonName.text = detailedCrayon?.name
         view.backgroundColor = UIColor(displayP3Red: CGFloat((detailedCrayon?.red)! / 255), green: CGFloat((detailedCrayon?.green)! / 255), blue: CGFloat((detailedCrayon?.blue)! / 255), alpha: 1.0)
         
+        
         redSlider.value = Float(Int(detailedCrayon!.red / 255))
         redLabel.text = "0"
         redSlider.minimumValue = 0.0
@@ -109,9 +110,6 @@ class DetailedViewController: UIViewController {
         
     }
     
-    
-    
-
 }
 
 

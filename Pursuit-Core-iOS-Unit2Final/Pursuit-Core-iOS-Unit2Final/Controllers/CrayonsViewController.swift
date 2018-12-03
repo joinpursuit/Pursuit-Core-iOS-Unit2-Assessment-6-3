@@ -16,7 +16,7 @@ private var crayonColor = Crayon.allTheCrayons
     override func viewDidLoad() {
         super.viewDidLoad()
       myTableView.dataSource = self
-    title = "Box if crayons 🖍"
+    title = "Box of crayons 🖍"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
