@@ -217,6 +217,15 @@
                         <outlet property="greenValueLabel" destination="wxr-s5-HWx" id="Gv2-u2-Nle"/>
                         <outlet property="redSlider" destination="ROW-pL-TUe" id="MWg-gU-abw"/>
                         <outlet property="redValueLabel" destination="WEm-wp-UqL" id="NZ6-hA-X9O"/>
+                        <outletCollection property="allLabelsArr" destination="MzB-B9-h56" collectionClass="NSMutableArray" id="Bxo-vb-vf4"/>
+                        <outletCollection property="allLabelsArr" destination="C5M-wT-eZ6" collectionClass="NSMutableArray" id="f53-NE-GgP"/>
+                        <outletCollection property="allLabelsArr" destination="WEm-wp-UqL" collectionClass="NSMutableArray" id="xeM-po-h26"/>
+                        <outletCollection property="allLabelsArr" destination="4fG-zw-wdV" collectionClass="NSMutableArray" id="d9d-Cz-04T"/>
+                        <outletCollection property="allLabelsArr" destination="wxr-s5-HWx" collectionClass="NSMutableArray" id="QxA-sx-mfg"/>
+                        <outletCollection property="allLabelsArr" destination="wqE-uL-HSY" collectionClass="NSMutableArray" id="s2m-Cq-eCv"/>
+                        <outletCollection property="allLabelsArr" destination="DzJ-EV-vXF" collectionClass="NSMutableArray" id="pbh-e6-Gtz"/>
+                        <outletCollection property="allLabelsArr" destination="sBu-sg-jod" collectionClass="NSMutableArray" id="eQ2-SY-RDF"/>
+                        <outletCollection property="allLabelsArr" destination="AHi-yl-qXS" collectionClass="NSMutableArray" id="eMD-Ra-iHw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

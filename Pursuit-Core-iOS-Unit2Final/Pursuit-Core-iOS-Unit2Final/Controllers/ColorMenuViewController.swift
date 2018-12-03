@@ -50,7 +50,10 @@ extension ColorMenuViewController: UITableViewDataSource {
         cell.detailTextLabel?.text = crayon.hex
         cell.backgroundColor = color
         
-        //if background-color is too dark change the text-color to a lighter color
+        if CrayonBrain.isScreenTooDim(luma: CrayonBrain.rgbToLuma(crayon.red, crayon.green, crayon.blue), alpha: 1) {
+            cell.textLabel?.textColor = .white
+            cell.detailTextLabel?.textColor = .white
+        }
         
         return cell
     }

@@ -28,17 +28,34 @@ class DetailColorViewController: UIViewController {
     
     var slidersArr: [UISlider]!
     var colorValueLabelsArr: [UILabel]!
-    var colorValuesArr: [Double]!
+    var colorValuesArr: [Double]! {
+        didSet {
+            luma = CrayonBrain.rgbToLuma(colorValuesArr[0], colorValuesArr[1], colorValuesArr[2])
+        }
+    }
     
     var crayon: Crayon!
     var defaultColor: UIColor!
     
-    var alphaValue: Double! //{
-//        didSet {
-//
-//        }
-//    }
+    var luma: Double! {
+        didSet {
+            let result = CrayonBrain.isScreenTooDim(luma: luma, alpha: alphaValue)
+            if result != screenTooDim { screenTooDim = result }
+        }
+    }
+    var alphaValue:Double = 1 {
+        didSet {
+            let result = CrayonBrain.isScreenTooDim(luma: luma, alpha: alphaValue)
+            if result != screenTooDim { screenTooDim = result }
+        }
+    }
     
+    var screenTooDim = false {
+        didSet {
+            changeAllLabelColors()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +82,7 @@ class DetailColorViewController: UIViewController {
     
     //action for stepper
     @IBAction func stepperChange(_ stepper: UIStepper) {
-        let alphaValue = stepper.value / 10
+        alphaValue = stepper.value / 10
         
         self.view.backgroundColor = CrayonBrain.rGBtoUIColor(red: colorValuesArr[0], green: colorValuesArr[1], blue: colorValuesArr[2], alpha: alphaValue)
         
@@ -79,10 +96,14 @@ class DetailColorViewController: UIViewController {
         setDefaultSetting()
     }
     
-    func setDefaultSetting() {
+    
+    //functions
+    private func setDefaultSetting() {
         //setup colors & alpha
         colorValuesArr = [crayon.red, crayon.green, crayon.blue]
+        luma = CrayonBrain.rgbToLuma(crayon.red, crayon.green, crayon.blue)
         alphaValue = 1
+        
         
         //setup slider
         for (i, slider) in slidersArr.enumerated() {
@@ -99,5 +120,13 @@ class DetailColorViewController: UIViewController {
         
         alphaStepper.value = 10
         alphaValueLabel.text = "\(alphaStepper.value / 10)"
+    }
+    
+    private func changeAllLabelColors() {
+        if screenTooDim {
+            allLabelsArr.forEach {$0.textColor = .white}
+        } else {
+            allLabelsArr.forEach {$0.textColor = .black}
+        }
     }
 }
