@@ -77,43 +77,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clc-T6-e0J">
-                                <rect key="frame" x="8" y="96" width="398" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="8" y="96" width="398" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kJH-0Q-kh0">
-                                <rect key="frame" x="15" y="165" width="384" height="31"/>
+                                <rect key="frame" x="15" y="175.5" width="384" height="31"/>
+                                <connections>
+                                    <action selector="redSliderAction:" destination="juG-bl-LvU" eventType="valueChanged" id="kTm-c0-ZQa"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVh-UZ-s8x">
-                                <rect key="frame" x="8" y="219" width="398" height="21"/>
+                                <rect key="frame" x="8" y="229.5" width="398" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="j2n-VY-jtM">
-                                <rect key="frame" x="15" y="275" width="384" height="31"/>
+                                <rect key="frame" x="15" y="285.5" width="384" height="31"/>
+                                <connections>
+                                    <action selector="greenSliderAction:" destination="juG-bl-LvU" eventType="valueChanged" id="yIu-sQ-WHQ"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gag-Ao-sMC">
-                                <rect key="frame" x="8" y="329" width="398" height="21"/>
+                                <rect key="frame" x="8" y="339.5" width="398" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TlI-oM-mS3">
-                                <rect key="frame" x="15" y="385" width="384" height="31"/>
+                                <rect key="frame" x="15" y="395.5" width="384" height="31"/>
+                                <connections>
+                                    <action selector="blueSliderAction:" destination="juG-bl-LvU" eventType="valueChanged" id="TtG-7D-m6g"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJb-qk-wg4">
-                                <rect key="frame" x="8" y="439" width="398" height="21"/>
+                                <rect key="frame" x="8" y="449.5" width="398" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ikY-Vb-HSR">
-                                <rect key="frame" x="160" y="510" width="94" height="32"/>
+                                <rect key="frame" x="160" y="520.5" width="94" height="32"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZV-cA-ePO">
-                                <rect key="frame" x="8" y="566" width="398" height="21"/>
+                                <rect key="frame" x="8" y="576.5" width="398" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -160,12 +169,12 @@
                         <outlet property="alphaLabel" destination="hZV-cA-ePO" id="2ck-ed-02S"/>
                         <outlet property="alphaStepper" destination="ikY-Vb-HSR" id="WLb-90-hPH"/>
                         <outlet property="blueLabel" destination="uJb-qk-wg4" id="Nrk-p0-Vta"/>
-                        <outlet property="blueSlider" destination="TlI-oM-mS3" id="KPN-Wx-jNu"/>
+                        <outlet property="blueSliderLabel" destination="TlI-oM-mS3" id="KPN-Wx-jNu"/>
                         <outlet property="crayonNameLabel" destination="clc-T6-e0J" id="MrB-Pt-ZKt"/>
                         <outlet property="greenLabel" destination="gag-Ao-sMC" id="xR9-dN-Pmo"/>
-                        <outlet property="greenSlider" destination="j2n-VY-jtM" id="MzN-23-QH9"/>
+                        <outlet property="greenSliderLabel" destination="j2n-VY-jtM" id="MzN-23-QH9"/>
                         <outlet property="redLabel" destination="dVh-UZ-s8x" id="eiz-FL-aNU"/>
-                        <outlet property="redSlider" destination="kJH-0Q-kh0" id="l3D-cZ-XGF"/>
+                        <outlet property="redSliderLabel" destination="kJH-0Q-kh0" id="l3D-cZ-XGF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33v-Zr-Ecd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

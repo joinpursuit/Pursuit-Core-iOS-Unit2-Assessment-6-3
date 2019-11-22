@@ -53,6 +53,7 @@ class ViewController: UIViewController {
                                        alpha: 1)
         crayonDVC.cray = crayola
         crayonDVC.view.backgroundColor = aColor
+        crayonDVC.updateUI(for: crayola)
 }
 
 }

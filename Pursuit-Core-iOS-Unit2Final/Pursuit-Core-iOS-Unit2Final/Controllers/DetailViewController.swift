@@ -14,41 +14,92 @@ class DetailViewController: UIViewController {
     var cray: Crayon!
 
     @IBOutlet weak var crayonNameLabel: UILabel!
-    @IBOutlet weak var crayonHexLabel: UILabel!
     
-    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var redSliderLabel: UISlider!
     @IBOutlet weak var redLabel: UILabel!
     
-    
-    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var greenSliderLabel: UISlider!
     @IBOutlet weak var greenLabel: UILabel!
     
-    
-    
-    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var blueSliderLabel: UISlider!
     @IBOutlet weak var blueLabel: UILabel!
-    
-    
     
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var alphaLabel: UILabel!
     
+   
+    var redSlider: Float = 0.0 {
+        didSet {
+            redLabel.text = redSliderLabel.value.description
+        }
+    }
+    
+    var greenSlider: Float = 0.0 {
+        didSet {
+            greenLabel.text = greenSliderLabel.value.description
+        }
+    }
+    
+    var blueSlider: Float = 0.0 {
+        didSet {
+            blueLabel.text = blueSliderLabel.value.description
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
-
-
+        configuredRedSlider()
+        configuredGreenSlider()
+        configuredBlueSlider()
+    
     }
 
-    func updateUI() {
+    func updateUI(for crayon: Crayon) {
         guard let theCrayon = cray else {
             fatalError("error")
         }
         title = theCrayon.name
-        
+        crayonNameLabel.text = crayon.name
     }
 
+    func configuredRedSlider() {
+        redSliderLabel.minimumValue = 0.0
+        redSliderLabel.maximumValue = 1.0
+        redSliderLabel.value = 0.7
+    }
+    
+    func configuredGreenSlider() {
+        greenSliderLabel.maximumValue = 0.0
+        greenSliderLabel.maximumValue = 1.0
+        greenSliderLabel.value = 0.7
+    }
+    
+    func configuredBlueSlider() {
+        blueSliderLabel.minimumValue = 0.0
+        blueSliderLabel.maximumValue = 1.0
+        blueSliderLabel.value = 0.7
+    }
+    
+    @IBAction func redSliderAction(_ sender: UISlider) {
+       redSlider = sender.value
+        let backgroundColor = UIColor(red: CGFloat(sender.value), green: CGFloat(0),blue: CGFloat(0),alpha:1.0)
+        view.backgroundColor = backgroundColor
+    }
+    
+    @IBAction func greenSliderAction(_ sender: UISlider) {
+        greenSlider = sender.value
+        let backgroundColor = UIColor(red: CGFloat(0), green: CGFloat(sender.value),blue: CGFloat(0),alpha:1.0)
+        view.backgroundColor = backgroundColor
+    }
+    
+    
+    @IBAction func blueSliderAction(_ sender: UISlider) {
+        blueSlider = sender.value
+        let backgroundColor = UIColor(red: CGFloat(0), green: CGFloat(),blue: CGFloat(sender.value),alpha:1.0)
+               view.backgroundColor = backgroundColor
+    }
+    
+    
 
 }
