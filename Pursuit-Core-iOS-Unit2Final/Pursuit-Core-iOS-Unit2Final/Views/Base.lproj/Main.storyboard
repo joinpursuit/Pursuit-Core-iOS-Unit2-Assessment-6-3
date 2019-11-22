@@ -147,6 +147,17 @@
                         <viewLayoutGuide key="safeArea" id="Hjm-ZZ-CDS"/>
                     </view>
                     <navigationItem key="navigationItem" id="Oaf-PC-o0I"/>
+                    <connections>
+                        <outlet property="alphaLabel" destination="rUi-3v-C0B" id="pPb-bN-d2g"/>
+                        <outlet property="alphaStepper" destination="zrh-7f-kQ9" id="DD4-Jm-Deq"/>
+                        <outlet property="blueLabel" destination="nvR-Cb-Jth" id="XaV-zS-2jd"/>
+                        <outlet property="blueSlider" destination="2wX-eS-Rm3" id="kAV-vw-2xE"/>
+                        <outlet property="colorNameLabel" destination="Kxf-8F-3nd" id="RdA-0g-Blb"/>
+                        <outlet property="greenLabel" destination="X6p-vC-hIZ" id="95v-OM-MtQ"/>
+                        <outlet property="greenSlider" destination="aTZ-Kz-Dgb" id="GuB-ky-XUU"/>
+                        <outlet property="redLabel" destination="WVd-Fp-BQe" id="yc1-Yd-yOh"/>
+                        <outlet property="redSlider" destination="RgB-Fa-HNn" id="a3c-JK-Mf8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ivj-oE-Irt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
