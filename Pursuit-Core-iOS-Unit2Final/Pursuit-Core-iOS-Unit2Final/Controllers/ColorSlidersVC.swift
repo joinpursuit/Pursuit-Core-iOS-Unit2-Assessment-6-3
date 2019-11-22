@@ -56,27 +56,26 @@ class ColorSlidersVC: UIViewController {
             alphaLabel.text = "Alpha: \(value)"
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
         view.backgroundColor = configureBGColor()
+        configure()
         title = currentColor?.name
     }
-    
     
     func configure() {
         blueSlider.minimumValue = 0.0
         blueSlider.maximumValue = 1.0
-        blueSlider.value = 1.0
+        blueSlider.value = Float(currentColor?.blue ?? 1.0) / 255
         
         greenSlider.minimumValue = 0.0
         greenSlider.maximumValue = 1.0
-        greenSlider.value = 1.0
+        greenSlider.value = Float(currentColor?.green ?? 1.0) / 255
         
         redSlider.minimumValue = 0.0
         redSlider.maximumValue = 1.0
-        redSlider.value = 1.0
+        redSlider.value = Float(currentColor?.red ?? 1.0) / 255
         
         alphaStepper.minimumValue = 0.0
         alphaStepper.maximumValue = 1.0
@@ -91,28 +90,37 @@ class ColorSlidersVC: UIViewController {
         return UIColor(red: red, green: green, blue: blue, alpha: 1)
     }
     
-    
+    func getNewBackgroundColor() -> UIColor {
+        let red = updatedRed ?? 1.0
+        let blue = updatedBlue ?? 1.0
+        let green = updatedGreen ?? 1.0
+        let alpha = updatedAlpha ?? 1.0
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
     
     
     @IBAction func redAction(_ sender: UISlider) {
         newRed = sender.value
         updatedRed = CGFloat(sender.value)
-        
+        view.backgroundColor = getNewBackgroundColor()
     }
     
     @IBAction func blueAction(_ sender: UISlider) {
         newBlue = sender.value
         updatedBlue = CGFloat(sender.value)
+        view.backgroundColor = getNewBackgroundColor()
     }
     
     @IBAction func greenAction(_ sender: UISlider) {
         newGreen = sender.value
         updatedGreen = CGFloat(sender.value)
+        view.backgroundColor = getNewBackgroundColor()
     }
     
     @IBAction func alphaAction(_ sender: UIStepper) {
         newAlpha = sender.value
         updatedAlpha = CGFloat(sender.value)
+        view.backgroundColor = getNewBackgroundColor()
     }
     
 }
