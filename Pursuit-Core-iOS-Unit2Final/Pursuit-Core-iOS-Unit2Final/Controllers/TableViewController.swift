@@ -10,9 +10,13 @@ import UIKit
 
 class TableViewController: UIViewController {
 
+    // MARK: Outlets of TableViewController
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: Properties of TableViewController
     var colours: [Crayon] = []
     
+    // MARK: Lifecycle Methods
   override func viewDidLoad() {
     super.viewDidLoad()
     setUp()
@@ -20,16 +24,19 @@ class TableViewController: UIViewController {
     tableView.delegate = self
   }
 
+    // MARK: Helper Methods
     private func setUp(){
         colours = Crayon.allTheCrayons
     }
     
+    // MARK: Other Methods
     @IBAction func bringingBackTheColour(from segue: UIStoryboardSegue){
         
     }
 
 }
 
+// MARK: DataSource Methods
 extension TableViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colours.count
@@ -44,6 +51,7 @@ extension TableViewController: UITableViewDataSource{
     }
 }
 
+// MARK: TableViewDelegate Methods
 extension TableViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newStoryboard = UIStoryboard(name: "SecondStoryboard", bundle: nil)
