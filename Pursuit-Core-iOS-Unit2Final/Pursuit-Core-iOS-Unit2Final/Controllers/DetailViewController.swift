@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
     func alphaStepperControl() {
         alphaStepper.minimumValue = 0.1
         alphaStepper.maximumValue = 1.0
-        alphaStepper.value = 0.2
+        alphaStepper.value = 1.0
         alphaStepper.stepValue = 0.1
     }
 }

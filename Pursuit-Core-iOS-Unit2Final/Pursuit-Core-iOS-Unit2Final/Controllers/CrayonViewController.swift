@@ -24,9 +24,12 @@ class CrayonViewController: UIViewController {
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("prepareForSegue")
     
-    guard let detailViewController = segue.destination as? DetailViewController else {
+    guard let detailViewController = segue.destination as? DetailViewController,
+        let crayonItem = tableView.indexPathForSelectedRow else {
         fatalError("no destination")
     }
+    
+    detailViewController.navigationItem.title = crayons[crayonItem.row].name
     }
 
 }
@@ -39,6 +42,12 @@ extension CrayonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
         
+        let crayonValues = crayons[indexPath.row]
+        
+        cell.textLabel?.text = crayonValues.name
+        cell.detailTextLabel?.text = crayonValues.hex
+        cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayonValues.red), green: CGFloat(crayonValues.green), blue: CGFloat(crayonValues.blue), alpha: 1.0)
+        // UIColor(displayP3Red:green:blue:alpha:)
         
         return cell
     }
