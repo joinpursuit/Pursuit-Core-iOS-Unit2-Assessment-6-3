@@ -9,12 +9,52 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var crayons = [Crayon]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    tableView.dataSource = self
+    loadData()
   }
+    
+    func loadData() {
+        crayons = Crayon.allTheCrayons
+    }
 
 
 }
 
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        crayons.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        
+        let crayon = crayons[indexPath.row]
+        
+        // configure cell:
+        // - add name as title
+        // - add hex as subtitle
+        // - cell color should be the color of the of the crayon
+        
+        cell.textLabel?.text = crayon.name
+        cell.detailTextLabel?.text = crayon.hex
+        cell.textLabel?.textColor = .white
+        cell.detailTextLabel?.textColor = .white
+        cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red/255.0), green: CGFloat(crayon.green/255.0) , blue: CGFloat(crayon.blue/255.0), alpha: 1.0)
+        
+        return cell 
+    }
+    
+    
+}
