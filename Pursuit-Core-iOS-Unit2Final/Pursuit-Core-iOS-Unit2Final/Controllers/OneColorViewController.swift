@@ -39,56 +39,52 @@ class OneColorViewController: UIViewController {
         
         nameOfCrayonLabel.text = newCrayon.name
         redSliderLabel.value = Float(newCrayon.red/255)
-        redValueSliderLabel.text = "Red Value is \(redSliderLabel.value)"
+        redValueSliderLabel.text = "Red Value is \(String(format: "%.2f", redSliderLabel.value))"
         greenSliderLabel.value = Float(newCrayon.green/255)
-        greenValueSliderLabel.text = "Green Value is \(greenSliderLabel.value)"
+        greenValueSliderLabel.text = "Green Value is \(String(format: "%.2f", greenSliderLabel.value))"
         blueSliderLabel.value = Float(newCrayon.blue/255)
-        blueValueSliderLabel.text = "Blue Value is \(greenSliderLabel.value)"
+        blueValueSliderLabel.text = "Blue Value is \(String(format: "%.2f", greenSliderLabel.value))"
         alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
-        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(greenSliderLabel.value), alpha: 1)
+        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(greenSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
     }
     
     func configureRedSlider() {
         redSliderLabel.minimumValue = 0.0
         redSliderLabel.maximumValue = 1.0
-        //redSliderLabel.value = Float(crayon.red)
     }
     
     func configureGreenSlider() {
         greenSliderLabel.minimumValue = 0.0
         greenSliderLabel.maximumValue = 1.0
-        //greenSliderLabel.value = Float(crayon.green) //17
     }
     
     func configureBlueSlider() {
         blueSliderLabel.minimumValue = 0.0
         blueSliderLabel.maximumValue = 1.0
-        //blueSliderLabel.value = Float(crayon.blue) //17
     }
     
     func configureStepper() {
         alphaStepperLabel.minimumValue = 0.0
         alphaStepperLabel.maximumValue = 1.0
         alphaStepperLabel.stepValue = 0.1
-        alphaStepperLabel.value = 1.0 //17.0
+        alphaStepperLabel.value = 1.0
     }
     
     @IBAction func redSliderAction(_ sender: UISlider) {
         redSliderLabel.value = sender.value
-        redValueSliderLabel.text = "Red Value is \(redSliderLabel.value)"
+        redValueSliderLabel.text = "Red Value is \(String(format: "%.2f", redSliderLabel.value))"
         view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
-        
     }
     
     @IBAction func greenSliderAction(_ sender: UISlider) {
         greenSliderLabel.value = sender.value
-        greenValueSliderLabel.text = "Green Value is \(greenSliderLabel.value)"
+        greenValueSliderLabel.text = "Green Value is \(String(format: "%.2f", greenSliderLabel.value))"
         view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
     }
     
     @IBAction func blueSliderAction(_ sender: UISlider) {
         blueSliderLabel.value = sender.value
-        blueValueSliderLabel.text = "Blue Value is \(blueSliderLabel.value)"
+        blueValueSliderLabel.text = "Blue Value is \(String(format: "%.2f", blueSliderLabel.value))"
         view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
     }
     
