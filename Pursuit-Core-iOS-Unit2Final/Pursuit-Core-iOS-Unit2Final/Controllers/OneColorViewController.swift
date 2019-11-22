@@ -13,10 +13,6 @@ class OneColorViewController: UIViewController {
     // HERE WILL BE OBJECT FOR PREPARE FOR SEGUE FUNC
     var crayon: Crayon?
     
-//    guard let newCrayon = crayon else {
-//        fatalError("I did not prepare for the segue correctly")
-//    }
-    
     @IBOutlet weak var nameOfCrayonLabel: UILabel!
     @IBOutlet weak var redSliderLabel: UISlider!
     @IBOutlet weak var redValueSliderLabel: UILabel!
@@ -85,24 +81,25 @@ class OneColorViewController: UIViewController {
 //               }
         redSliderLabel.value = sender.value
         redValueSliderLabel.text = "Red Value is \(redSliderLabel.value)"
-        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: 1)
+        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
         
     }
     
     @IBAction func greenSliderAction(_ sender: UISlider) {
         greenSliderLabel.value = sender.value
         greenValueSliderLabel.text = "Green Value is \(greenSliderLabel.value)"
-               view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: 1)
+               view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
     }
     
     @IBAction func blueSliderAction(_ sender: UISlider) {
         blueSliderLabel.value = sender.value
         blueValueSliderLabel.text = "Blue Value is \(blueSliderLabel.value)"
-        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: 1)
+        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
     }
     
     @IBAction func stepperAction(_ sender: UIStepper) {
         alphaStepperLabel.value = sender.value
+        alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
@@ -115,9 +112,9 @@ class OneColorViewController: UIViewController {
         greenValueSliderLabel.text = "Green Value is \(newCrayon.green)"
         blueSliderLabel.value = Float(newCrayon.blue/255)
         blueValueSliderLabel.text = "Blue Value is \(newCrayon.blue)"
+        alphaStepperLabel.value = 1.0
         alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
         view.backgroundColor = UIColor(red: CGFloat(newCrayon.red/255), green: CGFloat(newCrayon.green/255), blue: CGFloat(newCrayon.blue/255), alpha: 1)
-        
     }
     
     
