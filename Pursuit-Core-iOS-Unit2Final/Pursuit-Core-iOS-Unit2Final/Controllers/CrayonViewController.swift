@@ -48,7 +48,6 @@ extension CrayonViewController: UITableViewDataSource {
         cell.textLabel?.text = crayonValues.name
         cell.detailTextLabel?.text = crayonValues.hex
         cell.backgroundColor = UIColor(displayP3Red: CGFloat(crayonValues.red / 255), green: CGFloat(crayonValues.green / 255), blue: CGFloat(crayonValues.blue / 255), alpha: 1.0)
-        // UIColor(displayP3Red:green:blue:alpha:)
         
         if cell.textLabel?.text == "Black" {
             cell.textLabel?.textColor = .white

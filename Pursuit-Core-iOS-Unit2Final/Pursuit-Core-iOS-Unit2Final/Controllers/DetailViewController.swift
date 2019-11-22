@@ -61,13 +61,13 @@ class DetailViewController: UIViewController {
     func alphaSliderValues() {
         alphaSlider.minimumValue = 0.1
         alphaSlider.maximumValue = 1.0
-        alphaSlider.value = 0.2
+        alphaSlider.value = 0.1
     }
     
     func alphaStepperValues() {
         alphaStepper.minimumValue = 0.1
         alphaStepper.maximumValue = 1.0
-        alphaStepper.value = 0.2
+        alphaStepper.value = 0.1
         alphaStepper.stepValue = 0.1
     }
     
@@ -76,20 +76,24 @@ class DetailViewController: UIViewController {
     
     @IBAction func redAction(_ sender: UISlider) {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(sender.value / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: 1.0)
+        redTextLabel.text = "Red: \(round(sender.value))"
 
     }
     
     
     @IBAction func greenAction(_ sender: UISlider) {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(sender.value / 255), blue: CGFloat(crayon.blue / 255), alpha: 1.0)
+        greenTextLabel.text = "Green: \(round(sender.value))"
     }
     
     @IBAction func blueAction(_ sender: UISlider) {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(sender.value / 255), alpha: 1.0)
+        blueTextLabel.text = "Blue: \(round(sender.value))"
     }
     
     @IBAction func alphaAction(_ sender: UISlider) {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: CGFloat(sender.value))
+        alphaTextLabel.text = "Alpha: \(sender.value)"
         alphaStepper.value = Double(sender.value)
         
     }
@@ -97,6 +101,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func stepperAction(_ sender: UIStepper) {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: CGFloat(sender.value))
+        alphaTextLabel.text = "Alpha: \(sender.value)"
         alphaSlider.value = Float(sender.value)
     }
     
