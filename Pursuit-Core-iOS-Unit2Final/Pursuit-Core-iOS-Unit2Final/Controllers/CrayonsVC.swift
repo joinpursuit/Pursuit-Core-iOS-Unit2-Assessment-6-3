@@ -25,6 +25,12 @@ class CrayonsVC: UIViewController {
     crayons = Crayon.allTheCrayons
   }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let colorSliderVC = segue.destination as? ColorSlidersVC, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("at segue")
+        }
+        colorSliderVC.currentColor = crayons[indexPath.row]
+    }
     
 
 }
@@ -45,6 +51,8 @@ extension CrayonsVC: UITableViewDataSource {
         cell.textLabel?.text = crayonColor.name
         cell.detailTextLabel?.text = crayonColor.hex
         cell.backgroundColor = UIColor(red: redAsCGFloat, green: greenAsCGFloat, blue: blueAsCGFloat, alpha: 1)
+        cell.textLabel?.textColor = .white
+        cell.detailTextLabel?.textColor = .white
         
         return cell
     }

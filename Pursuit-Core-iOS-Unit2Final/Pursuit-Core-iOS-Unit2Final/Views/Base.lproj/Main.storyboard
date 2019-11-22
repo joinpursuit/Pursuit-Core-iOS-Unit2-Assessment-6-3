@@ -79,13 +79,22 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kua-G6-Gw7">
                                 <rect key="frame" x="18" y="323" width="378" height="31"/>
                                 <color key="tintColor" red="1" green="0.0093617555430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="redAction:" destination="Qtv-32-kRg" eventType="valueChanged" id="aJ4-Go-1Nf"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="weo-Ji-SwZ">
                                 <rect key="frame" x="18" y="433" width="378" height="31"/>
+                                <connections>
+                                    <action selector="blueAction:" destination="Qtv-32-kRg" eventType="valueChanged" id="vwN-Ob-IEf"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JcP-Bb-cmr">
                                 <rect key="frame" x="18" y="543" width="378" height="31"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="greenAction:" destination="Qtv-32-kRg" eventType="valueChanged" id="kgk-Sm-JgU"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0j-qF-xXu">
                                 <rect key="frame" x="0.0" y="361" width="414" height="21"/>
@@ -107,13 +116,22 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="bjg-0b-MRY">
                                 <rect key="frame" x="160" y="652" width="94" height="32"/>
+                                <connections>
+                                    <action selector="alphaAction:" destination="Qtv-32-kRg" eventType="valueChanged" id="1CT-AG-dgf"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZQ-y2-IRy">
                                 <rect key="frame" x="0.0" y="692" width="414" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCE-4M-nNi">
+                                <rect key="frame" x="187.5" y="840" width="39" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <state key="normal" title="Reset"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -124,6 +142,8 @@
                             <constraint firstItem="xAK-a2-J9w" firstAttribute="trailing" secondItem="kua-G6-Gw7" secondAttribute="trailing" constant="20" id="7qU-15-unt"/>
                             <constraint firstItem="kua-G6-Gw7" firstAttribute="leading" secondItem="xAK-a2-J9w" secondAttribute="leading" constant="20" id="CHr-Ay-CnW"/>
                             <constraint firstItem="weo-Ji-SwZ" firstAttribute="centerY" secondItem="aE5-7W-5iN" secondAttribute="centerY" id="Gse-ON-sZ5"/>
+                            <constraint firstItem="OCE-4M-nNi" firstAttribute="bottom" secondItem="xAK-a2-J9w" secondAttribute="bottom" constant="8" id="TMM-nI-te9"/>
+                            <constraint firstItem="OCE-4M-nNi" firstAttribute="centerX" secondItem="aE5-7W-5iN" secondAttribute="centerX" id="TQf-IC-T0Z"/>
                             <constraint firstItem="m0j-qF-xXu" firstAttribute="top" secondItem="kua-G6-Gw7" secondAttribute="bottom" constant="8" id="VhL-f8-X5c"/>
                             <constraint firstItem="JcP-Bb-cmr" firstAttribute="leading" secondItem="xAK-a2-J9w" secondAttribute="leading" constant="20" id="cwZ-uI-vQe"/>
                             <constraint firstItem="JcP-Bb-cmr" firstAttribute="top" secondItem="weo-Ji-SwZ" secondAttribute="bottom" constant="80" id="dz8-J2-T3G"/>
@@ -145,6 +165,16 @@
                         <viewLayoutGuide key="safeArea" id="xAK-a2-J9w"/>
                     </view>
                     <navigationItem key="navigationItem" id="YcG-uo-CQI"/>
+                    <connections>
+                        <outlet property="alphaLabel" destination="gZQ-y2-IRy" id="b9U-ER-bvi"/>
+                        <outlet property="alphaStepper" destination="bjg-0b-MRY" id="Sd1-Xx-581"/>
+                        <outlet property="blueLabel" destination="wJ7-fF-Zze" id="Bl4-gj-wuB"/>
+                        <outlet property="blueSlider" destination="weo-Ji-SwZ" id="C6P-j0-WjQ"/>
+                        <outlet property="greenLabel" destination="RUh-LH-mQc" id="RD0-aR-znu"/>
+                        <outlet property="greenSlider" destination="JcP-Bb-cmr" id="mSh-Iy-zob"/>
+                        <outlet property="redLabel" destination="m0j-qF-xXu" id="EPa-bX-kfL"/>
+                        <outlet property="redSlider" destination="kua-G6-Gw7" id="kAx-Mq-PPg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVf-yP-4md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
