@@ -23,37 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var alphaStepper: UIStepper!
     @IBOutlet weak var alphaColorLabel: UILabel!
     
-    var crayonColor:Crayon?{
-        didSet{
-            print("Crayon is changing")
-            updateUI()
-        }
-    }
     
- 
-//    var redCurrentValColor = crayonColor?.red{
-//        didSet{
-//            updateUI()
-//        }
-//    }
-//
-//    var greenCurrentValColor:Double?{
-//        didSet{
-//            updateUI()
-//        }
-//    }
-//
-//    var blueCurrentValColor:Double?{
-//        didSet{
-//            updateUI()
-//        }
-//    }
-//
-//    var alphaCurrentVal:Double?{
-//        didSet{
-//            updateUI()
-//        }
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,19 +32,25 @@ class DetailViewController: UIViewController {
         updateUI()
         // Do any additional setup after loading the view.
     }
-    
+    var crayonColor:Crayon?{
+        didSet{
+            print("Crayon is changing")
+            updateUI()
+        }
+    }
+
     @IBAction func redValChangedSlider(_ sender: UISlider) {
-        crayonColor?.red = Double(sender.value)
-        //print(crayonColor?.red)
+        crayonColor?.red = Double(sender.value) * 255.0
+        print("ib" ,crayonColor?.red)
     }
     
     @IBAction func greenValChangedSlider(_ sender: UISlider) {
-        crayonColor?.green = Double(sender.value)
+        crayonColor?.green = Double(sender.value) * 255.0
         //print(crayonColor?.green)
     }
     
     @IBAction func blueValChangedSlider(_ sender: UISlider) {
-        crayonColor?.blue = Double(sender.value)
+        crayonColor?.blue = Double(sender.value) * 255.0
         //print(crayonColor?.blue)
     }
     
@@ -94,21 +70,22 @@ class DetailViewController: UIViewController {
         
         crayonName?.text = validCrayonColor.name
         
-        redColorSlider?.value = Float((validCrayonColor.red))
-        print(redColorSlider?.value)
-        redColorLabel?.text = "Red Value: \(String(format: "%0.0f",(validCrayonColor.red)))"
+        redColorSlider?.value = (Float((validCrayonColor.red))) / 255.0
+        print("funcUI", redColorSlider?.value)
+        print("funcUI", validCrayonColor.red)
+        redColorLabel?.text = "Red Value: \(String(format: "%0.f",(redColorSlider.value)))"
         //print("\(String(format: "%0.f", (validCrayonColor.red/255.0)))")
         
-        greenColorSlider?.value = Float((validCrayonColor.green))
-        greenColorLabel?.text = "Green Value: \(String(format:"%0.0f",(validCrayonColor.green)))"
+        greenColorSlider?.value = (Float((validCrayonColor.green))) / 255.0
+        greenColorLabel?.text = "Green Value: \(String(format:"%0.f",(greenColorSlider.value)))"
         
-        blueColorSlider?.value = Float((validCrayonColor.blue))
-        blueColorLabel?.text = "Blue Value: \(String(format: "%0.0f", (validCrayonColor.blue)))"
+        blueColorSlider?.value = (Float((validCrayonColor.blue))) / 255.0
+        blueColorLabel?.text = "Blue Value: \(String(format: "%0.f", (blueColorSlider.value)))"
         
         alphaStepper?.value = 1.0
-        alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.0f", (alphaStepper.value)))"
+        alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.f", (alphaStepper.value)))"
         
-        view.backgroundColor = UIColor(displayP3Red: CGFloat((validCrayonColor.red)), green: CGFloat((validCrayonColor.green)), blue: CGFloat(validCrayonColor.blue), alpha: CGFloat(1))
+        view.backgroundColor = UIColor(displayP3Red: CGFloat((redColorSlider.value)), green: CGFloat((greenColorSlider.value)), blue: CGFloat(blueColorSlider.value), alpha: CGFloat(1))
     }
     
     func configureSlider(){
