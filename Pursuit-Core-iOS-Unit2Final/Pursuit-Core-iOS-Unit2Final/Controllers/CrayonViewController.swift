@@ -39,7 +39,6 @@ extension CrayonViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
         
-        cell.textLabel?.text = Crayon.singleCrayon()
         
         return cell
     }
