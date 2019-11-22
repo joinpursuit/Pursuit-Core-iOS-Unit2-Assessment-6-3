@@ -37,50 +37,11 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
         let color = crayonColors[indexPath.row]
         cell.textLabel?.text = color.name
+        cell.textLabel?.textColor = .white
         cell.detailTextLabel?.text = color.hex
+        cell.detailTextLabel?.textColor = .white
+        cell.backgroundColor = UIColor(red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1)
         return cell
     }
 }
 
-
-//    var animals = [ZooAnimal]() {
-//        didSet { //property observer - want automatically reload tableview
-//            tableView.reloadData()
-//        }
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        tableView.dataSource = self
-//        loadData()
-//    }
-//
-//    func loadData() {
-//        animals = ZooAnimal.zooAnimals
-//    }
-//
-//
-//}
-//
-//extension BasicAnimalCellController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return animals.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-////        this is for custom cells
-////        let cell = tableView.dequeueReusableCell(withIdentifier: "animalCell", for: indexPath)
-//
-//        //this is using a default cell
-//
-//        let cell = UITableViewCell()
-//
-//        // get current animal
-//        let animal = animals[indexPath.row]
-//
-//        // configure cell to be a "subtitle"
-//        cell.imageView?.image = UIImage(named: animal.imageNumber.description) // gives us String instead of Intr
-//        cell.textLabel?.text = animal.name
-//        cell.detailTextLabel?.text = animal.origin
-//        return cell
-//    }
