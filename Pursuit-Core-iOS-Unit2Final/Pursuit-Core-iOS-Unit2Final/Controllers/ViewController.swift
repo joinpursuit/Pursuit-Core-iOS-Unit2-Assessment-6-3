@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         allTheCrayons = Crayon.allTheCrayons
         
     }
+    
+
 }
 // Step 2: conform to UITableViewDataSource
 extension ViewController: UITableViewDataSource {
@@ -49,8 +51,23 @@ extension ViewController: UITableViewDataSource {
         cell.textLabel?.text = color.name
         cell.detailTextLabel?.text = color.hex
         
+        //key to cell color change???
+        //func colorForIndex(index: Int) -> UIColor {
+           // let itemCount = tableData.count - 1
+           // let color = (CGFloat(index) / CGFloat(itemCount)) * 0.6
+           // return UIColor(red: 1.0, green: color, blue: 0.0, alpha: 1.0)
+       // }
+         
+        if color.red == 0 && color.green == 0 && color.blue == 0 {
+            cell.textLabel?.textColor = .white
+            cell.detailTextLabel?.textColor = .white
+            cell.backgroundColor = UIColor(red: CGFloat(color.red)/CGFloat(255), green: CGFloat(color.green)/CGFloat(255), blue: CGFloat(color.blue)/CGFloat(255), alpha: 0.80)
+        } else {
+            cell.backgroundColor = UIColor(red: CGFloat(color.red)/CGFloat(255), green: CGFloat(color.green)/CGFloat(255), blue: CGFloat(color.blue)/CGFloat(255), alpha: 0.80)
+            
+        }
         return cell
     }
     
-    
+
 }
