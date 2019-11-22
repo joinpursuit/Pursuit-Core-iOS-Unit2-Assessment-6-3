@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Crayon {
+struct Crayon {
   var name: String
   var red: Double
   var green: Double
