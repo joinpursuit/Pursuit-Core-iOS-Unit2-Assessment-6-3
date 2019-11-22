@@ -35,18 +35,18 @@ class DetailViewController: UIViewController {
     
     var crayon: Crayon?
     
-//    var redSliderValue: CGFloat? {
-//        didSet {
-//            updateUI()
-//        }
-//    }
+    //    var redSliderValue: CGFloat? {
+    //        didSet {
+    //            updateUI()
+    //        }
+    //    }
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-   // configureRedSlider()
+        // configureRedSlider()
         updateUI()
-       
+        
     }
     
     func updateUI() {
@@ -67,7 +67,7 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func colorChangeSlider(_ sender: UISlider) {
-       // redSlider.value = sender.value
+        // redSlider.value = sender.value
         redSliderLabel.text = "Red: \(String(format: "%.2f", redSlider.value))"
         greenSliderLabel.text = "Green: \(String(format: "%.2f", greenSlider.value))"
         blueSliderLabel.text = "Blue: \(String(format: "%.2f", blueSlider.value))"
@@ -75,8 +75,8 @@ class DetailViewController: UIViewController {
         let green = greenSlider.value
         let blue = blueSlider.value
         view.backgroundColor = UIColor(red: CGFloat(red), green:  CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alphaStepper.value))
-//        redSliderValue = CGFloat(sender.value)
-       
+        //        redSliderValue = CGFloat(sender.value)
+        
     }
     
     

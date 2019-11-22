@@ -19,12 +19,12 @@ class ViewController: UIViewController {
         }
     }
     
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    loadData()
-    tableView.dataSource = self
-    
-  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadData()
+        tableView.dataSource = self
+        
+    }
     
     func loadData() {
         crayons = Crayon.allTheCrayons
@@ -48,13 +48,11 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
         let crayon = crayons[indexPath.row]
-       let crayonColor = UIColor.init(red: CGFloat(crayon.red / 255.0 ), green: CGFloat(crayon.green / 255.0 ), blue: CGFloat(crayon.blue / 255.0), alpha: 1)
-       
-
+        let crayonColor = UIColor.init(red: CGFloat(crayon.red / 255.0 ), green: CGFloat(crayon.green / 255.0 ), blue: CGFloat(crayon.blue / 255.0), alpha: 1)
+        
+        
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
-        
-//        self.colorView.backgroundColor = UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: CGFloat.random(in: 0...1))
 
         cell.backgroundColor = crayonColor 
         
