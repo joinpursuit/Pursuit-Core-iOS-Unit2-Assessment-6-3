@@ -33,6 +33,15 @@ class ViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let DetailVC = segue.destination as? DetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("prepare for segue failed")
+        }
+        let crayon = allTheCrayons[indexPath.row]
+        DetailVC.crayonColor = crayon
+    }
+    
 
 }
 // Step 2: conform to UITableViewDataSource

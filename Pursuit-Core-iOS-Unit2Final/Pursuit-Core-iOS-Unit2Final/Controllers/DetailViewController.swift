@@ -27,10 +27,29 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var colorButton: UIButton!
     
+    var crayonColor: Crayon!
+    
+    var redValue: CGFloat!, greenValue: CGFloat!, blueValue: CGFloat!, alphaValue: CGFloat!
+    
+//    var updatedRedValue: CGFloat!, updatedGreenValue: CGFloat!, updatedBlueValue: CGFloat!, updatedAlphaValue: CGFloat!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        redValue = CGFloat(crayonColor.red)
+        greenValue = CGFloat(crayonColor.green)
+        blueValue = CGFloat(crayonColor.blue)
+        alphaValue = 1.0
+        
+        redValueSlider.value = Float (CGFloat(redValue/CGFloat(255)))
+         greenValueSlider.value = Float (CGFloat(redValue/CGFloat(255)))
+         blueValueSlider.value = Float (CGFloat(redValue/CGFloat(255)))
+        
+        
+        view.backgroundColor = UIColor(red: CGFloat(redValue)/CGFloat(255), green: CGFloat(greenValue)/CGFloat(255), blue: CGFloat(blueValue)/CGFloat(255), alpha: alphaValue)
     }
     
     @IBAction func resetButtonPressed() {
