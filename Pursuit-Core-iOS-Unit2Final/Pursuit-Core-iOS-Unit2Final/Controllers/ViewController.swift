@@ -47,12 +47,12 @@ class ViewController: UIViewController {
         }
         
         let crayola = crayon[indexPath.row]
-        let aColor = UIColor(red: CGFloat(crayola.red)/CGFloat(255),
-                                       green: CGFloat(crayola.green)/CGFloat(255),
-                                       blue: CGFloat(crayola.blue)/CGFloat(255),
-                                       alpha: 1)
+//        let aColor = UIColor(red: CGFloat(crayola.red)/CGFloat(255),
+//                                       green: CGFloat(crayola.green)/CGFloat(255),
+//                                       blue: CGFloat(crayola.blue)/CGFloat(255),
+//                                       alpha: 1)
         crayonDVC.cray = crayola
-        crayonDVC.view.backgroundColor = aColor
+//        crayonDVC.view.backgroundColor = aColor
         crayonDVC.updateUI(for: crayola)
 }
 

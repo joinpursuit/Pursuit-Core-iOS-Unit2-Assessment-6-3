@@ -120,6 +120,9 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ikY-Vb-HSR">
                                 <rect key="frame" x="160" y="520.5" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperAction:" destination="juG-bl-LvU" eventType="valueChanged" id="cb9-g9-s3I"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZV-cA-ePO">
                                 <rect key="frame" x="8" y="576.5" width="398" height="21"/>
@@ -131,6 +134,9 @@
                                 <rect key="frame" x="8" y="693" width="398" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="juG-bl-LvU" eventType="touchUpInside" id="78X-Ki-fN6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
