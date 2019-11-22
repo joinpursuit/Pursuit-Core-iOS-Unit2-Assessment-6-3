@@ -71,19 +71,19 @@ class DetailViewController: UIViewController {
         crayonName?.text = validCrayonColor.name
         
         redColorSlider?.value = (Float((validCrayonColor.red))) / 255.0
-        print("funcUI", redColorSlider?.value)
-        print("funcUI", validCrayonColor.red)
-        redColorLabel?.text = "Red Value: \(String(format: "%0.f",(redColorSlider.value)))"
+        print("funcUI1", redColorSlider?.value)
+        print("funcUI2", validCrayonColor.red)
+        redColorLabel?.text = "Red Value: \(String(format: "%0.1f",(redColorSlider.value)))"
         //print("\(String(format: "%0.f", (validCrayonColor.red/255.0)))")
         
         greenColorSlider?.value = (Float((validCrayonColor.green))) / 255.0
-        greenColorLabel?.text = "Green Value: \(String(format:"%0.f",(greenColorSlider.value)))"
+        greenColorLabel?.text = "Green Value: \(String(format:"%0.1f",(greenColorSlider.value)))"
         
         blueColorSlider?.value = (Float((validCrayonColor.blue))) / 255.0
-        blueColorLabel?.text = "Blue Value: \(String(format: "%0.f", (blueColorSlider.value)))"
+        blueColorLabel?.text = "Blue Value: \(String(format: "%0.1f", (blueColorSlider.value)))"
         
         alphaStepper?.value = 1.0
-        alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.f", (alphaStepper.value)))"
+        alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.1f", (alphaStepper.value)))"
         
         view.backgroundColor = UIColor(displayP3Red: CGFloat((redColorSlider.value)), green: CGFloat((greenColorSlider.value)), blue: CGFloat(blueColorSlider.value), alpha: CGFloat(1))
     }
