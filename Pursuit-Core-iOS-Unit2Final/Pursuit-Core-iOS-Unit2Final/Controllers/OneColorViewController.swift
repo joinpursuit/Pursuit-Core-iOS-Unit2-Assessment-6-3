@@ -10,7 +10,6 @@ import UIKit
 
 class OneColorViewController: UIViewController {
     
-    // HERE WILL BE OBJECT FOR PREPARE FOR SEGUE FUNC
     var crayon: Crayon?
     
     @IBOutlet weak var nameOfCrayonLabel: UILabel!
@@ -25,7 +24,6 @@ class OneColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateUI()
     }
     
@@ -41,13 +39,13 @@ class OneColorViewController: UIViewController {
         
         nameOfCrayonLabel.text = newCrayon.name
         redSliderLabel.value = Float(newCrayon.red/255)
-        redValueSliderLabel.text = "Red Value is \(newCrayon.red)"
+        redValueSliderLabel.text = "Red Value is \(redSliderLabel.value)"
         greenSliderLabel.value = Float(newCrayon.green/255)
-        greenValueSliderLabel.text = "Green Value is \(newCrayon.green)"
+        greenValueSliderLabel.text = "Green Value is \(greenSliderLabel.value)"
         blueSliderLabel.value = Float(newCrayon.blue/255)
-        blueValueSliderLabel.text = "Blue Value is \(newCrayon.blue)"
+        blueValueSliderLabel.text = "Blue Value is \(greenSliderLabel.value)"
         alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
-        view.backgroundColor = UIColor(red: CGFloat(newCrayon.red/255), green: CGFloat(newCrayon.green/255), blue: CGFloat(newCrayon.blue/255), alpha: 1)
+        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(greenSliderLabel.value), alpha: 1)
     }
     
     func configureRedSlider() {
@@ -76,9 +74,6 @@ class OneColorViewController: UIViewController {
     }
     
     @IBAction func redSliderAction(_ sender: UISlider) {
-//        guard let newCrayon = crayon else {
-//                   fatalError("I did not prepare for the segue correctly")
-//               }
         redSliderLabel.value = sender.value
         redValueSliderLabel.text = "Red Value is \(redSliderLabel.value)"
         view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
@@ -88,7 +83,7 @@ class OneColorViewController: UIViewController {
     @IBAction func greenSliderAction(_ sender: UISlider) {
         greenSliderLabel.value = sender.value
         greenValueSliderLabel.text = "Green Value is \(greenSliderLabel.value)"
-               view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
+        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
     }
     
     @IBAction func blueSliderAction(_ sender: UISlider) {
@@ -99,75 +94,12 @@ class OneColorViewController: UIViewController {
     
     @IBAction func stepperAction(_ sender: UIStepper) {
         alphaStepperLabel.value = sender.value
-        alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
+        alphaValueLabel.text = "Alpha is \(String(format: "%.1f", alphaStepperLabel.value))"
+        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
-        guard let newCrayon = crayon else {
-            fatalError("cannot reset the game")
-        }
-        redSliderLabel.value = Float(newCrayon.red/255)
-        redValueSliderLabel.text = "Red Value is \(newCrayon.red)"
-        greenSliderLabel.value = Float(newCrayon.green/255)
-        greenValueSliderLabel.text = "Green Value is \(newCrayon.green)"
-        blueSliderLabel.value = Float(newCrayon.blue/255)
-        blueValueSliderLabel.text = "Blue Value is \(newCrayon.blue)"
-        alphaStepperLabel.value = 1.0
-        alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
-        view.backgroundColor = UIColor(red: CGFloat(newCrayon.red/255), green: CGFloat(newCrayon.green/255), blue: CGFloat(newCrayon.blue/255), alpha: 1)
+        updateUI()
     }
-    
-    
 }
 
-//
-//var sliderFont: Float? {
-//     didSet {
-//         updateUI()
-//         //changeFontLabel.text = "Preview Font Size: \(Int(sliderFont))"
-//     }
-// }
-//
-// override func viewDidLoad() {
-//     super.viewDidLoad()
-//     configureStepper()
-//     configureSlide()
-//     updateUI()
-// }
-//
-// func updateUI(){
-//     guard let updatedFontSize = sliderFont else {
-//         fatalError("I did not prepare for the segue correctly")
-//     }
-//     sliderOutlet?.value = updatedFontSize
-//     stepperOutlet?.value = Double(updatedFontSize)
-//     changeFontLabel?.text = "Preview Font Size: \(Int(updatedFontSize))"
-// }
-//
-//
-// func configureStepper() {
-//     stepperOutlet.minimumValue = 5.0
-//     stepperOutlet.maximumValue = 50.0
-//     stepperOutlet.stepValue = 1.0
-//
-//     //stepperOutlet.value = Double(sliderFont) //17.0
-// }
-//
-// func configureSlide() {
-//     sliderOutlet.minimumValue = 5
-//     sliderOutlet.maximumValue = 50
-//     //sliderOutlet.value = sliderFont //17
-// }
-//
-// @IBAction func sliderAction(_ sender: UISlider) {
-//     //stepperOutlet.value = Double(sender.value)
-//     sliderFont = sender.value
-// }
-//
-// @IBAction func stepperAction(_ sender: UIStepper) {
-//     //sliderOutlet.value = Float(sender.value)
-//     sliderFont = Float(sender.value) // of type Float
-// }
-//
-// @IBAction func returnButton(_ sender: UIButton) {
-// }
