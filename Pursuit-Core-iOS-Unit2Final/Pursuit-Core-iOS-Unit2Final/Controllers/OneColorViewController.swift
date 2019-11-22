@@ -9,6 +9,17 @@
 import UIKit
 
 class OneColorViewController: UIViewController {
+    
+    @IBOutlet weak var nameOfCrayonLabel: UILabel!
+    @IBOutlet weak var redSliderLabel: UISlider!
+    @IBOutlet weak var redValueSliderLabel: UILabel!
+    @IBOutlet weak var greenSliderLabel: UISlider!
+    @IBOutlet weak var greenValueSliderLabel: UILabel!
+    @IBOutlet weak var blueSliderLabel: UISlider!
+    @IBOutlet weak var blueValueSliderLabel: UILabel!
+    @IBOutlet weak var alphaStepperLabel: UIStepper!
+    @IBOutlet weak var alphaValueLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,15 +27,8 @@ class OneColorViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func resetButton(_ sender: UIButton) {
     }
-    */
+    
 
 }
