@@ -36,15 +36,27 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="IRB-5a-AIu" userLabel="blueSlider">
                                 <rect key="frame" x="122" y="341.5" width="286" height="31"/>
+                                <connections>
+                                    <action selector="sliderHasSlided:" destination="fFL-NG-bvA" eventType="valueChanged" id="F4R-7T-QOx"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZYY-qL-QLg" userLabel="redSlider">
                                 <rect key="frame" x="122" y="259.5" width="286" height="31"/>
+                                <connections>
+                                    <action selector="sliderHasSlided:" destination="fFL-NG-bvA" eventType="valueChanged" id="abR-dH-MBS"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EWx-7U-aMz" userLabel="greenSlider">
                                 <rect key="frame" x="122" y="300.5" width="286" height="31"/>
+                                <connections>
+                                    <action selector="sliderHasSlided:" destination="fFL-NG-bvA" eventType="valueChanged" id="anT-0W-nqe"/>
+                                </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-VN-aSJ" userLabel="alphaStepper">
                                 <rect key="frame" x="160" y="432" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperHasStepped:" destination="fFL-NG-bvA" eventType="valueChanged" id="vKX-vl-Byt"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijc-Th-QM6" userLabel="alphaLabel">
                                 <rect key="frame" x="180.5" y="403" width="53" height="21"/>
@@ -85,7 +97,11 @@
                                 <segue destination="7az-TZ-ZCf" kind="unwind" unwindAction="bringingBackTheColourFrom:" id="v2t-94-McF"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="KeK-dA-VPf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="KeK-dA-VPf">
+                            <connections>
+                                <action selector="resetButtonWasPressed:" destination="fFL-NG-bvA" id="c0O-FO-wua"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="alphaStepper" destination="hdM-VN-aSJ" id="sOq-6F-JLi"/>
