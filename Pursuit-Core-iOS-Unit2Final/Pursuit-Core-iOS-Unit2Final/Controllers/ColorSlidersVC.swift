@@ -56,10 +56,11 @@ class ColorSlidersVC: UIViewController {
             alphaLabel.text = "Alpha: \(value)"
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = configureBGColor()
+        updatedBGC = view.backgroundColor ?? .white
         configure()
         title = currentColor?.name
     }
@@ -97,8 +98,7 @@ class ColorSlidersVC: UIViewController {
         let alpha = updatedAlpha ?? 1.0
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
-    
-    
+        
     @IBAction func redAction(_ sender: UISlider) {
         newRed = sender.value
         updatedRed = CGFloat(sender.value)
@@ -124,10 +124,11 @@ class ColorSlidersVC: UIViewController {
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
-        if sender.tag == 0{
+        if sender.tag == 0 {
             view.backgroundColor = configureBGColor()
         }
     }
     
+
     
 }
