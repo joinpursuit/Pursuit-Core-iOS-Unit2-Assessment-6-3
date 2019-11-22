@@ -84,9 +84,15 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BpV-LF-CPs">
                                 <rect key="frame" x="68" y="191" width="278" height="31"/>
+                                <connections>
+                                    <action selector="redAction:" destination="aMS-mV-eOb" eventType="valueChanged" id="FHb-B1-bMR"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qYN-t4-kbv">
                                 <rect key="frame" x="68" y="302" width="278" height="31"/>
+                                <connections>
+                                    <action selector="greenAction:" destination="aMS-mV-eOb" eventType="valueChanged" id="NXv-20-IUd"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw6-ib-BsS">
                                 <rect key="frame" x="120" y="362" width="174" height="21"/>
@@ -96,6 +102,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ky2-Qf-PjI">
                                 <rect key="frame" x="68" y="413" width="278" height="31"/>
+                                <connections>
+                                    <action selector="blueAction:" destination="aMS-mV-eOb" eventType="valueChanged" id="TAR-Cl-7pJ"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0I-qZ-CLG">
                                 <rect key="frame" x="120" y="473" width="174" height="21"/>
@@ -105,6 +114,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CGM-i7-4y3">
                                 <rect key="frame" x="68" y="524" width="278" height="31"/>
+                                <connections>
+                                    <action selector="alphaAction:" destination="aMS-mV-eOb" eventType="valueChanged" id="3wc-eD-f3x"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJF-aq-bYv">
                                 <rect key="frame" x="120" y="251" width="174" height="21"/>
@@ -114,10 +126,16 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="z2l-v9-0gY">
                                 <rect key="frame" x="160" y="589.33333333333337" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperAction:" destination="aMS-mV-eOb" eventType="valueChanged" id="hYb-hh-hvc"/>
+                                </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3W-vh-OFg">
                                 <rect key="frame" x="184" y="651.33333333333337" width="46" height="30"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="aMS-mV-eOb" eventType="touchUpInside" id="fws-f8-KQG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -170,7 +188,6 @@
                         <outlet property="greenTextLabel" destination="eJF-aq-bYv" id="U4E-LW-aVd"/>
                         <outlet property="redSlider" destination="BpV-LF-CPs" id="BA6-14-DsM"/>
                         <outlet property="redTextLabel" destination="YoW-tK-Qiy" id="QyW-nF-xEM"/>
-                        <outlet property="resetButton" destination="k3W-vh-OFg" id="xiV-Ty-Hmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hz-4m-N7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
