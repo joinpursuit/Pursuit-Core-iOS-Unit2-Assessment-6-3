@@ -12,19 +12,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-
-    
-    
-    
-    
     var crayon = [Crayon]() {
         didSet {
             tableView.reloadData()
         }
     }
-    
-    
-    
     
     
     override func viewDidLoad() {
@@ -47,12 +39,9 @@ class ViewController: UIViewController {
         }
         
         let crayola = crayon[indexPath.row]
-//        let aColor = UIColor(red: CGFloat(crayola.red)/CGFloat(255),
-//                                       green: CGFloat(crayola.green)/CGFloat(255),
-//                                       blue: CGFloat(crayola.blue)/CGFloat(255),
-//                                       alpha: 1)
+
         crayonDVC.cray = crayola
-//        crayonDVC.view.backgroundColor = aColor
+
         crayonDVC.updateUI(for: crayola)
 }
 
@@ -82,25 +71,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.backgroundColor = theColors
     }
     
-    
-    
 }
 
-//for color in crayon {
-//    cell.backgroundColor = UIColor()
-//}
 
-
-
-//        cell.textLabel?.text = someCrayon.name
-//        cell.detailTextLabel?.text = someCrayon.hex
-//        cell.backgroundView?.backgroundColor = UIColor(red: CGFloat(someCrayon.red), green:CGFloat(someCrayon.green), blue: CGFloat(someCrayon.blue), alpha: CGFloat(someCrayon.blue))
-//        let backgroundView = UIView()
-//        backgroundView.backgroundColor = UIColor.clear
-//        cell.selectedBackgroundView = backgroundView
-
-
-//
-//var separatorColor: UIColor?
-//var sectionIndexColor: UIColor?
-//var sectionIndexBackgroundColor: UIColor?

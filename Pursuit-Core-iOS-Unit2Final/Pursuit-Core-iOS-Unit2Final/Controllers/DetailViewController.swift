@@ -106,16 +106,12 @@ class DetailViewController: UIViewController {
         redSlider = sender.value
         let backgroundColor = UIColor(red: CGFloat(sender.value), green: CGFloat(0),blue: CGFloat(0),alpha:1.0)
         view.backgroundColor = backgroundColor
-        blueSliderLabel.isHidden = true
-        greenSliderLabel.isHidden = true
     }
     
     @IBAction func greenSliderAction(_ sender: UISlider) {
         greenSlider = sender.value
         let backgroundColor = UIColor(red: CGFloat(0), green: CGFloat(sender.value),blue: CGFloat(0),alpha:1.0)
         view.backgroundColor = backgroundColor
-        redSliderLabel.isHidden = true
-        blueSliderLabel.isHidden = true
     }
     
     
@@ -123,8 +119,6 @@ class DetailViewController: UIViewController {
         blueSlider = sender.value
         let backgroundColor = UIColor(red: CGFloat(0), green: CGFloat(),blue: CGFloat(sender.value),alpha:1.0)
         view.backgroundColor = backgroundColor
-        greenSliderLabel.isHidden = true
-        redSliderLabel.isHidden = true
     }
     
     
@@ -136,15 +130,10 @@ class DetailViewController: UIViewController {
     }
     
     
-    
-    
     @IBAction func reset(_ sender: UIButton) {
         redSliderLabel.value = Float(CGFloat(cray.red)/CGFloat(255))
         blueSliderLabel.value = Float(CGFloat(cray.blue)/CGFloat(255))
         greenSliderLabel.value = Float(CGFloat(cray.green)/CGFloat(255))
-        greenSliderLabel.isHidden = false
-        redSliderLabel.isHidden = false
-        blueSliderLabel.isHidden = false
         alphaStepper.value = 1.0
         alphaLabel.text = 1.0.description
         
@@ -155,6 +144,5 @@ class DetailViewController: UIViewController {
        
         view.backgroundColor = color
     }
-    
     
 }
