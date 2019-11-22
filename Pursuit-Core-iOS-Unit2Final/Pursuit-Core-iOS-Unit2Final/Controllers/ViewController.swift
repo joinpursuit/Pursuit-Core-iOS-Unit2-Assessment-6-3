@@ -12,9 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var separatorColor: UIColor?
-    var sectionIndexColor: UIColor?
-    var sectionIndexBackgroundColor: UIColor?
+
     
     
     
@@ -41,9 +39,24 @@ class ViewController: UIViewController {
         crayon = Crayon.allTheCrayons
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare for segue")
+        guard let crayonDVC = segue.destination as? DetailViewController,
+            let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("error")
+        }
+        
+        let crayola = crayon[indexPath.row]
+        let aColor = UIColor(red: CGFloat(crayola.red)/CGFloat(255),
+                                       green: CGFloat(crayola.green)/CGFloat(255),
+                                       blue: CGFloat(crayola.blue)/CGFloat(255),
+                                       alpha: 1)
+        crayonDVC.cray = crayola
+        crayonDVC.view.backgroundColor = aColor
 }
 
+}
+    
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return crayon.count
@@ -54,21 +67,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let someCrayon = crayon[indexPath.row]
         cell.textLabel?.text = someCrayon.name
         cell.detailTextLabel?.text = someCrayon.hex
-        cell.backgroundView?.backgroundColor = UIColor(red: CGFloat(someCrayon.red), green:CGFloat(someCrayon.green), blue: CGFloat(someCrayon.blue), alpha: CGFloat(someCrayon.blue))
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor.clear
-        cell.selectedBackgroundView = backgroundView
-        
-        
         return cell
+        
     }
+    
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let someColors = crayon[indexPath.row]
         let theColors = UIColor(red: CGFloat(someColors.red)/CGFloat(255),
                                 green: CGFloat(someColors.green)/CGFloat(255),
                                 blue: CGFloat(someColors.blue)/CGFloat(255),
-        alpha: 1)
+                                alpha: 1)
         cell.backgroundColor = theColors
     }
     
@@ -79,3 +88,18 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 //for color in crayon {
 //    cell.backgroundColor = UIColor()
 //}
+
+
+
+//        cell.textLabel?.text = someCrayon.name
+//        cell.detailTextLabel?.text = someCrayon.hex
+//        cell.backgroundView?.backgroundColor = UIColor(red: CGFloat(someCrayon.red), green:CGFloat(someCrayon.green), blue: CGFloat(someCrayon.blue), alpha: CGFloat(someCrayon.blue))
+//        let backgroundView = UIView()
+//        backgroundView.backgroundColor = UIColor.clear
+//        cell.selectedBackgroundView = backgroundView
+
+
+//
+//var separatorColor: UIColor?
+//var sectionIndexColor: UIColor?
+//var sectionIndexBackgroundColor: UIColor?
