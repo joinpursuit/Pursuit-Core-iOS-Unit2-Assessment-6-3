@@ -25,9 +25,12 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var resetButton: UIButton!
     
+    var crayon: Crayon!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: 1.0)
     }
     
     
