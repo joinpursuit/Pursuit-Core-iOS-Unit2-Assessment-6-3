@@ -85,14 +85,20 @@
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-it-L6o">
                                 <rect key="frame" x="18" y="159.66666666666666" width="378" height="31"/>
                                 <connections>
-                                    <action selector="redChangeSlider:" destination="DFS-ZX-Zoe" eventType="valueChanged" id="MjZ-jF-X5q"/>
+                                    <action selector="colorChangeSlider:" destination="DFS-ZX-Zoe" eventType="valueChanged" id="MjZ-jF-X5q"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="lX9-on-RMe">
                                 <rect key="frame" x="18" y="310" width="378" height="31"/>
+                                <connections>
+                                    <action selector="colorChangeSlider:" destination="DFS-ZX-Zoe" eventType="valueChanged" id="jjQ-II-4p4"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fWX-s3-15L">
                                 <rect key="frame" x="18" y="460.66666666666669" width="378" height="31"/>
+                                <connections>
+                                    <action selector="colorChangeSlider:" destination="DFS-ZX-Zoe" eventType="valueChanged" id="NWf-ru-tah"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WhM-Jj-fJQ">
                                 <rect key="frame" x="100" y="360" width="214" height="20.666666666666686"/>
@@ -112,8 +118,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="96t-pW-j7n">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="96t-pW-j7n">
                                 <rect key="frame" x="160" y="611" width="94" height="32"/>
+                                <connections>
+                                    <action selector="alphaStepper:" destination="DFS-ZX-Zoe" eventType="valueChanged" id="SZh-YE-qNS"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bey-bd-ik5">
                                 <rect key="frame" x="100" y="663" width="214" height="21"/>
@@ -124,6 +133,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iMl-AO-RtQ">
                                 <rect key="frame" x="180" y="807" width="54" height="30"/>
                                 <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetColorButton:" destination="DFS-ZX-Zoe" eventType="touchUpInside" id="nXq-Dg-fDA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -163,7 +175,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="uP8-g5-2Vq"/>
                     <connections>
-                        <outlet property="alphaStepper" destination="96t-pW-j7n" id="Nk1-1N-2uM"/>
+                        <outlet property="alphaStepper" destination="96t-pW-j7n" id="bq9-1T-Toc"/>
                         <outlet property="alphaStepperLabel" destination="bey-bd-ik5" id="yPO-i9-Xzy"/>
                         <outlet property="blueSlider" destination="fWX-s3-15L" id="k87-wy-iBB"/>
                         <outlet property="blueSliderLabel" destination="ecE-O1-EHw" id="AFW-DE-aDh"/>
