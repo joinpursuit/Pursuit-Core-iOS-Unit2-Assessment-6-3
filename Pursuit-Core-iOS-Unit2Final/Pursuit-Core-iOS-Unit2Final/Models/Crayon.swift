@@ -39,4 +39,15 @@ class Crayon {
     Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
     Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
   ]
+    
+    static func singleCrayon() -> [Crayon] {
+        
+        var uniqueCrayons = Crayon.allTheCrayons
+
+        for crayon in uniqueCrayons {
+            let oneCrayon = Crayon(name: crayon.name, red: crayon.red, green: crayon.green, blue: crayon.blue, hex: crayon.hex)
+            uniqueCrayons.append(oneCrayon)
+        }
+        return uniqueCrayons
+    }
 }
