@@ -71,6 +71,12 @@ class DetailViewController: UIViewController {
     
     //reset button
     @IBAction func resetButton(_ sender: UIButton) {
+        
+        
+        crayonColor?.red = red! //* 255.0
+        crayonColor?.green = green! //* 255.0
+        crayonColor?.blue = blue! //* 255.0
+        
         redColorSlider.value = Float(red! / 255.0)
         redColorLabel?.text = "Red Value: \(String(format: "%0.1f",(redColorSlider.value)))"
 
@@ -79,10 +85,10 @@ class DetailViewController: UIViewController {
         
         blueColorSlider.value = Float(blue! / 255.0)
         blueColorLabel?.text = "Blue Value: \(String(format: "%0.1f", (blueColorSlider.value)))"
-        
         alphaStepper.value = 1.0
         alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.1f", (alphaStepper.value)))"
         view.backgroundColor = UIColor(displayP3Red: CGFloat((redColorSlider.value)), green: CGFloat((greenColorSlider.value)), blue: CGFloat(blueColorSlider.value), alpha: CGFloat(1))
+        
     }
     
     func updateUI(){
@@ -104,7 +110,6 @@ class DetailViewController: UIViewController {
         alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.1f", (alphaStepper.value)))"
         
         view.backgroundColor = UIColor(displayP3Red: CGFloat((redColorSlider.value)), green: CGFloat((greenColorSlider.value)), blue: CGFloat(blueColorSlider.value), alpha: CGFloat(alphaStepper.value))
-        
     }
     
     func configureSlider(){
