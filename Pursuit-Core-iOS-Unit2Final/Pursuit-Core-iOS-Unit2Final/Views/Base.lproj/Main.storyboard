@@ -60,6 +60,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Crayons" id="De9-qb-06A"/>
+                    <connections>
+                        <outlet property="tableView" destination="dTz-KV-zBq" id="jnJ-4g-ROV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
