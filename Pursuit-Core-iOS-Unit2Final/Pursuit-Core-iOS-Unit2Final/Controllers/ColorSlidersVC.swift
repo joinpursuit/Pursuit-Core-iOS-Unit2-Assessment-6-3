@@ -22,36 +22,28 @@ class ColorSlidersVC: UIViewController {
     @IBOutlet weak var alphaLabel: UILabel!
     
     var currentColor: Crayon?
-    var updatedRed: CGFloat!
-    var updatedBlue: CGFloat!
-    var updatedGreen: CGFloat!
-    var updatedAlpha: CGFloat!
     
     var newRed: Float = 1.0 {
         didSet {
             let value = String(format: "%.2f", redSlider.value)
-            updatedRed = CGFloat(redSlider.value)
             redLabel.text = "Red: \(value)"
         }
     }
     var newGreen: Float = 1.0 {
         didSet {
             let value = String(format: "%.2f", greenSlider.value)
-            updatedGreen = CGFloat(greenSlider.value)
             greenLabel.text = "Green: \(value)"
         }
     }
     var newBlue: Float = 1.0 {
         didSet{
             let value = String(format: "%.2f", blueSlider.value)
-            updatedBlue = CGFloat(blueSlider.value)
             blueLabel.text = "Blue: \(value)"
         }
     }
     var newAlpha: Double = 1.0 {
         didSet {
             let value = String(format: "%.2f", alphaStepper.value)
-            updatedAlpha = CGFloat(alphaStepper.value)
             alphaLabel.text = "Alpha: \(value)"
         }
     }
@@ -64,11 +56,14 @@ class ColorSlidersVC: UIViewController {
     }
     
     func updateLabelColor() {
-        if updatedGreen == 0 && updatedBlue == 0 && updatedRed == 0 {
+        if newGreen == 0 && newBlue == 0 && newRed == 0 && newAlpha < 1 {
             alphaLabel.textColor = .white
+            alphaStepper.backgroundColor = .white
         } else {
             alphaLabel.textColor = .black
+            alphaStepper.backgroundColor = .clear
         }
+        
     }
     
     func configure() {
@@ -98,37 +93,33 @@ class ColorSlidersVC: UIViewController {
     }
     
     func getNewBackgroundColor() -> UIColor {
-        let red = updatedRed ?? 1.0
-        let blue = updatedBlue ?? 1.0
-        let green = updatedGreen ?? 1.0
-        let alpha = updatedAlpha ?? 1.0
+        let red = CGFloat(newRed)
+        let blue = CGFloat(newBlue)
+        let green = CGFloat(newGreen)
+        let alpha = CGFloat(newAlpha)
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
         
     @IBAction func redAction(_ sender: UISlider) {
         newRed = sender.value
-        updatedRed = CGFloat(sender.value)
         view.backgroundColor = getNewBackgroundColor()
         updateLabelColor()
     }
     
     @IBAction func blueAction(_ sender: UISlider) {
         newBlue = sender.value
-        updatedBlue = CGFloat(sender.value)
         view.backgroundColor = getNewBackgroundColor()
         updateLabelColor()
     }
     
     @IBAction func greenAction(_ sender: UISlider) {
         newGreen = sender.value
-        updatedGreen = CGFloat(sender.value)
         view.backgroundColor = getNewBackgroundColor()
         updateLabelColor()
     }
     
     @IBAction func alphaAction(_ sender: UIStepper) {
         newAlpha = sender.value
-        updatedAlpha = CGFloat(sender.value)
         view.backgroundColor = getNewBackgroundColor()
         updateLabelColor()
     }
