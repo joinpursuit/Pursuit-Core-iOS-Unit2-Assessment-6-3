@@ -121,7 +121,7 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opacity: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZQ-y2-IRy">
-                                <rect key="frame" x="0.0" y="692" width="414" height="21"/>
+                                <rect key="frame" x="167.5" y="692" width="79.5" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
@@ -135,6 +135,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="gZQ-y2-IRy" firstAttribute="centerX" secondItem="aE5-7W-5iN" secondAttribute="centerX" id="0Ai-vR-0QA"/>
                             <constraint firstItem="wJ7-fF-Zze" firstAttribute="leading" secondItem="xAK-a2-J9w" secondAttribute="leading" id="2uv-iO-Gm7"/>
                             <constraint firstItem="xAK-a2-J9w" firstAttribute="trailing" secondItem="weo-Ji-SwZ" secondAttribute="trailing" constant="20" id="4dX-XF-oh4"/>
                             <constraint firstItem="bjg-0b-MRY" firstAttribute="leading" secondItem="xAK-a2-J9w" secondAttribute="leading" constant="160" id="596-yE-5tf"/>
@@ -156,11 +157,9 @@
                             <constraint firstItem="xAK-a2-J9w" firstAttribute="trailing" secondItem="wJ7-fF-Zze" secondAttribute="trailing" id="nVV-kT-SW3"/>
                             <constraint firstItem="weo-Ji-SwZ" firstAttribute="leading" secondItem="xAK-a2-J9w" secondAttribute="leading" constant="20" id="oTv-2K-0JW"/>
                             <constraint firstItem="xAK-a2-J9w" firstAttribute="trailing" secondItem="JcP-Bb-cmr" secondAttribute="trailing" constant="20" id="obu-0T-PsZ"/>
-                            <constraint firstItem="xAK-a2-J9w" firstAttribute="trailing" secondItem="gZQ-y2-IRy" secondAttribute="trailing" id="rMG-Eu-Ad1"/>
                             <constraint firstItem="xAK-a2-J9w" firstAttribute="trailing" secondItem="m0j-qF-xXu" secondAttribute="trailing" id="tKY-JG-fOJ"/>
                             <constraint firstItem="weo-Ji-SwZ" firstAttribute="top" secondItem="kua-G6-Gw7" secondAttribute="bottom" constant="80" id="v1r-aR-Nza"/>
                             <constraint firstItem="RUh-LH-mQc" firstAttribute="leading" secondItem="xAK-a2-J9w" secondAttribute="leading" id="vS3-2G-fpo"/>
-                            <constraint firstItem="gZQ-y2-IRy" firstAttribute="leading" secondItem="xAK-a2-J9w" secondAttribute="leading" id="xY3-sQ-m2u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xAK-a2-J9w"/>
                     </view>

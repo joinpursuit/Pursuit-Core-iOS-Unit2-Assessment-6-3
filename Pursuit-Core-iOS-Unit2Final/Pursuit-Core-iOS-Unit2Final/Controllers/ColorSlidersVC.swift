@@ -22,42 +22,66 @@ class ColorSlidersVC: UIViewController {
     @IBOutlet weak var alphaLabel: UILabel!
     
     var currentColor: Crayon?
+    var updatedRed: CGFloat!
+    var updatedBlue: CGFloat!
+    var updatedGreen: CGFloat!
+    var updatedAlpha: CGFloat!
+    var updatedBGC: UIColor!
     
+    var newRed: Float = 1.0 {
+        didSet {
+            let value = String(format: "%.2f", redSlider.value)
+            updatedRed = CGFloat(redSlider.value)
+            redLabel.text = "Red: \(value)"
+        }
+    }
+    var newGreen: Float = 1.0 {
+        didSet {
+            let value = String(format: "%.2f", greenSlider.value)
+            updatedGreen = CGFloat(greenSlider.value)
+            greenLabel.text = "Green: \(value)"
+        }
+    }
+    var newBlue: Float = 1.0 {
+        didSet{
+            let value = String(format: "%.2f", blueSlider.value)
+            updatedBlue = CGFloat(blueSlider.value)
+            blueLabel.text = "Blue: \(value)"
+        }
+    }
+    var newAlpha: Double = 1.0 {
+        didSet {
+            let value = String(format: "%.2f", alphaStepper.value)
+            updatedAlpha = CGFloat(alphaStepper.value)
+            alphaLabel.text = "Alpha: \(value)"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureRedSlider()
-        configureBlueSlider()
-        configureGreenSlider()
-        configureAlphaStepper()
+        configure()
         view.backgroundColor = configureBGColor()
-    }
-    func configureRedSlider() {
-        redSlider.minimumValue = 0.0
-        redSlider.maximumValue = 1.0
-        redSlider.value = Float(currentColor?.red ?? 1.0)
-        redLabel.text = "Red: \(redSlider.value)"
+        title = currentColor?.name
     }
     
-    func configureBlueSlider() {
+    
+    func configure() {
         blueSlider.minimumValue = 0.0
         blueSlider.maximumValue = 1.0
-        blueSlider.value = Float(currentColor?.blue ?? 1.0)
-        blueLabel.text = "Blue: \(blueSlider.value)"
-    }
-    
-    func configureGreenSlider() {
+        blueSlider.value = 1.0
+        
         greenSlider.minimumValue = 0.0
         greenSlider.maximumValue = 1.0
-        greenSlider.value = Float(currentColor?.green ?? 1.0)
-        greenLabel.text = "Green: \(greenSlider.value)"
-    }
-
-    func configureAlphaStepper() {
+        greenSlider.value = 1.0
+        
+        redSlider.minimumValue = 0.0
+        redSlider.maximumValue = 1.0
+        redSlider.value = 1.0
+        
         alphaStepper.minimumValue = 0.0
         alphaStepper.maximumValue = 1.0
         alphaStepper.value = 1.0
-        alphaLabel.text = "Alpha: \(alphaStepper.value)"
+        alphaStepper.stepValue = 0.1
     }
     
     func configureBGColor() -> UIColor {
@@ -68,23 +92,27 @@ class ColorSlidersVC: UIViewController {
     }
     
     
+    
+    
     @IBAction func redAction(_ sender: UISlider) {
-        redSlider.value = sender.value
-        //currentColor?.red = redSlider.value
+        newRed = sender.value
+        updatedRed = CGFloat(sender.value)
+        
     }
     
     @IBAction func blueAction(_ sender: UISlider) {
-        blueSlider.value = sender.value
-        //currentColor?.blue = blueSlider.value
+        newBlue = sender.value
+        updatedBlue = CGFloat(sender.value)
     }
     
     @IBAction func greenAction(_ sender: UISlider) {
-        greenSlider.value = sender.value
-        //currentColor?.green = greenSlider.value
+        newGreen = sender.value
+        updatedGreen = CGFloat(sender.value)
     }
     
     @IBAction func alphaAction(_ sender: UIStepper) {
-        alphaStepper.value = sender.value
+        newAlpha = sender.value
+        updatedAlpha = CGFloat(sender.value)
     }
     
 }
