@@ -112,6 +112,10 @@ class DetailViewController: UIViewController {
         updateBackgroundandLabelColors()
         allLabels.map {$0.textColor = .black}
         
+        if colorNameLabel.text == "Black" {
+            allLabels.map {$0.textColor = .white}
+        }
+        
     }
     
     
