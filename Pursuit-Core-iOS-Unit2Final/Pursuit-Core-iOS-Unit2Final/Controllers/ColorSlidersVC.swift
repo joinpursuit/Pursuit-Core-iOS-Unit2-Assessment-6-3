@@ -26,7 +26,6 @@ class ColorSlidersVC: UIViewController {
     var updatedBlue: CGFloat!
     var updatedGreen: CGFloat!
     var updatedAlpha: CGFloat!
-    var updatedBGC: UIColor!
     
     var newRed: Float = 1.0 {
         didSet {
@@ -60,9 +59,16 @@ class ColorSlidersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = configureBGColor()
-        updatedBGC = view.backgroundColor ?? .white
         configure()
         title = currentColor?.name
+    }
+    
+    func updateLabelColor() {
+        if updatedGreen == 0 && updatedBlue == 0 && updatedRed == 0 {
+            alphaLabel.textColor = .white
+        } else {
+            alphaLabel.textColor = .black
+        }
     }
     
     func configure() {
@@ -103,24 +109,28 @@ class ColorSlidersVC: UIViewController {
         newRed = sender.value
         updatedRed = CGFloat(sender.value)
         view.backgroundColor = getNewBackgroundColor()
+        updateLabelColor()
     }
     
     @IBAction func blueAction(_ sender: UISlider) {
         newBlue = sender.value
         updatedBlue = CGFloat(sender.value)
         view.backgroundColor = getNewBackgroundColor()
+        updateLabelColor()
     }
     
     @IBAction func greenAction(_ sender: UISlider) {
         newGreen = sender.value
         updatedGreen = CGFloat(sender.value)
         view.backgroundColor = getNewBackgroundColor()
+        updateLabelColor()
     }
     
     @IBAction func alphaAction(_ sender: UIStepper) {
         newAlpha = sender.value
         updatedAlpha = CGFloat(sender.value)
         view.backgroundColor = getNewBackgroundColor()
+        updateLabelColor()
     }
     
     @IBAction func resetButton(_ sender: UIButton) {
