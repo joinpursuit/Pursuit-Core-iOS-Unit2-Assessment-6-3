@@ -24,12 +24,18 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var alphaColorLabel: UILabel!
     
     
+    var red:Double?
+    var green:Double?
+    var blue:Double?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSlider()
         configureStepper()
         updateUI()
+        red = crayonColor?.red
+        green = crayonColor?.green
+        blue = crayonColor?.blue
         // Do any additional setup after loading the view.
     }
     var crayonColor:Crayon?{
@@ -38,7 +44,8 @@ class DetailViewController: UIViewController {
             updateUI()
         }
     }
-
+    
+    
     @IBAction func redValChangedSlider(_ sender: UISlider) {
         crayonColor?.red = Double(sender.value) * 255.0
         print("ib" ,crayonColor?.red)
@@ -59,8 +66,21 @@ class DetailViewController: UIViewController {
         //print(alphaStepper.value)
     }
     
+    //reset button
     @IBAction func resetButton(_ sender: UIButton) {
+        redColorSlider.value = Float(red! / 255.0)
+        redColorLabel?.text = "Red Value: \(String(format: "%0.1f",(redColorSlider.value)))"
+
+        print("reset", red)
+        greenColorSlider.value = Float(green! / 255.0)
+        greenColorLabel?.text = "Green Value: \(String(format:"%0.1f",(greenColorSlider.value)))"
         
+        blueColorSlider.value = Float(blue! / 255.0)
+        blueColorLabel?.text = "Blue Value: \(String(format: "%0.1f", (blueColorSlider.value)))"
+        
+        alphaStepper.value = 1.0
+        alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.1f", (alphaStepper.value)))"
+        view.backgroundColor = UIColor(displayP3Red: CGFloat((redColorSlider.value)), green: CGFloat((greenColorSlider.value)), blue: CGFloat(blueColorSlider.value), alpha: CGFloat(1))
     }
     
     func updateUI(){
