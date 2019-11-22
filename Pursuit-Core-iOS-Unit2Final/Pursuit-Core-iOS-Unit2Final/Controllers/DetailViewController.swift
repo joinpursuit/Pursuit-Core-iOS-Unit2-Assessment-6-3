@@ -110,6 +110,12 @@ class DetailViewController: UIViewController {
         alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.1f", (alphaStepper.value)))"
         
         view.backgroundColor = UIColor(displayP3Red: CGFloat((redColorSlider.value)), green: CGFloat((greenColorSlider.value)), blue: CGFloat(blueColorSlider.value), alpha: CGFloat(alphaStepper.value))
+        
+        crayonName.textColor = UIColor(displayP3Red: 1.0 - CGFloat(redColorSlider.value), green: 1.0 - CGFloat(greenColorSlider.value), blue: 1.0 - CGFloat(blueColorSlider.value), alpha: 1.0)
+        redColorLabel.textColor = UIColor(displayP3Red: 1.0 - CGFloat(redColorSlider.value), green: 1.0 - CGFloat(greenColorSlider.value), blue: 1.0 - CGFloat(blueColorSlider.value), alpha: 1.0)
+        greenColorLabel.textColor = UIColor(displayP3Red: 1.0 - CGFloat(redColorSlider.value), green: 1.0 - CGFloat(greenColorSlider.value), blue: 1.0 - CGFloat(blueColorSlider.value), alpha: 1.0)
+        blueColorLabel.textColor = UIColor(displayP3Red: 1.0 - CGFloat(redColorSlider.value), green: 1.0 - CGFloat(greenColorSlider.value), blue: 1.0 - CGFloat(blueColorSlider.value), alpha: 1.0)
+        alphaColorLabel.textColor = UIColor(displayP3Red: 1.0 - CGFloat(redColorSlider.value), green: 1.0 - CGFloat(greenColorSlider.value), blue: 1.0 - CGFloat(blueColorSlider.value), alpha: 1.0)
     }
     
     func configureSlider(){
