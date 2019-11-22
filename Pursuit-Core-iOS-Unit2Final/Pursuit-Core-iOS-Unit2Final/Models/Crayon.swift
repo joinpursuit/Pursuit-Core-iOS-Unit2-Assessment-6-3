@@ -42,12 +42,12 @@ class Crayon {
     
     static func singleCrayon() -> [Crayon] {
         
-        var Crayons = Crayon.allTheCrayons
-        
-        for crayon in Crayons {
-            Crayons = [crayon]
+        var uniqueCrayons = Crayon.allTheCrayons
+
+        for crayon in uniqueCrayons {
+            let oneCrayon = Crayon(name: crayon.name, red: crayon.red, green: crayon.green, blue: crayon.blue, hex: crayon.hex)
+            uniqueCrayons.append(oneCrayon)
         }
-        
-        return Crayons
+        return uniqueCrayons
     }
 }
