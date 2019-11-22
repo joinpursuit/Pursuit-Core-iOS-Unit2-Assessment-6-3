@@ -27,20 +27,6 @@ class DetailViewController: UIViewController {
     var crayon: Crayon!
     
     
-    //    var sliderFont: Float = 12 {
-//        didSet {
-//            fontSize.text = "Preview Font Size: \(round(sliderControl.value))"
-//        }
-//    }
-    
-    var currentColor: Float = 50.0 {
-        didSet {
-            self.view.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value / 255), green: CGFloat(greenSlider.value / 255), blue: CGFloat(blueSlider.value / 255), alpha: 1.0)
-        }
-    }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +36,7 @@ class DetailViewController: UIViewController {
         greenSliderValues()
         blueSliderValues()
         alphaSliderValues()
+        alphaStepperValues()
     }
     
     
@@ -67,8 +54,8 @@ class DetailViewController: UIViewController {
     
     func blueSliderValues() {
         blueSlider.minimumValue = 1.0
-        greenSlider.maximumValue = 300.0
-        greenSlider.value = 50.0
+        blueSlider.maximumValue = 300.0
+        blueSlider.value = 50.0
     }
     
     func alphaSliderValues() {
@@ -80,7 +67,7 @@ class DetailViewController: UIViewController {
     func alphaStepperValues() {
         alphaStepper.minimumValue = 0.1
         alphaStepper.maximumValue = 1.0
-        alphaStepper.value = 1.0
+        alphaStepper.value = 0.2
         alphaStepper.stepValue = 0.1
     }
     
@@ -103,15 +90,22 @@ class DetailViewController: UIViewController {
     
     @IBAction func alphaAction(_ sender: UISlider) {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: CGFloat(sender.value))
+        alphaStepper.value = Double(sender.value)
         
     }
     
     
     @IBAction func stepperAction(_ sender: UIStepper) {
         self.view.backgroundColor = UIColor(displayP3Red: CGFloat(crayon.red / 255), green: CGFloat(crayon.green / 255), blue: CGFloat(crayon.blue / 255), alpha: CGFloat(sender.value))
+        alphaSlider.value = Float(sender.value)
     }
     
     
     @IBAction func resetButton(_ sender: UIButton) {
+        redSliderValues()
+        greenSliderValues()
+        blueSliderValues()
+        alphaSliderValues()
+        alphaStepperValues()
     }
 }
