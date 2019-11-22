@@ -123,4 +123,11 @@ class ColorSlidersVC: UIViewController {
         view.backgroundColor = getNewBackgroundColor()
     }
     
+    @IBAction func resetButton(_ sender: UIButton) {
+        if sender.tag == 0{
+            view.backgroundColor = configureBGColor()
+        }
+    }
+    
+    
 }
