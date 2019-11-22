@@ -28,12 +28,13 @@ class ViewController: UIViewController {
         crayons = Crayon.allTheCrayons
     }
 
-// segue
+// Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? DetailViewController, let indexPath = tableView.indexPathForSelectedRow else {fatalError("failed to access DetailViewController")}
         
         detailVC.crayon = crayons[indexPath.row]
+       // detailVC.redColor = crayons[indexPath.row].red
     }
 }
 
@@ -47,11 +48,6 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
         let crayon = crayons[indexPath.row]
-        
-        // configure cell:
-        // - add name as title
-        // - add hex as subtitle
-        // - cell color should be the color of the of the crayon
         
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex

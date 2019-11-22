@@ -108,15 +108,27 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RgB-Fa-HNn">
                                 <rect key="frame" x="6" y="296.5" width="402" height="31"/>
+                                <connections>
+                                    <action selector="redSliderChanged:" destination="RlT-L5-J5o" eventType="valueChanged" id="SrX-UY-Y6T"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aTZ-Kz-Dgb">
                                 <rect key="frame" x="6" y="397.5" width="402" height="31"/>
+                                <connections>
+                                    <action selector="greenSliderChanged:" destination="RlT-L5-J5o" eventType="valueChanged" id="QED-74-fNj"/>
+                                </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="zrh-7f-kQ9">
                                 <rect key="frame" x="160" y="599.5" width="94" height="32"/>
+                                <connections>
+                                    <action selector="alphaStepperChanged:" destination="RlT-L5-J5o" eventType="valueChanged" id="Ei0-g6-55L"/>
+                                </connections>
                             </stepper>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2wX-eS-Rm3">
                                 <rect key="frame" x="6" y="498.5" width="402" height="31"/>
+                                <connections>
+                                    <action selector="blueSliderChanged:" destination="RlT-L5-J5o" eventType="valueChanged" id="EgI-dU-y3q"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
