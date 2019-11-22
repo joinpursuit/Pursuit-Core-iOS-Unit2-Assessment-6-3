@@ -42,19 +42,19 @@ class DetailViewController: UIViewController {
         
         // red
         redSlider.minimumValue = 0.0
-        redSlider.maximumValue = 1.1
+        redSlider.maximumValue = 1.0
         redSlider.value = Float(selectedCrayon.red/255)
         redLabel.text = String(format: "%.2f", redSlider.value)
         
         // green
         greenSlider.minimumValue = 0.0
-        greenSlider.maximumValue = 1.1
+        greenSlider.maximumValue = 1.0
         greenSlider.value = Float(selectedCrayon.green/255)
         greenLabel.text = String(format: "%.2f", greenSlider.value)
         
         //blue
         blueSlider.minimumValue = 0.0
-        blueSlider.maximumValue = 1.1
+        blueSlider.maximumValue = 1.0
         blueSlider.value = Float(selectedCrayon.blue/255)
         blueLabel.text = String(format: "%.2f", blueSlider.value)
         
@@ -92,5 +92,12 @@ class DetailViewController: UIViewController {
         alphaLabel.text = String(format: "%.1f", sender.value)
         updateBackgroundColor()
     }
+    
+    @IBAction func reset(_ sender: UIButton) {
+        configureControls()
+        updateBackgroundColor()
+        
+    }
+    
     
 }
