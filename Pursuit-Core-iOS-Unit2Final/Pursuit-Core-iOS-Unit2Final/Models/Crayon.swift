@@ -14,6 +14,7 @@ class Crayon {
   var green: Double
   var blue: Double
   var hex: String
+    
   init(name: String, red: Double, green: Double, blue: Double, hex: String) {
     self.name = name
     self.red = red
@@ -21,6 +22,22 @@ class Crayon {
     self.blue = blue
     self.hex = hex
   }
+    convenience init(name: String, hex: String){
+        var aHex = hex
+        
+        aHex.remove(at: aHex.startIndex)
+        let hexArr = Array(aHex)
+        let xRed = hexArr[0...1]
+        let xGreen = hexArr[2...3]
+        let xBlue = hexArr[4...5]
+        
+        guard let red = UInt8(xRed.reduce(""){ String($0) + String($1) }, radix:16), let green = UInt8(xGreen.reduce(""){ String($0) + String($1) }, radix: 16), let blue = UInt8(xBlue.reduce(""){ String($0) + String($1) }, radix: 16) else{
+            fatalError("Could not create instance of Crayon with input \(hex)")
+        }
+        
+        self.init(name: name, red: Double(red), green: Double(green), blue: Double(blue), hex: hex)
+    }
+    
   static let allTheCrayons = [
     Crayon(name: "Almond", red: 239, green: 222, blue: 205, hex: "#EFDECD"),
     Crayon(name: "Antique Brass", red: 205, green: 149, blue: 117, hex: "#CD9575"),
@@ -37,6 +54,7 @@ class Crayon {
     Crayon(name: "Blue Bell", red: 162, green: 162, blue: 208, hex: "#A2A2D0"),
     Crayon(name: "Blue Gray", red: 102, green: 153, blue: 204, hex: "#6699CC"),
     Crayon(name: "Blue Green", red: 13, green: 152, blue: 186, hex: "#0D98BA"),
-    Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD")
+    Crayon(name: "Blue Violet", red: 115, green: 102, blue: 189, hex: "#7366BD"),
+    Crayon(name: "Some Shade of Blue", hex: "#34F7EA")
   ]
 }
