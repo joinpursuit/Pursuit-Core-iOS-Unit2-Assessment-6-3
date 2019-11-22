@@ -170,6 +170,7 @@
                         <outlet property="greenTextLabel" destination="eJF-aq-bYv" id="U4E-LW-aVd"/>
                         <outlet property="redSlider" destination="BpV-LF-CPs" id="BA6-14-DsM"/>
                         <outlet property="redTextLabel" destination="YoW-tK-Qiy" id="QyW-nF-xEM"/>
+                        <outlet property="resetButton" destination="k3W-vh-OFg" id="xiV-Ty-Hmd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hz-4m-N7y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

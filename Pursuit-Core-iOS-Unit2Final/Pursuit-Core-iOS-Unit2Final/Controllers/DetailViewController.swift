@@ -23,6 +23,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var alphaSlider: UISlider!
     @IBOutlet weak var alphaStepper: UIStepper!
     
+    @IBOutlet weak var resetButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,30 +34,31 @@ class DetailViewController: UIViewController {
     func redSliderControl() {
         redSlider.minimumValue = 1.0
         redSlider.maximumValue = 300.0
-        redSlider.value = 1.0
+        redSlider.value = 50.0
     }
 
     func greenSliderControl() {
         greenSlider.minimumValue = 1.0
         greenSlider.maximumValue = 300.0
-        greenSlider.value = 1.0
+        greenSlider.value = 50.0
     }
     
     func blueSliderControl() {
         blueSlider.minimumValue = 1.0
         greenSlider.maximumValue = 300.0
-        greenSlider.value = 1.0
+        greenSlider.value = 50.0
     }
     
     func alphaSliderControl() {
         alphaSlider.minimumValue = 0.1
         alphaSlider.maximumValue = 1.0
-        alphaSlider.value = 0.1
+        alphaSlider.value = 0.2
     }
     
     func alphaStepperControl() {
         alphaStepper.minimumValue = 0.1
         alphaStepper.maximumValue = 1.0
-        alphaStepper.value = 0.1
+        alphaStepper.value = 0.2
+        alphaStepper.stepValue = 0.1
     }
 }
