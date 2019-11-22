@@ -23,6 +23,10 @@ class TableViewController: UIViewController {
     private func setUp(){
         colours = Crayon.allTheCrayons
     }
+    
+    @IBAction func bringingBackTheColour(from segue: UIStoryboardSegue){
+        
+    }
 
 }
 
@@ -42,6 +46,9 @@ extension TableViewController: UITableViewDataSource{
 
 extension TableViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let newStoryboard = UIStoryboard(name: "SecondStoryboard", bundle: nil)
+        let colourVC = newStoryboard.instantiateViewController(withIdentifier: "colourViewController") as! ColourViewController
+        colourVC.colour = colours[indexPath.row]
+        navigationController?.pushViewController(colourVC, animated: true)
     }
 }
