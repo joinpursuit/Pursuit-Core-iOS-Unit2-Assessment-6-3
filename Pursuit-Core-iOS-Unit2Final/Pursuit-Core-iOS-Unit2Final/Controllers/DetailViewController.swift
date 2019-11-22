@@ -15,7 +15,26 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var crayonNameLabel: UILabel!
     @IBOutlet weak var crayonHexLabel: UILabel!
-
+    
+    @IBOutlet weak var redSlider: UISlider!
+    @IBOutlet weak var redLabel: UILabel!
+    
+    
+    @IBOutlet weak var greenSlider: UISlider!
+    @IBOutlet weak var greenLabel: UILabel!
+    
+    
+    
+    @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var blueLabel: UILabel!
+    
+    
+    
+    @IBOutlet weak var alphaStepper: UIStepper!
+    @IBOutlet weak var alphaLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
