@@ -84,6 +84,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PSd-nv-7jj">
                                 <rect key="frame" x="18" y="243" width="378" height="31"/>
+                                <connections>
+                                    <action selector="redSliderAction:" destination="VJB-ME-IwN" eventType="valueChanged" id="Zoh-7F-gJ9"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggD-0J-mpX">
                                 <rect key="frame" x="20" y="293" width="374" height="21"/>
@@ -93,6 +96,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mXf-SZ-yLb">
                                 <rect key="frame" x="18" y="374" width="378" height="31"/>
+                                <connections>
+                                    <action selector="greenSliderAction:" destination="VJB-ME-IwN" eventType="valueChanged" id="PKv-1v-ylb"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rl2-eQ-6hO">
                                 <rect key="frame" x="20" y="424" width="374" height="21"/>
@@ -102,6 +108,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uuO-Zr-qNB">
                                 <rect key="frame" x="18" y="505" width="378" height="31"/>
+                                <connections>
+                                    <action selector="blueSliderAction:" destination="VJB-ME-IwN" eventType="valueChanged" id="92Y-oA-Vr9"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwh-TM-vAy">
                                 <rect key="frame" x="20" y="555" width="374" height="21"/>
@@ -111,6 +120,9 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="teq-YM-kfM">
                                 <rect key="frame" x="160" y="636" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperAction:" destination="VJB-ME-IwN" eventType="valueChanged" id="UAj-vZ-rbu"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpJ-vG-0Pi">
                                 <rect key="frame" x="20" y="688" width="374" height="21"/>

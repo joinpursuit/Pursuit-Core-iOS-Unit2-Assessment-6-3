@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var crayonColors = [Crayon] () {
+    var crayonColors = [Crayon]() {
         didSet {
             tableView.reloadData()
         }
@@ -27,6 +27,34 @@ class ViewController: UIViewController {
     func loadData() {
         crayonColors = Crayon.allTheCrayons
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let secondVC = segue.destination as? OneColorViewController,
+            let indexPath = tableView.indexPathForSelectedRow
+            else {
+            fatalError("failed to get indexPath and secondVC")
+        }
+            let color = crayonColors[indexPath.row]
+                
+            secondVC.crayon = color
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // we need y=the segue.destination view controller we are navigating to
+//        // we need the indexPath that was selected
+//        guard let detailViewController = segue.destination as? AnimalDetailViewController,
+//            let indexPath = tableView.indexPathForSelectedRow
+//            else {
+//            fatalError("failed to get indexPath and detailVC")
+//        }
+//        
+//        //get currently selected object (ZooAnimal)
+//        let animal = animalClassifications[indexPath.section][indexPath.row]
+//        
+//        // set the detailVC animal object
+//        detailViewController.animal = animal
+//    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
