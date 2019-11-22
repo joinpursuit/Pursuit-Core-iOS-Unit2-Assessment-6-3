@@ -45,25 +45,28 @@ class DetailViewController: UIViewController {
         }
     }
     
+    var stepperVal:Double?{
+        didSet{
+            print("Crayon is changing")
+            updateUI()
+        }
+    }
+    
     
     @IBAction func redValChangedSlider(_ sender: UISlider) {
         crayonColor?.red = Double(sender.value) * 255.0
-        print("ib" ,crayonColor?.red)
     }
     
     @IBAction func greenValChangedSlider(_ sender: UISlider) {
         crayonColor?.green = Double(sender.value) * 255.0
-        //print(crayonColor?.green)
     }
     
     @IBAction func blueValChangedSlider(_ sender: UISlider) {
         crayonColor?.blue = Double(sender.value) * 255.0
-        //print(crayonColor?.blue)
     }
     
     @IBAction func stepperValChagedSlider(_ sender: UIStepper) {
-        alphaStepper.value = sender.value
-        //print(alphaStepper.value)
+        stepperVal = sender.value
     }
     
     //reset button
@@ -71,7 +74,6 @@ class DetailViewController: UIViewController {
         redColorSlider.value = Float(red! / 255.0)
         redColorLabel?.text = "Red Value: \(String(format: "%0.1f",(redColorSlider.value)))"
 
-        print("reset", red)
         greenColorSlider.value = Float(green! / 255.0)
         greenColorLabel?.text = "Green Value: \(String(format:"%0.1f",(greenColorSlider.value)))"
         
@@ -91,10 +93,7 @@ class DetailViewController: UIViewController {
         crayonName?.text = validCrayonColor.name
         
         redColorSlider?.value = (Float((validCrayonColor.red))) / 255.0
-        print("funcUI1", redColorSlider?.value)
-        print("funcUI2", validCrayonColor.red)
         redColorLabel?.text = "Red Value: \(String(format: "%0.1f",(redColorSlider.value)))"
-        //print("\(String(format: "%0.f", (validCrayonColor.red/255.0)))")
         
         greenColorSlider?.value = (Float((validCrayonColor.green))) / 255.0
         greenColorLabel?.text = "Green Value: \(String(format:"%0.1f",(greenColorSlider.value)))"
@@ -102,10 +101,10 @@ class DetailViewController: UIViewController {
         blueColorSlider?.value = (Float((validCrayonColor.blue))) / 255.0
         blueColorLabel?.text = "Blue Value: \(String(format: "%0.1f", (blueColorSlider.value)))"
         
-        alphaStepper?.value = 1.0
         alphaColorLabel?.text = "Alpha Value: \(String(format: "%0.1f", (alphaStepper.value)))"
         
-        view.backgroundColor = UIColor(displayP3Red: CGFloat((redColorSlider.value)), green: CGFloat((greenColorSlider.value)), blue: CGFloat(blueColorSlider.value), alpha: CGFloat(1))
+        view.backgroundColor = UIColor(displayP3Red: CGFloat((redColorSlider.value)), green: CGFloat((greenColorSlider.value)), blue: CGFloat(blueColorSlider.value), alpha: CGFloat(alphaStepper.value))
+        
     }
     
     func configureSlider(){
@@ -122,6 +121,7 @@ class DetailViewController: UIViewController {
         alphaStepper.minimumValue = 0.0
         alphaStepper.maximumValue = 1.0
         alphaStepper.stepValue = 0.1
+        alphaStepper?.value = 1.0
     }
 
 }
