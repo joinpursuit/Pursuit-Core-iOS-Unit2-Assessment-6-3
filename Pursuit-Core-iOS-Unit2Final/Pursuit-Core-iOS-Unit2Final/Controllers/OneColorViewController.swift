@@ -11,11 +11,7 @@ import UIKit
 class OneColorViewController: UIViewController {
     
     // HERE WILL BE OBJECT FOR PREPARE FOR SEGUE FUNC
-    var crayon: Crayon! {
-        didSet {
-            
-        }
-    }
+    var crayon: Crayon?
     
     @IBOutlet weak var nameOfCrayonLabel: UILabel!
     @IBOutlet weak var redSliderLabel: UISlider!
@@ -27,97 +23,57 @@ class OneColorViewController: UIViewController {
     @IBOutlet weak var alphaStepperLabel: UIStepper!
     @IBOutlet weak var alphaValueLabel: UILabel!
     
-    var crayonName: String? {
-        didSet {
-            nameOfCrayonLabel.text = crayon.name
-            redSliderLabel.value = Float(crayon.red)
-            redValueSliderLabel.text = "Red Value is \(crayon.red)"
-            greenSliderLabel.value = Float(crayon.green)
-            greenValueSliderLabel.text = "Green Value is \(crayon.green)"
-            blueSliderLabel.value = Float(crayon.blue)
-            blueValueSliderLabel.text = "Blue Value is \(crayon.blue)"
-            alphaStepperLabel.value = 1
-            alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
-            //updateUI()
-            //changeFontLabel.text = "Preview Font Size: \(Int(sliderFont))"
-        }
-    }
-    
-    var crayonColor: CGFloat? {
-        didSet {
-            updateUI()
-            //changeFontLabel.text = "Preview Font Size: \(Int(sliderFont))"
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateUI()
+    }
+    
+    func updateUI(){
+        guard let newCrayon = crayon else {
+            fatalError("I did not prepare for the segue correctly")
+        }
+        
         configureRedSlider()
         configureGreenSlider()
         configureBlueSlider()
         configureStepper()
         
-        nameOfCrayonLabel.text = crayon.name
-        redSliderLabel.value = Float(crayon.red)
-        redValueSliderLabel.text = "Red Value is \(crayon.red)"
-        greenSliderLabel.value = Float(crayon.green)
-        greenValueSliderLabel.text = "Green Value is \(crayon.green)"
-        blueSliderLabel.value = Float(crayon.blue)
-        blueValueSliderLabel.text = "Blue Value is \(crayon.blue)"
-        alphaStepperLabel.value = 1
+        nameOfCrayonLabel.text = newCrayon.name
+        redSliderLabel.value = Float(newCrayon.red)
+        redValueSliderLabel.text = "Red Value is \(newCrayon.red)"
+        greenSliderLabel.value = Float(newCrayon.green)
+        greenValueSliderLabel.text = "Green Value is \(newCrayon.green)"
+        blueSliderLabel.value = Float(newCrayon.blue)
+        blueValueSliderLabel.text = "Blue Value is \(newCrayon.blue)"
         alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
-        
-        //updateUI()
-        
-    }
-    
-    func updateUI(){
-//        guard let colorName = crayonName else {
-//            fatalError("I did not prepare for the segue correctly")
-//        }
-        nameOfCrayonLabel.text = crayon.name
-        redSliderLabel.value = Float(crayon.red)
-        redValueSliderLabel.text = "Red Value is \(crayon.red)"
-        greenSliderLabel.value = Float(crayon.green)
-        greenValueSliderLabel.text = "Green Value is \(crayon.green)"
-        blueSliderLabel.value = Float(crayon.blue)
-        blueValueSliderLabel.text = "Blue Value is \(crayon.blue)"
-        //           @IBOutlet weak var alphaStepperLabel: UIStepper!
-        //           @IBOutlet weak var alphaValueLabel: UILabel!
-        
-        
-        //         sliderOutlet?.value = updatedFontSize
-        //         stepperOutlet?.value = Double(updatedFontSize)
-        //         changeFontLabel?.text = "Preview Font Size: \(Int(updatedFontSize))"
+        view.backgroundColor = UIColor(red: CGFloat(newCrayon.red/255), green: CGFloat(newCrayon.green/255), blue: CGFloat(newCrayon.blue/255), alpha: 1)
     }
     
     func configureRedSlider() {
         redSliderLabel.minimumValue = 0.0
         redSliderLabel.maximumValue = 1.0
-        //sliderOutlet.value = sliderFont //17
+        //redSliderLabel.value = Float(crayon.red)
     }
     
     func configureGreenSlider() {
         greenSliderLabel.minimumValue = 0.0
         greenSliderLabel.maximumValue = 1.0
-        //sliderOutlet.value = sliderFont //17
+        //greenSliderLabel.value = Float(crayon.green) //17
     }
     
     func configureBlueSlider() {
         blueSliderLabel.minimumValue = 0.0
         blueSliderLabel.maximumValue = 1.0
-        //sliderOutlet.value = sliderFont //17
+        //blueSliderLabel.value = Float(crayon.blue) //17
     }
     
     func configureStepper() {
         alphaStepperLabel.minimumValue = 0.0
         alphaStepperLabel.maximumValue = 1.0
         alphaStepperLabel.stepValue = 0.1
-        
-        //alphaStepperLabel.value = Double(sliderFont) //17.0
+        alphaStepperLabel.value = 1.0 //17.0
     }
-    
-    
     
     @IBAction func redSliderAction(_ sender: UISlider) {
     }
