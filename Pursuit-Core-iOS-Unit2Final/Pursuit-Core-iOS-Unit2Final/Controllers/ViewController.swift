@@ -48,7 +48,8 @@ extension ViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "crayonCell", for: indexPath)
         let color = crayonColors[indexPath.row]
         cell.textLabel?.text = color.name
-        cell.textLabel?.textColor = .white
+        
+        
         cell.detailTextLabel?.text = color.hex
         cell.detailTextLabel?.textColor = .white
         cell.backgroundColor = UIColor(red: CGFloat(color.red/255), green: CGFloat(color.green/255), blue: CGFloat(color.blue/255), alpha: 1)

@@ -45,7 +45,7 @@ class OneColorViewController: UIViewController {
         blueSliderLabel.value = Float(newCrayon.blue/255)
         blueValueSliderLabel.text = "Blue Value is \(String(format: "%.2f", greenSliderLabel.value))"
         alphaValueLabel.text = "Alpha is \(alphaStepperLabel.value)"
-        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(greenSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
+        view.backgroundColor = UIColor(red: CGFloat(redSliderLabel.value), green: CGFloat(greenSliderLabel.value), blue: CGFloat(blueSliderLabel.value), alpha: CGFloat(alphaStepperLabel.value))
     }
     
     func configureRedSlider() {
